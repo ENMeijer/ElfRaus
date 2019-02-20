@@ -54,14 +54,22 @@
 		2F40E13D221DB26F007E5536 /* ElfRaus */ = {
 			isa = PBXGroup;
 			children = (
-				2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
 				2F40E140221DB26F007E5536 /* ViewController.swift */,
 				2F40E142221DB26F007E5536 /* Main.storyboard */,
-				2F40E145221DB272007E5536 /* Assets.xcassets */,
-				2F40E147221DB272007E5536 /* LaunchScreen.storyboard */,
+				2F40E150221DB2D0007E5536 /* Supporting Files */,
 				2F40E14A221DB272007E5536 /* Info.plist */,
 			);
 			path = ElfRaus;
+			sourceTree = "<group>";
+		};
+		2F40E150221DB2D0007E5536 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F40E145221DB272007E5536 /* Assets.xcassets */,
+				2F40E147221DB272007E5536 /* LaunchScreen.storyboard */,
+				2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
