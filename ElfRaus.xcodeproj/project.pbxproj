@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210DC30E221EE0A000DF4CFC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DC30D221EE0A000DF4CFC /* Card.swift */; };
+		21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */; };
 		2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E13E221DB26F007E5536 /* AppDelegate.swift */; };
 		2F40E141221DB26F007E5536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E140221DB26F007E5536 /* ViewController.swift */; };
 		2F40E146221DB272007E5536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E145221DB272007E5536 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210DC30D221EE0A000DF4CFC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElfRaus.swift; sourceTree = "<group>"; };
 		2F40E13B221DB26F007E5536 /* ElfRaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElfRaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F40E13E221DB26F007E5536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F40E140221DB26F007E5536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				2F40E140221DB26F007E5536 /* ViewController.swift */,
 				2F40E151221DBA58007E5536 /* Main.storyboard */,
+				21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
+				210DC30D221EE0A000DF4CFC /* Card.swift */,
 				2F40E150221DB2D0007E5536 /* Supporting Files */,
 				2F40E14A221DB272007E5536 /* Info.plist */,
 			);
@@ -143,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
 				2F40E141221DB26F007E5536 /* ViewController.swift in Sources */,
 				2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */,
+				210DC30E221EE0A000DF4CFC /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8M6BGD9PZ4;
+				DEVELOPMENT_TEAM = 3HFEGW6FN2;
 				INFOPLIST_FILE = ElfRaus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8M6BGD9PZ4;
+				DEVELOPMENT_TEAM = 3HFEGW6FN2;
 				INFOPLIST_FILE = ElfRaus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

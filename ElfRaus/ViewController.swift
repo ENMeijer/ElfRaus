@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //var game:elfRaus
+    var game = ElfRaus()
+    
     @IBOutlet var playingField: [UILabel]!
     
     @IBOutlet weak var playerCard1: UIButton!
@@ -18,9 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerCard4: UIButton!
     
     //for testing, should be linked to hand in the game
-    var hand = ["3 red", "2 blue", "10 yellow", "2 red"]
+    var hand = [Card]()
+    var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     
-    
+
     @IBAction func drawButton(_ sender: UIButton) {
         //draw action
         playerCard1.setTitle("test", for: .normal)
@@ -31,10 +33,17 @@ class ViewController: UIViewController {
     }
     
     func showHand(){
-        playerCard1.setTitle(hand[0], for: .normal)
-        playerCard2.setTitle(hand[1], for: .normal)
-        playerCard3.setTitle(hand[2], for: .normal)
-        playerCard4.setTitle(hand[3], for: .normal)
+        hand = game.getCardsPlayer()
+        
+        playerCard1.setTitle(String(hand[0].number), for: .normal)
+        playerCard1.setTitleColor(hand[0].color, for: .normal)
+        playerCard2.setTitle(String(hand[1].number), for: .normal)
+        playerCard2.setTitleColor(hand[1].color, for: .normal)
+        playerCard3.setTitle(String(hand[2].number), for: .normal)
+        playerCard3.setTitleColor(hand[2].color, for: .normal)
+        playerCard4.setTitle(String(hand[3].number), for: .normal)
+        playerCard4.setTitleColor(hand[3].color, for: .normal)
+        print("showHand")
 
     }
     
