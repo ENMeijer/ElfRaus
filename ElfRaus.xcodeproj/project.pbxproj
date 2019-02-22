@@ -14,6 +14,23 @@
 		2F40E146221DB272007E5536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E145221DB272007E5536 /* Assets.xcassets */; };
 		2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E147221DB272007E5536 /* LaunchScreen.storyboard */; };
 		2F40E152221DBA58007E5536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E151221DBA58007E5536 /* Main.storyboard */; };
+		2F528184222038BB00AB4778 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528173222038BA00AB4778 /* Temporal.swift */; };
+		2F528185222038BB00AB4778 /* ACTRWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528174222038BA00AB4778 /* ACTRWindowView.swift */; };
+		2F528186222038BB00AB4778 /* BufferAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528175222038BA00AB4778 /* BufferAction.swift */; };
+		2F528187222038BB00AB4778 /* Declarative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528176222038BB00AB4778 /* Declarative.swift */; };
+		2F528188222038BB00AB4778 /* Instantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528177222038BB00AB4778 /* Instantiation.swift */; };
+		2F528189222038BB00AB4778 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528178222038BB00AB4778 /* Support.swift */; };
+		2F52818A222038BB00AB4778 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528179222038BB00AB4778 /* Vision.swift */; };
+		2F52818B222038BB00AB4778 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52817A222038BB00AB4778 /* Model.swift */; };
+		2F52818C222038BB00AB4778 /* FocusRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52817B222038BB00AB4778 /* FocusRing.swift */; };
+		2F52818D222038BB00AB4778 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52817C222038BB00AB4778 /* Parser.swift */; };
+		2F52818E222038BB00AB4778 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52817D222038BB00AB4778 /* Production.swift */; };
+		2F52818F222038BB00AB4778 /* SlotCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52817E222038BB00AB4778 /* SlotCondition.swift */; };
+		2F528190222038BB00AB4778 /* SlotAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52817F222038BB00AB4778 /* SlotAction.swift */; };
+		2F528191222038BB00AB4778 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528180222038BB00AB4778 /* Tokenizer.swift */; };
+		2F528192222038BB00AB4778 /* Procedural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528181222038BB00AB4778 /* Procedural.swift */; };
+		2F528193222038BB00AB4778 /* Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528182222038BB00AB4778 /* Chunk.swift */; };
+		2F528194222038BB00AB4778 /* BufferCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528183222038BB00AB4778 /* BufferCondition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +43,23 @@
 		2F40E148221DB272007E5536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F40E14A221DB272007E5536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F40E151221DBA58007E5536 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../Downloads/Main.storyboard; sourceTree = "<group>"; };
+		2F528173222038BA00AB4778 /* Temporal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
+		2F528174222038BA00AB4778 /* ACTRWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTRWindowView.swift; sourceTree = "<group>"; };
+		2F528175222038BA00AB4778 /* BufferAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAction.swift; sourceTree = "<group>"; };
+		2F528176222038BB00AB4778 /* Declarative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Declarative.swift; sourceTree = "<group>"; };
+		2F528177222038BB00AB4778 /* Instantiation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiation.swift; sourceTree = "<group>"; };
+		2F528178222038BB00AB4778 /* Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		2F528179222038BB00AB4778 /* Vision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
+		2F52817A222038BB00AB4778 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		2F52817B222038BB00AB4778 /* FocusRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusRing.swift; sourceTree = "<group>"; };
+		2F52817C222038BB00AB4778 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		2F52817D222038BB00AB4778 /* Production.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
+		2F52817E222038BB00AB4778 /* SlotCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotCondition.swift; sourceTree = "<group>"; };
+		2F52817F222038BB00AB4778 /* SlotAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotAction.swift; sourceTree = "<group>"; };
+		2F528180222038BB00AB4778 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		2F528181222038BB00AB4778 /* Procedural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Procedural.swift; sourceTree = "<group>"; };
+		2F528182222038BB00AB4778 /* Chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
+		2F528183222038BB00AB4778 /* BufferCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferCondition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +96,7 @@
 				2F40E151221DBA58007E5536 /* Main.storyboard */,
 				21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
 				210DC30D221EE0A000DF4CFC /* Card.swift */,
+				2F5281722220384A00AB4778 /* ACT-R */,
 				2F40E150221DB2D0007E5536 /* Supporting Files */,
 				2F40E14A221DB272007E5536 /* Info.plist */,
 			);
@@ -76,6 +111,31 @@
 				2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F5281722220384A00AB4778 /* ACT-R */ = {
+			isa = PBXGroup;
+			children = (
+				2F528174222038BA00AB4778 /* ACTRWindowView.swift */,
+				2F528175222038BA00AB4778 /* BufferAction.swift */,
+				2F528183222038BB00AB4778 /* BufferCondition.swift */,
+				2F528182222038BB00AB4778 /* Chunk.swift */,
+				2F528176222038BB00AB4778 /* Declarative.swift */,
+				2F52817B222038BB00AB4778 /* FocusRing.swift */,
+				2F528177222038BB00AB4778 /* Instantiation.swift */,
+				2F52817A222038BB00AB4778 /* Model.swift */,
+				2F52817C222038BB00AB4778 /* Parser.swift */,
+				2F528181222038BB00AB4778 /* Procedural.swift */,
+				2F52817D222038BB00AB4778 /* Production.swift */,
+				2F52817F222038BB00AB4778 /* SlotAction.swift */,
+				2F52817E222038BB00AB4778 /* SlotCondition.swift */,
+				2F528178222038BB00AB4778 /* Support.swift */,
+				2F528173222038BA00AB4778 /* Temporal.swift */,
+				2F528180222038BB00AB4778 /* Tokenizer.swift */,
+				2F528179222038BB00AB4778 /* Vision.swift */,
+			);
+			name = "ACT-R";
+			path = "Supporting Files/ACT-R";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +209,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F528187222038BB00AB4778 /* Declarative.swift in Sources */,
+				2F528189222038BB00AB4778 /* Support.swift in Sources */,
+				2F528188222038BB00AB4778 /* Instantiation.swift in Sources */,
+				2F52818B222038BB00AB4778 /* Model.swift in Sources */,
+				2F528192222038BB00AB4778 /* Procedural.swift in Sources */,
 				21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
+				2F52818E222038BB00AB4778 /* Production.swift in Sources */,
+				2F528193222038BB00AB4778 /* Chunk.swift in Sources */,
 				2F40E141221DB26F007E5536 /* ViewController.swift in Sources */,
+				2F528191222038BB00AB4778 /* Tokenizer.swift in Sources */,
+				2F52818F222038BB00AB4778 /* SlotCondition.swift in Sources */,
+				2F52818D222038BB00AB4778 /* Parser.swift in Sources */,
+				2F528185222038BB00AB4778 /* ACTRWindowView.swift in Sources */,
 				2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */,
+				2F528194222038BB00AB4778 /* BufferCondition.swift in Sources */,
 				210DC30E221EE0A000DF4CFC /* Card.swift in Sources */,
+				2F528184222038BB00AB4778 /* Temporal.swift in Sources */,
+				2F52818C222038BB00AB4778 /* FocusRing.swift in Sources */,
+				2F528186222038BB00AB4778 /* BufferAction.swift in Sources */,
+				2F52818A222038BB00AB4778 /* Vision.swift in Sources */,
+				2F528190222038BB00AB4778 /* SlotAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
