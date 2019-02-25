@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerCard3: UIButton!
     @IBOutlet weak var playerCard4: UIButton!
     
+    @IBOutlet var cardButtons: [UIButton]!
     //for testing, should be linked to hand in the game
     var hand = [Card]()
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
@@ -25,8 +26,21 @@ class ViewController: UIViewController {
 
     @IBAction func drawButton(_ sender: UIButton) {
         //draw action
-        playerCard1.setTitle("test", for: .normal)
+        //playerCard1.setTitle("test", for: .normal)
+        game.drawCard("Player")
+        showHand()
     }
+    
+    @IBAction func touchCard(_ sender: UIButton) {
+        if let cardNumber = cardButtons.index(of: sender) {
+            game.chooseCard(at: hand[cardNumber].identifier)
+            //updateViewFromModel()
+        } else {
+            print("choosen card was not in cardButtons")
+        }
+        showHand()
+    }
+    
     @IBAction func nextButton(_ sender: UIButton) {
         //next card
         showHand()
@@ -34,6 +48,7 @@ class ViewController: UIViewController {
     
     func showHand(){
         hand = game.getCardsPlayer()
+        hand.shuffle()
         
         playerCard1.setTitle(String(hand[0].number), for: .normal)
         playerCard1.setTitleColor(hand[0].color, for: .normal)
