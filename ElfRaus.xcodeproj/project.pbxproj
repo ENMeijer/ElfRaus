@@ -13,7 +13,6 @@
 		2F40E141221DB26F007E5536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E140221DB26F007E5536 /* ViewController.swift */; };
 		2F40E146221DB272007E5536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E145221DB272007E5536 /* Assets.xcassets */; };
 		2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E147221DB272007E5536 /* LaunchScreen.storyboard */; };
-		2F40E152221DBA58007E5536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E151221DBA58007E5536 /* Main.storyboard */; };
 		2F528184222038BB00AB4778 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528173222038BA00AB4778 /* Temporal.swift */; };
 		2F528185222038BB00AB4778 /* ACTRWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528174222038BA00AB4778 /* ACTRWindowView.swift */; };
 		2F528186222038BB00AB4778 /* BufferAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528175222038BA00AB4778 /* BufferAction.swift */; };
@@ -31,6 +30,7 @@
 		2F528192222038BB00AB4778 /* Procedural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528181222038BB00AB4778 /* Procedural.swift */; };
 		2F528193222038BB00AB4778 /* Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528182222038BB00AB4778 /* Chunk.swift */; };
 		2F528194222038BB00AB4778 /* BufferCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528183222038BB00AB4778 /* BufferCondition.swift */; };
+		40F68C9E22240043004EBCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F68C9D22240043004EBCFC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,6 @@
 		2F40E145221DB272007E5536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F40E148221DB272007E5536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F40E14A221DB272007E5536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F40E151221DBA58007E5536 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../Downloads/Main.storyboard; sourceTree = "<group>"; };
 		2F528173222038BA00AB4778 /* Temporal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
 		2F528174222038BA00AB4778 /* ACTRWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTRWindowView.swift; sourceTree = "<group>"; };
 		2F528175222038BA00AB4778 /* BufferAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAction.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		2F528181222038BB00AB4778 /* Procedural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Procedural.swift; sourceTree = "<group>"; };
 		2F528182222038BB00AB4778 /* Chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
 		2F528183222038BB00AB4778 /* BufferCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferCondition.swift; sourceTree = "<group>"; };
+		40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				2F40E140221DB26F007E5536 /* ViewController.swift */,
-				2F40E151221DBA58007E5536 /* Main.storyboard */,
+				40F68C9D22240043004EBCFC /* Main.storyboard */,
 				21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
 				210DC30D221EE0A000DF4CFC /* Card.swift */,
 				2F5281722220384A00AB4778 /* ACT-R */,
@@ -196,9 +196,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F40E152221DBA58007E5536 /* Main.storyboard in Resources */,
 				2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */,
 				2F40E146221DB272007E5536 /* Assets.xcassets in Resources */,
+				40F68C9E22240043004EBCFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HFEGW6FN2;
+				DEVELOPMENT_TEAM = T8BYNH69C5;
 				INFOPLIST_FILE = ElfRaus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -386,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HFEGW6FN2;
+				DEVELOPMENT_TEAM = T8BYNH69C5;
 				INFOPLIST_FILE = ElfRaus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
