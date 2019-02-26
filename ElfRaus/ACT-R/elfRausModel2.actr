@@ -112,6 +112,7 @@
     =goal>
         isa decision
         state decide
+        direction = high
     =imaginal>
         isa  card
         colour  =colour
@@ -131,6 +132,7 @@
     =goal>
         isa decision
         state decide
+        direction = low
     =imaginal>
         isa  card
         colour  =colour
