@@ -31,7 +31,8 @@
 		2F528193222038BB00AB4778 /* Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528182222038BB00AB4778 /* Chunk.swift */; };
 		2F528194222038BB00AB4778 /* BufferCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F528183222038BB00AB4778 /* BufferCondition.swift */; };
 		40F68C9E22240043004EBCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F68C9D22240043004EBCFC /* Main.storyboard */; };
-		BB44879C2225713600986462 /* elfRausModel in Resources */ = {isa = PBXBuildFile; fileRef = BB44879B2225713600986462 /* elfRausModel */; };
+		BB44879C2225713600986462 /* elfRausModel2 in Resources */ = {isa = PBXBuildFile; fileRef = BB44879B2225713600986462 /* elfRausModel2 */; };
+		BB44879E2225774500986462 /* elfRausModel in Resources */ = {isa = PBXBuildFile; fileRef = BB44879D2225774500986462 /* elfRausModel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +62,8 @@
 		2F528182222038BB00AB4778 /* Chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
 		2F528183222038BB00AB4778 /* BufferCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferCondition.swift; sourceTree = "<group>"; };
 		40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		BB44879B2225713600986462 /* elfRausModel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = elfRausModel; path = ../../../../elfRausModel; sourceTree = "<group>"; };
+		BB44879B2225713600986462 /* elfRausModel2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = elfRausModel2; path = ../../../../elfRausModel2; sourceTree = "<group>"; };
+		BB44879D2225774500986462 /* elfRausModel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = elfRausModel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,8 @@
 		2F5281722220384A00AB4778 /* ACT-R */ = {
 			isa = PBXGroup;
 			children = (
-				BB44879B2225713600986462 /* elfRausModel */,
+				BB44879B2225713600986462 /* elfRausModel2 */,
+				BB44879D2225774500986462 /* elfRausModel */,
 				2F528174222038BA00AB4778 /* ACTRWindowView.swift */,
 				2F528175222038BA00AB4778 /* BufferAction.swift */,
 				2F528183222038BB00AB4778 /* BufferCondition.swift */,
@@ -200,9 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */,
+				BB44879E2225774500986462 /* elfRausModel in Resources */,
 				2F40E146221DB272007E5536 /* Assets.xcassets in Resources */,
 				40F68C9E22240043004EBCFC /* Main.storyboard in Resources */,
-				BB44879C2225713600986462 /* elfRausModel in Resources */,
+				BB44879C2225713600986462 /* elfRausModel2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
