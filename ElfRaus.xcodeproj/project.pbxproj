@@ -1,430 +1,429 @@
 // !$*UTF8*$!
 {
-    archiveVersion = 1;
-    classes = {
-    };
-    objectVersion = 50;
-    objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
 
 /* Begin PBXBuildFile section */
-        210B277B2228186300D18A68 /* PlayedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B277A2228186300D18A68 /* PlayedCards.swift */; };
-        210DC30E221EE0A000DF4CFC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DC30D221EE0A000DF4CFC /* Card.swift */; };
-        21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */; };
-        2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E13E221DB26F007E5536 /* AppDelegate.swift */; };
-        2F40E141221DB26F007E5536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E140221DB26F007E5536 /* ViewController.swift */; };
-        2F40E146221DB272007E5536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E145221DB272007E5536 /* Assets.xcassets */; };
-        2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E147221DB272007E5536 /* LaunchScreen.storyboard */; };
-        4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FD22281C2200A33FBE /* ACTRWindowView.swift */; };
-        4026931022281C2200A33FBE /* BufferAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FE22281C2200A33FBE /* BufferAction.swift */; };
-        4026931122281C2200A33FBE /* BufferCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FF22281C2200A33FBE /* BufferCondition.swift */; };
-        4026931222281C2200A33FBE /* Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930022281C2200A33FBE /* Chunk.swift */; };
-        4026931322281C2200A33FBE /* Declarative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930122281C2200A33FBE /* Declarative.swift */; };
-        4026931422281C2200A33FBE /* elfRausModel2.actr in Resources */ = {isa = PBXBuildFile; fileRef = 4026930222281C2200A33FBE /* elfRausModel2.actr */; };
-        4026931522281C2200A33FBE /* FocusRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930322281C2200A33FBE /* FocusRing.swift */; };
-        4026931622281C2200A33FBE /* Instantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930422281C2200A33FBE /* Instantiation.swift */; };
-        4026931722281C2200A33FBE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930522281C2200A33FBE /* Model.swift */; };
-        4026931822281C2200A33FBE /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930622281C2200A33FBE /* Parser.swift */; };
-        4026931922281C2200A33FBE /* Procedural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930722281C2200A33FBE /* Procedural.swift */; };
-        4026931A22281C2200A33FBE /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930822281C2200A33FBE /* Production.swift */; };
-        4026931B22281C2200A33FBE /* SlotAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930922281C2200A33FBE /* SlotAction.swift */; };
-        4026931C22281C2200A33FBE /* SlotCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930A22281C2200A33FBE /* SlotCondition.swift */; };
-        4026931D22281C2200A33FBE /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930B22281C2200A33FBE /* Support.swift */; };
-        4026931E22281C2200A33FBE /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930C22281C2200A33FBE /* Temporal.swift */; };
-        4026931F22281C2200A33FBE /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930D22281C2200A33FBE /* Tokenizer.swift */; };
-        4026932022281C2200A33FBE /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930E22281C2200A33FBE /* Vision.swift */; };
-        40F68C9E22240043004EBCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F68C9D22240043004EBCFC /* Main.storyboard */; };
+		210DC30E221EE0A000DF4CFC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DC30D221EE0A000DF4CFC /* Card.swift */; };
+		21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */; };
+		2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E13E221DB26F007E5536 /* AppDelegate.swift */; };
+		2F40E141221DB26F007E5536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E140221DB26F007E5536 /* ViewController.swift */; };
+		2F40E146221DB272007E5536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E145221DB272007E5536 /* Assets.xcassets */; };
+		2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E147221DB272007E5536 /* LaunchScreen.storyboard */; };
+		4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FD22281C2200A33FBE /* ACTRWindowView.swift */; };
+		4026931022281C2200A33FBE /* BufferAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FE22281C2200A33FBE /* BufferAction.swift */; };
+		4026931122281C2200A33FBE /* BufferCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FF22281C2200A33FBE /* BufferCondition.swift */; };
+		4026931222281C2200A33FBE /* Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930022281C2200A33FBE /* Chunk.swift */; };
+		4026931322281C2200A33FBE /* Declarative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930122281C2200A33FBE /* Declarative.swift */; };
+		4026931422281C2200A33FBE /* elfRausModel2.actr in Resources */ = {isa = PBXBuildFile; fileRef = 4026930222281C2200A33FBE /* elfRausModel2.actr */; };
+		4026931522281C2200A33FBE /* FocusRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930322281C2200A33FBE /* FocusRing.swift */; };
+		4026931622281C2200A33FBE /* Instantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930422281C2200A33FBE /* Instantiation.swift */; };
+		4026931722281C2200A33FBE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930522281C2200A33FBE /* Model.swift */; };
+		4026931822281C2200A33FBE /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930622281C2200A33FBE /* Parser.swift */; };
+		4026931922281C2200A33FBE /* Procedural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930722281C2200A33FBE /* Procedural.swift */; };
+		4026931A22281C2200A33FBE /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930822281C2200A33FBE /* Production.swift */; };
+		4026931B22281C2200A33FBE /* SlotAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930922281C2200A33FBE /* SlotAction.swift */; };
+		4026931C22281C2200A33FBE /* SlotCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930A22281C2200A33FBE /* SlotCondition.swift */; };
+		4026931D22281C2200A33FBE /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930B22281C2200A33FBE /* Support.swift */; };
+		4026931E22281C2200A33FBE /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930C22281C2200A33FBE /* Temporal.swift */; };
+		4026931F22281C2200A33FBE /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930D22281C2200A33FBE /* Tokenizer.swift */; };
+		4026932022281C2200A33FBE /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930E22281C2200A33FBE /* Vision.swift */; };
+		4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026932322281EFA00A33FBE /* PlayingCardView.swift */; };
+		402693262228200400A33FBE /* PlayedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402693252228200400A33FBE /* PlayedCards.swift */; };
+		40F68C9E22240043004EBCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F68C9D22240043004EBCFC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-        210B277A2228186300D18A68 /* PlayedCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedCards.swift; sourceTree = "<group>"; };
-        210DC30D221EE0A000DF4CFC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-        21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElfRaus.swift; sourceTree = "<group>"; };
-        2F40E13B221DB26F007E5536 /* ElfRaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElfRaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-        2F40E13E221DB26F007E5536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-        2F40E140221DB26F007E5536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-        2F40E145221DB272007E5536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-        2F40E148221DB272007E5536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-        2F40E14A221DB272007E5536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-        402692FD22281C2200A33FBE /* ACTRWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTRWindowView.swift; sourceTree = "<group>"; };
-        402692FE22281C2200A33FBE /* BufferAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAction.swift; sourceTree = "<group>"; };
-        402692FF22281C2200A33FBE /* BufferCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferCondition.swift; sourceTree = "<group>"; };
-        4026930022281C2200A33FBE /* Chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
-        4026930122281C2200A33FBE /* Declarative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Declarative.swift; sourceTree = "<group>"; };
-        4026930222281C2200A33FBE /* elfRausModel2.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = elfRausModel2.actr; sourceTree = "<group>"; };
-        4026930322281C2200A33FBE /* FocusRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusRing.swift; sourceTree = "<group>"; };
-        4026930422281C2200A33FBE /* Instantiation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiation.swift; sourceTree = "<group>"; };
-        4026930522281C2200A33FBE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-        4026930622281C2200A33FBE /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-        4026930722281C2200A33FBE /* Procedural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Procedural.swift; sourceTree = "<group>"; };
-        4026930822281C2200A33FBE /* Production.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
-        4026930922281C2200A33FBE /* SlotAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotAction.swift; sourceTree = "<group>"; };
-        4026930A22281C2200A33FBE /* SlotCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotCondition.swift; sourceTree = "<group>"; };
-        4026930B22281C2200A33FBE /* Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
-        4026930C22281C2200A33FBE /* Temporal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
-        4026930D22281C2200A33FBE /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
-        4026930E22281C2200A33FBE /* Vision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
-        40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		210DC30D221EE0A000DF4CFC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElfRaus.swift; sourceTree = "<group>"; };
+		2F40E13B221DB26F007E5536 /* ElfRaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElfRaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F40E13E221DB26F007E5536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2F40E140221DB26F007E5536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F40E145221DB272007E5536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F40E148221DB272007E5536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2F40E14A221DB272007E5536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		402692FD22281C2200A33FBE /* ACTRWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTRWindowView.swift; sourceTree = "<group>"; };
+		402692FE22281C2200A33FBE /* BufferAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAction.swift; sourceTree = "<group>"; };
+		402692FF22281C2200A33FBE /* BufferCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferCondition.swift; sourceTree = "<group>"; };
+		4026930022281C2200A33FBE /* Chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
+		4026930122281C2200A33FBE /* Declarative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Declarative.swift; sourceTree = "<group>"; };
+		4026930222281C2200A33FBE /* elfRausModel2.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = elfRausModel2.actr; sourceTree = "<group>"; };
+		4026930322281C2200A33FBE /* FocusRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusRing.swift; sourceTree = "<group>"; };
+		4026930422281C2200A33FBE /* Instantiation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiation.swift; sourceTree = "<group>"; };
+		4026930522281C2200A33FBE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4026930622281C2200A33FBE /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		4026930722281C2200A33FBE /* Procedural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Procedural.swift; sourceTree = "<group>"; };
+		4026930822281C2200A33FBE /* Production.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
+		4026930922281C2200A33FBE /* SlotAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotAction.swift; sourceTree = "<group>"; };
+		4026930A22281C2200A33FBE /* SlotCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotCondition.swift; sourceTree = "<group>"; };
+		4026930B22281C2200A33FBE /* Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		4026930C22281C2200A33FBE /* Temporal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
+		4026930D22281C2200A33FBE /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		4026930E22281C2200A33FBE /* Vision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
+		4026932322281EFA00A33FBE /* PlayingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
+		402693252228200400A33FBE /* PlayedCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayedCards.swift; sourceTree = "<group>"; };
+		40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-        2F40E138221DB26F007E5536 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		2F40E138221DB26F007E5536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-        2F40E132221DB26F007E5536 = {
-            isa = PBXGroup;
-            children = (
-                2F40E13D221DB26F007E5536 /* ElfRaus */,
-                2F40E13C221DB26F007E5536 /* Products */,
-            );
-            sourceTree = "<group>";
-        };
-        2F40E13C221DB26F007E5536 /* Products */ = {
-            isa = PBXGroup;
-            children = (
-                2F40E13B221DB26F007E5536 /* ElfRaus.app */,
-            );
-            name = Products;
-            sourceTree = "<group>";
-        };
-        2F40E13D221DB26F007E5536 /* ElfRaus */ = {
-            isa = PBXGroup;
-            children = (
-                2F40E145221DB272007E5536 /* Assets.xcassets */,
-                2F40E147221DB272007E5536 /* LaunchScreen.storyboard */,
-                2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
-                402692FC22281C2200A33FBE /* ACT-R */,
-                2F40E140221DB26F007E5536 /* ViewController.swift */,
-                40F68C9D22240043004EBCFC /* Main.storyboard */,
-                21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
-                210B277A2228186300D18A68 /* PlayedCards.swift */,
-                210DC30D221EE0A000DF4CFC /* Card.swift */,
-                2F40E14A221DB272007E5536 /* Info.plist */,
-            );
-            path = ElfRaus;
-            sourceTree = "<group>";
-        };
-        402692FC22281C2200A33FBE /* ACT-R */ = {
-            isa = PBXGroup;
-            children = (
-                402692FD22281C2200A33FBE /* ACTRWindowView.swift */,
-                402692FE22281C2200A33FBE /* BufferAction.swift */,
-                402692FF22281C2200A33FBE /* BufferCondition.swift */,
-                4026930022281C2200A33FBE /* Chunk.swift */,
-                4026930122281C2200A33FBE /* Declarative.swift */,
-                4026930222281C2200A33FBE /* elfRausModel2.actr */,
-                4026930322281C2200A33FBE /* FocusRing.swift */,
-                4026930422281C2200A33FBE /* Instantiation.swift */,
-                4026930522281C2200A33FBE /* Model.swift */,
-                4026930622281C2200A33FBE /* Parser.swift */,
-                4026930722281C2200A33FBE /* Procedural.swift */,
-                4026930822281C2200A33FBE /* Production.swift */,
-                4026930922281C2200A33FBE /* SlotAction.swift */,
-                4026930A22281C2200A33FBE /* SlotCondition.swift */,
-                4026930B22281C2200A33FBE /* Support.swift */,
-                4026930C22281C2200A33FBE /* Temporal.swift */,
-                4026930D22281C2200A33FBE /* Tokenizer.swift */,
-                4026930E22281C2200A33FBE /* Vision.swift */,
-            );
-            path = "ACT-R";
-            sourceTree = "<group>";
-        };
+		2F40E132221DB26F007E5536 = {
+			isa = PBXGroup;
+			children = (
+				2F40E13D221DB26F007E5536 /* ElfRaus */,
+				2F40E13C221DB26F007E5536 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F40E13C221DB26F007E5536 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F40E13B221DB26F007E5536 /* ElfRaus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F40E13D221DB26F007E5536 /* ElfRaus */ = {
+			isa = PBXGroup;
+			children = (
+				2F40E145221DB272007E5536 /* Assets.xcassets */,
+				2F40E147221DB272007E5536 /* LaunchScreen.storyboard */,
+				2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
+				402692FC22281C2200A33FBE /* ACT-R */,
+				2F40E140221DB26F007E5536 /* ViewController.swift */,
+				4026932322281EFA00A33FBE /* PlayingCardView.swift */,
+				40F68C9D22240043004EBCFC /* Main.storyboard */,
+				402693252228200400A33FBE /* PlayedCards.swift */,
+				21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
+				210DC30D221EE0A000DF4CFC /* Card.swift */,
+				2F40E14A221DB272007E5536 /* Info.plist */,
+			);
+			path = ElfRaus;
+			sourceTree = "<group>";
+		};
+		402692FC22281C2200A33FBE /* ACT-R */ = {
+			isa = PBXGroup;
+			children = (
+				402692FD22281C2200A33FBE /* ACTRWindowView.swift */,
+				402692FE22281C2200A33FBE /* BufferAction.swift */,
+				402692FF22281C2200A33FBE /* BufferCondition.swift */,
+				4026930022281C2200A33FBE /* Chunk.swift */,
+				4026930122281C2200A33FBE /* Declarative.swift */,
+				4026930222281C2200A33FBE /* elfRausModel2.actr */,
+				4026930322281C2200A33FBE /* FocusRing.swift */,
+				4026930422281C2200A33FBE /* Instantiation.swift */,
+				4026930522281C2200A33FBE /* Model.swift */,
+				4026930622281C2200A33FBE /* Parser.swift */,
+				4026930722281C2200A33FBE /* Procedural.swift */,
+				4026930822281C2200A33FBE /* Production.swift */,
+				4026930922281C2200A33FBE /* SlotAction.swift */,
+				4026930A22281C2200A33FBE /* SlotCondition.swift */,
+				4026930B22281C2200A33FBE /* Support.swift */,
+				4026930C22281C2200A33FBE /* Temporal.swift */,
+				4026930D22281C2200A33FBE /* Tokenizer.swift */,
+				4026930E22281C2200A33FBE /* Vision.swift */,
+			);
+			path = "ACT-R";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-        2F40E13A221DB26F007E5536 /* ElfRaus */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = 2F40E14D221DB272007E5536 /* Build configuration list for PBXNativeTarget "ElfRaus" */;
-            buildPhases = (
-                2F40E137221DB26F007E5536 /* Sources */,
-                2F40E138221DB26F007E5536 /* Frameworks */,
-                2F40E139221DB26F007E5536 /* Resources */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-            );
-            name = ElfRaus;
-            productName = ElfRaus;
-            productReference = 2F40E13B221DB26F007E5536 /* ElfRaus.app */;
-            productType = "com.apple.product-type.application";
-        };
+		2F40E13A221DB26F007E5536 /* ElfRaus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F40E14D221DB272007E5536 /* Build configuration list for PBXNativeTarget "ElfRaus" */;
+			buildPhases = (
+				2F40E137221DB26F007E5536 /* Sources */,
+				2F40E138221DB26F007E5536 /* Frameworks */,
+				2F40E139221DB26F007E5536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ElfRaus;
+			productName = ElfRaus;
+			productReference = 2F40E13B221DB26F007E5536 /* ElfRaus.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-        2F40E133221DB26F007E5536 /* Project object */ = {
-            isa = PBXProject;
-            attributes = {
-                LastSwiftUpdateCheck = 1010;
-                LastUpgradeCheck = 1010;
-                ORGANIZATIONNAME = "Eline Meijer";
-                TargetAttributes = {
-                    2F40E13A221DB26F007E5536 = {
-                        CreatedOnToolsVersion = 10.1;
-                    };
-                };
-            };
-            buildConfigurationList = 2F40E136221DB26F007E5536 /* Build configuration list for PBXProject "ElfRaus" */;
-            compatibilityVersion = "Xcode 9.3";
-            developmentRegion = en;
-            hasScannedForEncodings = 0;
-            knownRegions = (
-                en,
-                Base,
-            );
-            mainGroup = 2F40E132221DB26F007E5536;
-            productRefGroup = 2F40E13C221DB26F007E5536 /* Products */;
-            projectDirPath = "";
-            projectRoot = "";
-            targets = (
-                2F40E13A221DB26F007E5536 /* ElfRaus */,
-            );
-        };
+		2F40E133221DB26F007E5536 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Eline Meijer";
+				TargetAttributes = {
+					2F40E13A221DB26F007E5536 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 2F40E136221DB26F007E5536 /* Build configuration list for PBXProject "ElfRaus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F40E132221DB26F007E5536;
+			productRefGroup = 2F40E13C221DB26F007E5536 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F40E13A221DB26F007E5536 /* ElfRaus */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-        2F40E139221DB26F007E5536 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */,
-                2F40E146221DB272007E5536 /* Assets.xcassets in Resources */,
-                40F68C9E22240043004EBCFC /* Main.storyboard in Resources */,
-                4026931422281C2200A33FBE /* elfRausModel2.actr in Resources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		2F40E139221DB26F007E5536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */,
+				2F40E146221DB272007E5536 /* Assets.xcassets in Resources */,
+				40F68C9E22240043004EBCFC /* Main.storyboard in Resources */,
+				4026931422281C2200A33FBE /* elfRausModel2.actr in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-        2F40E137221DB26F007E5536 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
+		2F40E137221DB26F007E5536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 				4026931122281C2200A33FBE /* BufferCondition.swift in Sources */,
+				402693262228200400A33FBE /* PlayedCards.swift in Sources */,
 				4026931F22281C2200A33FBE /* Tokenizer.swift in Sources */,
 				4026931622281C2200A33FBE /* Instantiation.swift in Sources */,
 				4026931922281C2200A33FBE /* Procedural.swift in Sources */,
 				4026931E22281C2200A33FBE /* Temporal.swift in Sources */,
-				2F528187222038BB00AB4778 /* Declarative.swift in Sources */,
-				2F528189222038BB00AB4778 /* Support.swift in Sources */,
-				210B277B2228186300D18A68 /* PlayedCards.swift in Sources */,
-				2F528188222038BB00AB4778 /* Instantiation.swift in Sources */,
-				2F52818B222038BB00AB4778 /* Model.swift in Sources */,
-				2F528192222038BB00AB4778 /* Procedural.swift in Sources */,
-                21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
-                4026931722281C2200A33FBE /* Model.swift in Sources */,
-                4026931A22281C2200A33FBE /* Production.swift in Sources */,
-                4026931822281C2200A33FBE /* Parser.swift in Sources */,
-                2F40E141221DB26F007E5536 /* ViewController.swift in Sources */,
-                4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */,
-                2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */,
-                210DC30E221EE0A000DF4CFC /* Card.swift in Sources */,
-                4026931B22281C2200A33FBE /* SlotAction.swift in Sources */,
-                4026931022281C2200A33FBE /* BufferAction.swift in Sources */,
-                4026932022281C2200A33FBE /* Vision.swift in Sources */,
-                4026931222281C2200A33FBE /* Chunk.swift in Sources */,
-                4026931522281C2200A33FBE /* FocusRing.swift in Sources */,
-                4026931322281C2200A33FBE /* Declarative.swift in Sources */,
-                4026931C22281C2200A33FBE /* SlotCondition.swift in Sources */,
-                4026931D22281C2200A33FBE /* Support.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+				4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */,
+				21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
+				4026931722281C2200A33FBE /* Model.swift in Sources */,
+				4026931A22281C2200A33FBE /* Production.swift in Sources */,
+				4026931822281C2200A33FBE /* Parser.swift in Sources */,
+				2F40E141221DB26F007E5536 /* ViewController.swift in Sources */,
+				4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */,
+				2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */,
+				210DC30E221EE0A000DF4CFC /* Card.swift in Sources */,
+				4026931B22281C2200A33FBE /* SlotAction.swift in Sources */,
+				4026931022281C2200A33FBE /* BufferAction.swift in Sources */,
+				4026932022281C2200A33FBE /* Vision.swift in Sources */,
+				4026931222281C2200A33FBE /* Chunk.swift in Sources */,
+				4026931522281C2200A33FBE /* FocusRing.swift in Sources */,
+				4026931322281C2200A33FBE /* Declarative.swift in Sources */,
+				4026931C22281C2200A33FBE /* SlotCondition.swift in Sources */,
+				4026931D22281C2200A33FBE /* Support.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-        2F40E147221DB272007E5536 /* LaunchScreen.storyboard */ = {
-            isa = PBXVariantGroup;
-            children = (
-                2F40E148221DB272007E5536 /* Base */,
-            );
-            name = LaunchScreen.storyboard;
-            sourceTree = "<group>";
-        };
+		2F40E147221DB272007E5536 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F40E148221DB272007E5536 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-        2F40E14B221DB272007E5536 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "iPhone Developer";
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = dwarf;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                ENABLE_TESTABILITY = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_DYNAMIC_NO_PIC = NO;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_OPTIMIZATION_LEVEL = 0;
-                GCC_PREPROCESSOR_DEFINITIONS = (
-                    "DEBUG=1",
-                    "$(inherited)",
-                );
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-                MTL_FAST_MATH = YES;
-                ONLY_ACTIVE_ARCH = YES;
-                SDKROOT = iphoneos;
-                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            };
-            name = Debug;
-        };
-        2F40E14C221DB272007E5536 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "iPhone Developer";
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-                ENABLE_NS_ASSERTIONS = NO;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-                MTL_ENABLE_DEBUG_INFO = NO;
-                MTL_FAST_MATH = YES;
-                SDKROOT = iphoneos;
-                SWIFT_COMPILATION_MODE = wholemodule;
-                SWIFT_OPTIMIZATION_LEVEL = "-O";
-                VALIDATE_PRODUCT = YES;
-            };
-            name = Release;
-        };
-        2F40E14E221DB272007E5536 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = T8BYNH69C5;
-                INFOPLIST_FILE = ElfRaus/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = cogmod.ElfRaus;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_VERSION = 4.2;
-                TARGETED_DEVICE_FAMILY = "1,2";
-            };
-            name = Debug;
-        };
-        2F40E14F221DB272007E5536 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = T8BYNH69C5;
-                INFOPLIST_FILE = ElfRaus/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = cogmod.ElfRaus;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_VERSION = 4.2;
-                TARGETED_DEVICE_FAMILY = "1,2";
-            };
-            name = Release;
-        };
+		2F40E14B221DB272007E5536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2F40E14C221DB272007E5536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F40E14E221DB272007E5536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8BYNH69C5;
+				INFOPLIST_FILE = ElfRaus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cogmod.ElfRaus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F40E14F221DB272007E5536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8BYNH69C5;
+				INFOPLIST_FILE = ElfRaus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cogmod.ElfRaus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-        2F40E136221DB26F007E5536 /* Build configuration list for PBXProject "ElfRaus" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                2F40E14B221DB272007E5536 /* Debug */,
-                2F40E14C221DB272007E5536 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        2F40E14D221DB272007E5536 /* Build configuration list for PBXNativeTarget "ElfRaus" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                2F40E14E221DB272007E5536 /* Debug */,
-                2F40E14F221DB272007E5536 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
+		2F40E136221DB26F007E5536 /* Build configuration list for PBXProject "ElfRaus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F40E14B221DB272007E5536 /* Debug */,
+				2F40E14C221DB272007E5536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F40E14D221DB272007E5536 /* Build configuration list for PBXNativeTarget "ElfRaus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F40E14E221DB272007E5536 /* Debug */,
+				2F40E14F221DB272007E5536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-    };
-    rootObject = 2F40E133221DB26F007E5536 /* Project object */;
+	};
+	rootObject = 2F40E133221DB26F007E5536 /* Project object */;
 }
