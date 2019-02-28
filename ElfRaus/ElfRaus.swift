@@ -64,16 +64,22 @@ class ElfRaus {
     func chooseCard(at index : Int){
         print("chooseCard")
         let indexCardDeck = index //cardsPlayer[index].identifier
+        //print(indexCardDeck)
+        //print(legalOptions)
         //let chosenCard = cards[indexCardDeck]
         if (legalOptions.index(forKey: indexCardDeck) != nil) {
             print("play card")
             cards[index].location = "Played"
-            if(cards[index].number > 11), (cards[index].number < 20){
+            if(cards[index].number >= 11), (cards[index].number < 20){
                 legalOptions.updateValue(cards[index+1], forKey: index+1)
-            }else if(cards[index].number > 1), (cards[index].number > 11){
+            }
+            if(cards[index].number > 1), (cards[index].number <= 11){
                 legalOptions.updateValue(cards[index-1], forKey: index-1)
             }
+            legalOptions.removeValue(forKey: indexCardDeck)
+            //print(legalOptions)
             playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
+            //print(cards[index].number)
             playedCards.printPlayedCards()
             for indexCardPlayer in 0...cardsPlayer.endIndex-1{
                 if(cardsPlayer[indexCardPlayer].identifier == index){
@@ -94,11 +100,12 @@ class ElfRaus {
         //create all cards
         for color in 0...3 {
             for number in 1...20 {
-                cards.append(Card(color: colors[color],number: number,location: "Deck", identifier : color*20+number ))
+                cards.append(Card(color: colors[color],number: number,location: "Deck", identifier : color*20+number-1 ))
             }
-            legalOptions.updateValue(cards[color*20+11], forKey: color*20+11)
+            legalOptions.updateValue(cards[color*20+10], forKey: color*20+10)
         }
-        deck.shuffle()
+        print(cards[0])
+        //deck.shuffle()
         //distribute the cards before first turn
         //cards.shuffle()
         let numberOfDistributedCards = 5
@@ -113,7 +120,7 @@ class ElfRaus {
             cards[cardModel].location = "Model"
             cardsModel.append(cards[cardModel])
             cardsInDeck -= 2
-            print(card)
+            //print(card)
         }
     }
     
