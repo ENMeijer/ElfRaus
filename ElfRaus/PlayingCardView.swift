@@ -12,17 +12,21 @@ import UIKit
 class PlayingCardView: UIView {
     
     @IBInspectable
-    private var number: Int = 1 { didSet { setNeedsDisplay(); setNeedsLayout() } } // 0 makes it disappear
+    private var number: Int = 0 { didSet { setNeedsDisplay(); setNeedsLayout() } } // 0 makes it disappear
     @IBInspectable
     private var color: UIColor = UIColor.black{ didSet { setNeedsDisplay(); setNeedsLayout() } }
     @IBInspectable
-    private var isFaceUp: Bool = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    private var atLeastOneCard: Bool = false { didSet { setNeedsDisplay(); setNeedsLayout() } }
     
     var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize { didSet { setNeedsDisplay() } }
     
     
-    func setCardView(cardNumber:Int, cardColor:UIColor){
+    func setCardView(cardNumber:Int){
         number = cardNumber
+        atLeastOneCard = true
+    }
+    
+    func setCardViewColor(cardColor:UIColor){
         color = cardColor
     }
     
@@ -56,7 +60,7 @@ class PlayingCardView: UIView {
         label.attributedText = cornerString
         label.frame.size = CGSize.zero
         label.sizeToFit()
-        label.isHidden = !isFaceUp
+        label.isHidden = !atLeastOneCard
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -80,10 +84,14 @@ class PlayingCardView: UIView {
         
         let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         roundedRect.addClip()
-        #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).setFill()
+        if atLeastOneCard{
+            #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).setFill()
+        } else {
+            #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0).setFill()
+        }
         roundedRect.fill()
         
-        if isFaceUp {
+        if atLeastOneCard {
             if let faceCardImage = UIImage(named: numberString, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 faceCardImage.draw(in: bounds.zoom(by: faceCardScale))
             }
@@ -93,6 +101,11 @@ class PlayingCardView: UIView {
             }
         }
     }
+    
+    
+    
+    
+    
     
 }
 
@@ -119,6 +132,7 @@ extension PlayingCardView {
     private var numberString: String {
         switch number {
         case 0: return ""
+        case nil: return ""
         case 1...20: return String(number)
         default: return "?"
         }

@@ -10,18 +10,19 @@ import Foundation
 import UIKit
 
 class PlayedCards{
-    private var red_11 = false
-    private var yellow_11 = false
-    private var green_11 = false
-    private var blue_11 = false
-    private var red_high : Int?
-    private var red_low : Int?
-    private var yellow_high : Int?
-    private var yellow_low : Int?
-    private var green_high : Int?
-    private var green_low : Int?
-    private var blue_high : Int?
-    private var blue_low : Int?
+    var red_11 = false
+    var yellow_11 = false
+    var green_11 = false
+    var blue_11 = false
+    var red_high : Int?
+    var red_low : Int?
+    var yellow_high : Int?
+    var yellow_low : Int?
+    var green_high : Int?
+    var green_low : Int?
+    var blue_high : Int?
+    var blue_low : Int?
+
     
     func newPlayedCard(color :UIColor, number: Int){
         if (color == UIColor.red){
@@ -62,7 +63,6 @@ class PlayedCards{
     
     
     func printPlayedCards() {
-        print("hgdufi")
         print(blue_high ?? 0, blue_low ?? 0, blue_11, red_high ?? 0, red_low ?? 0, red_11, green_high ?? 0, green_low ?? 0, green_11, yellow_high ?? 0, yellow_low ?? 0, yellow_11 )
     }
 }
