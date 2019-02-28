@@ -12,13 +12,19 @@ import UIKit
 class PlayingCardView: UIView {
     
     @IBInspectable
-    var number: Int = 1 { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    private var number: Int = 1 { didSet { setNeedsDisplay(); setNeedsLayout() } } // 0 makes it disappear
     @IBInspectable
-    var color: UIColor = UIColor.black{ didSet { setNeedsDisplay(); setNeedsLayout() } }
+    private var color: UIColor = UIColor.black{ didSet { setNeedsDisplay(); setNeedsLayout() } }
     @IBInspectable
-    var isFaceUp: Bool = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    private var isFaceUp: Bool = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
     
     var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize { didSet { setNeedsDisplay() } }
+    
+    
+    func setCardView(cardNumber:Int, cardColor:UIColor){
+        number = cardNumber
+        color = cardColor
+    }
     
     
     
