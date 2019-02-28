@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     var game = ElfRaus()
     
-    @IBOutlet var playingField: [UILabel]!
+    //@IBOutlet var playingField: [UILabel]!
+    @IBOutlet var playingField: [PlayingCardView]!
+    
     
     @IBOutlet weak var playerCard1: UIButton!
     @IBOutlet weak var playerCard2: UIButton!
