@@ -19,112 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bum-Gy-C75">
-                                <rect key="frame" x="324" y="611" width="60" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J7c-4J-iIk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyS-f4-q1U">
-                                <rect key="frame" x="32" y="614" width="60" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Draw">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="drawButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awe-bM-rg6"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dn3-l2-Ifb">
-                                <rect key="frame" x="88" y="166" width="238" height="440"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kWu-jk-0QB">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="104"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-De-8Qw" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4U-4t-ADO" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="82" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-du-xe7" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="164" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="02Z-14-rWs">
-                                        <rect key="frame" x="0.0" y="112" width="238" height="104"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wv6-zb-kvP" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-9K-UeW" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="82" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bVF-mn-ONG" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="164" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-TN-ZtG">
-                                        <rect key="frame" x="0.0" y="224" width="238" height="104"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-cd-3yc" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-wp-nOA" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="82" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-uB-Z9P" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="164" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-31-q7c">
-                                        <rect key="frame" x="0.0" y="336" width="238" height="104"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHS-3i-Elg" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-wH-U8e" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="82" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thu-Ao-VVn" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="164" y="0.0" width="74" height="104"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De4-Se-sMu">
-                                <rect key="frame" x="95" y="44" width="224" height="60"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-vD-6XY">
-                                <rect key="frame" x="20" y="767" width="372" height="95"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-vD-6XY">
+                                <rect key="frame" x="21" y="751" width="372" height="95"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXU-M1-EWl">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="95"/>
@@ -185,6 +81,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-g0-0Nt">
                                         <rect key="frame" x="304" y="0.0" width="68" height="95"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ud7-g0-0Nt" secondAttribute="height" multiplier="5:7" id="i54-NY-6oD"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Card5">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,20 +93,162 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bum-Gy-C75">
+                                <rect key="frame" x="335" y="707.5" width="49" height="41"/>
+                                <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J7c-4J-iIk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyS-f4-q1U">
+                                <rect key="frame" x="16" y="659" width="76" height="90"/>
+                                <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Ud7-g0-0Nt" firstAttribute="width" secondItem="Ud7-g0-0Nt" secondAttribute="height" multiplier="5:7" id="Ihb-GM-fke"/>
+                                    <constraint firstAttribute="width" secondItem="nyS-f4-q1U" secondAttribute="height" multiplier="5:7" id="Rvd-fR-gCa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Draw">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="drawButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awe-bM-rg6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De4-Se-sMu">
+                                <rect key="frame" x="16" y="74" width="382" height="95.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="De4-Se-sMu" secondAttribute="height" multiplier="20:5" id="7i7-jf-Lp8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dn3-l2-Ifb">
+                                <rect key="frame" x="82" y="180" width="250" height="461"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kWu-jk-0QB">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="109"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-De-8Qw" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="AhK-De-8Qw" secondAttribute="height" multiplier="5:7" id="Fw5-CC-g9X"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4U-4t-ADO" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="78" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="B4U-4t-ADO" secondAttribute="height" multiplier="5:7" id="8Sq-UE-4RT"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-du-xe7" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="172" y="0.0" width="78" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="DKB-du-xe7" secondAttribute="height" multiplier="5:7" id="Xoy-So-nUg"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="number">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="02Z-14-rWs">
+                                        <rect key="frame" x="0.0" y="117" width="250" height="109.5"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wv6-zb-kvP" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wv6-zb-kvP" secondAttribute="height" multiplier="5:7" id="0lT-qy-smR"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-9K-UeW" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="78" height="109.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aZl-9K-UeW" secondAttribute="height" multiplier="5:7" id="KQF-b3-oWz"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVF-mn-ONG" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="172" y="0.0" width="78" height="109.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bVF-mn-ONG" secondAttribute="height" multiplier="5:7" id="cgR-CM-56o"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-TN-ZtG">
+                                        <rect key="frame" x="0.0" y="234.5" width="250" height="109"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-cd-3yc" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Gtl-cd-3yc" secondAttribute="height" multiplier="5:7" id="2UU-UH-zKG"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-wp-nOA" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="78" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="oOU-wp-nOA" secondAttribute="height" multiplier="5:7" id="vDx-0P-CeR"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-uB-Z9P" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="172" y="0.0" width="78" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TS7-uB-Z9P" secondAttribute="height" multiplier="5:7" id="m3p-nO-4UQ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-31-q7c">
+                                        <rect key="frame" x="0.0" y="351.5" width="250" height="109.5"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHS-3i-Elg" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tHS-3i-Elg" secondAttribute="height" multiplier="5:7" id="pUJ-Pr-MJm"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-wH-U8e" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="78" height="109.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="i2J-wH-U8e" secondAttribute="height" multiplier="5:7" id="F3N-fp-zfe"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thu-Ao-VVn" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <rect key="frame" x="172" y="0.0" width="78" height="109.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="thu-Ao-VVn" secondAttribute="height" multiplier="5:7" id="MFQ-Y8-WCo"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="PuI-cJ-L1b"/>
+                                    <constraint firstAttribute="width" constant="250" id="aJD-MX-wSu"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="De4-Se-sMu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F8e-qt-Fja"/>
-                            <constraint firstItem="dn3-l2-Ifb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="De4-Se-sMu" secondAttribute="bottom" constant="8" symbolic="YES" id="GRg-3M-P60"/>
-                            <constraint firstItem="6bk-vD-6XY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Igf-Aq-NbZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6bk-vD-6XY" secondAttribute="bottom" id="gNf-Ov-Cuo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6bk-vD-6XY" secondAttribute="trailing" constant="22" id="jpB-sK-rJq"/>
-                            <constraint firstItem="De4-Se-sMu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k7O-H1-jtp"/>
-                            <constraint firstItem="6bk-vD-6XY" firstAttribute="firstBaseline" secondItem="dn3-l2-Ifb" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="ttR-CJ-AbC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="De4-Se-sMu" secondAttribute="trailing" constant="16" id="06Z-t1-2ZS"/>
+                            <constraint firstItem="dn3-l2-Ifb" firstAttribute="firstBaseline" secondItem="De4-Se-sMu" secondAttribute="baseline" constant="16.5" symbolType="layoutAnchor" id="6X1-u4-Ct8"/>
+                            <constraint firstItem="dn3-l2-Ifb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="96q-jA-yqC"/>
+                            <constraint firstItem="bum-Gy-C75" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dn3-l2-Ifb" secondAttribute="bottom" constant="16" id="9vM-Xf-vGL"/>
+                            <constraint firstItem="nyS-f4-q1U" firstAttribute="top" secondItem="dn3-l2-Ifb" secondAttribute="bottom" constant="8" symbolic="YES" id="VZg-hg-mFF"/>
+                            <constraint firstItem="nyS-f4-q1U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WLq-es-d54"/>
+                            <constraint firstItem="6bk-vD-6XY" firstAttribute="firstBaseline" secondItem="nyS-f4-q1U" secondAttribute="baseline" constant="32" symbolType="layoutAnchor" id="Wup-LF-mBV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bum-Gy-C75" secondAttribute="trailing" constant="30" id="d1B-1v-KzE"/>
+                            <constraint firstItem="De4-Se-sMu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fYS-yP-UmE"/>
+                            <constraint firstItem="De4-Se-sMu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="mcy-dU-qfE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6bk-vD-6XY" secondAttribute="bottom" constant="16" id="tgV-qi-xEm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
