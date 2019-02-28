@@ -21,6 +21,7 @@ class ElfRaus {
     var cardsPlayedRed = [Int]()
     var cardsPlayedBlue = [Int]()
     var cardsPlayedYellow = [Int]()
+    var playedCards = PlayedCards()
     
     
     var legalOptions = [Int:Card]()
@@ -46,6 +47,7 @@ class ElfRaus {
         print(cardIndex)
     }
     
+    //probably not needed anymore --> class
     //add card to array of the color
     func addPlayedCardToColorArray(in color: UIColor, at index : Int){
         if(color == UIColor.green){
@@ -66,11 +68,13 @@ class ElfRaus {
         if (legalOptions.index(forKey: indexCardDeck) != nil) {
             print("play card")
             cards[index].location = "Played"
-            if(cards[index].number > 11), (cards[index].number > 20){
+            if(cards[index].number > 11), (cards[index].number < 20){
                 legalOptions.updateValue(cards[index+1], forKey: index+1)
-            }else if(cards[index].number > 1){
+            }else if(cards[index].number > 1), (cards[index].number > 11){
                 legalOptions.updateValue(cards[index-1], forKey: index-1)
             }
+            playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
+            playedCards.printPlayedCards()
             for indexCardPlayer in 0...cardsPlayer.endIndex-1{
                 if(cardsPlayer[indexCardPlayer].identifier == index){
                     cardsPlayer.remove(at: indexCardPlayer)
