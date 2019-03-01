@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     //@IBOutlet var playingField: [UILabel]!
     @IBOutlet var playingField: [PlayingCardView]!{didSet{
-        playingField[0].setCardViewColor(cardColor: UIColor.black);
+        playingField[0].setCardViewColor(cardColor: UIColor.yellow);
         playingField[1].setCardViewColor(cardColor: UIColor.yellow);
         playingField[2].setCardViewColor(cardColor: UIColor.yellow);
         playingField[3].setCardViewColor(cardColor: UIColor.red);
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerCard2: UIButton!
     @IBOutlet weak var playerCard3: UIButton!
     @IBOutlet weak var playerCard4: UIButton!
-    @IBOutlet weak var playerCard5: UIButton!
+    @IBOutlet weak var playerCard5: UIButton!{didSet{showHand();updateViewFromModel()}}
     
     @IBOutlet var cardButtons: [UIButton]!
     //for testing, should be linked to hand in the game
@@ -65,17 +65,26 @@ class ViewController: UIViewController {
     func showHand(){
         hand = game.getCardsPlayer()
         hand.shuffle()
-                
-        playerCard1.setTitle(String(hand[0].number), for: .normal)
-        playerCard1.setTitleColor(hand[0].color, for: .normal)
-        playerCard2.setTitle(String(hand[1].number), for: .normal)
-        playerCard2.setTitleColor(hand[1].color, for: .normal)
-        playerCard3.setTitle(String(hand[2].number), for: .normal)
-        playerCard3.setTitleColor(hand[2].color, for: .normal)
-        playerCard4.setTitle(String(hand[3].number), for: .normal)
-        playerCard4.setTitleColor(hand[3].color, for: .normal)
-        playerCard5.setTitle(String(hand[4].number), for: .normal)
-        playerCard5.setTitleColor(hand[4].color, for: .normal)
+        
+        
+        //one way of handeling too few cards in the players hand... but maybe you find a better solution :)
+        playerCard1.setPlayerCardView(handCards: hand, cardIndex: 0)
+        playerCard2.setPlayerCardView(handCards: hand, cardIndex: 1)
+        playerCard3.setPlayerCardView(handCards: hand, cardIndex: 2)
+        playerCard4.setPlayerCardView(handCards: hand, cardIndex: 3)
+        playerCard5.setPlayerCardView(handCards: hand, cardIndex: 4)
+
+        
+//        playerCard1.setTitle(String(hand[0].number), for: .normal)
+//        playerCard1.setTitleColor(hand[0].color, for: .normal)
+//        playerCard2.setTitle(String(hand[1].number), for: .normal)
+//        playerCard2.setTitleColor(hand[1].color, for: .normal)
+//        playerCard3.setTitle(String(hand[2].number), for: .normal)
+//        playerCard3.setTitleColor(hand[2].color, for: .normal)
+//        playerCard4.setTitle(String(hand[3].number), for: .normal)
+//        playerCard4.setTitleColor(hand[3].color, for: .normal)
+//        playerCard5.setTitle(String(hand[4].number), for: .normal)
+//        playerCard5.setTitleColor(hand[4].color, for: .normal)
         print("showHand")
 
     }
@@ -108,7 +117,23 @@ class ViewController: UIViewController {
         }
     }
     
-    
+}
+
+// handles setting hand with too few cards
+extension UIButton {
+    func setPlayerCardView(handCards: [Card], cardIndex: Int){
+        //only accepts this
+        if (cardIndex < handCards.count && cardIndex>=0) {
+            self.setTitle(String(handCards[cardIndex].number), for: .normal)
+            self.setTitleColor(handCards[cardIndex].color, for: .normal)
+            
+        }else {
+            print("player has one card to few")
+            self.setTitle("miss", for: .normal)
+            self.setTitleColor(UIColor.black, for: .normal)
+
+        }
+    }
 }
 
 

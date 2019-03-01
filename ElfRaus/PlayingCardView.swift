@@ -23,8 +23,6 @@ class PlayingCardView: UIView {
     
     
     
-    
-    
     func setCardView(cardNumber:Int){
         switch cardNumber {
         case 0: number = cardNumber; self.alpha = 1.0; atLeastOneCard = false
