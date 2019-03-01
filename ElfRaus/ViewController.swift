@@ -88,16 +88,16 @@ class ViewController: UIViewController {
     
     func updatePlayingFieldView(){
         playingField[1].setCardView(cardNumber: game.playedCards.yellow_low ?? 0)
-        playingField[2].setCardView(cardNumber: game.playedCards.yellow_11 ? 11:0)
+        playingField[2].setCardView(cardNumber: game.playedCards.yellow_11 ? 11:-11)
         playingField[3].setCardView(cardNumber: game.playedCards.yellow_high ?? 0)
         playingField[4].setCardView(cardNumber: game.playedCards.red_low ?? 0)
-        playingField[5].setCardView(cardNumber: game.playedCards.red_11 ? 11:0)
+        playingField[5].setCardView(cardNumber: game.playedCards.red_11 ? 11:-11)
         playingField[6].setCardView(cardNumber: game.playedCards.red_high ?? 0)
         playingField[7].setCardView(cardNumber: game.playedCards.green_low ?? 0)
-        playingField[8].setCardView(cardNumber: game.playedCards.green_11 ? 11:0)
+        playingField[8].setCardView(cardNumber: game.playedCards.green_11 ? 11:-11)
         playingField[9].setCardView(cardNumber: game.playedCards.green_high ?? 0)
         playingField[10].setCardView(cardNumber: game.playedCards.green_low ?? 0)
-        playingField[11].setCardView(cardNumber: game.playedCards.green_11 ? 11:0)
+        playingField[11].setCardView(cardNumber: game.playedCards.green_11 ? 11:-11)
         playingField[12].setCardView(cardNumber: game.playedCards.green_high ?? 0)
         
         

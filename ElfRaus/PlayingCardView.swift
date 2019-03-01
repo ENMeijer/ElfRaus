@@ -12,17 +12,25 @@ import UIKit
 class PlayingCardView: UIView {
     
     @IBInspectable
-    private var number: Int = 0 { didSet { setNeedsDisplay(); setNeedsLayout() } } // 0 makes it disappear
+    private var number: Int = 0 { didSet { setNeedsDisplay(); setNeedsLayout() } } // 0 makes it disappear, -11 makes the 11 only show slighly
     @IBInspectable
     private var color: UIColor = UIColor.black{ didSet { setNeedsDisplay(); setNeedsLayout() } }
     @IBInspectable
     private var atLeastOneCard: Bool = false { didSet { setNeedsDisplay(); setNeedsLayout() } } //card is invisable if no card is given
     
+    //how opaque should 11 be at the beginning
+    private let howOpaque:CGFloat = 0.2
+    
+    
+    
+    
     
     func setCardView(cardNumber:Int){
-        number = cardNumber
-        if cardNumber != 0{
-            atLeastOneCard = true
+        switch cardNumber {
+        case 0: number = cardNumber; self.alpha = 1.0; atLeastOneCard = false
+        case -11: number = 11; self.alpha = howOpaque; atLeastOneCard = true
+        case 1...20: number = cardNumber; self.alpha = 1.0;  atLeastOneCard = true
+        default:  number = -1; self.alpha = 1.0; atLeastOneCard = true    // shows -1 if it fucked up
         }
     }
     
