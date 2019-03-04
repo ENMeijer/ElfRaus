@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="29m-q7-kMH">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,14 +16,14 @@
             <objects>
                 <viewController id="paW-U4-k1d" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wee-yn-ANB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="66H-jj-ggR">
-                                <rect key="frame" x="99.666666666666686" y="357" width="176" height="152"/>
+                                <rect key="frame" x="99.5" y="289.5" width="176" height="152"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGm-72-ada">
-                                        <rect key="frame" x="36.999999999999986" y="0.0" width="102.00000000000001" height="72"/>
+                                        <rect key="frame" x="37" y="0.0" width="102" height="72"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Start">
@@ -66,11 +66,11 @@
             <objects>
                 <viewController id="37D-fA-vol" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5sA-Wb-HrH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-vM-sCa">
-                                <rect key="frame" x="16" y="419" width="343" height="29"/>
+                                <rect key="frame" x="16" y="351.5" width="343" height="29"/>
                                 <segments>
                                     <segment title="Easy"/>
                                     <segment title="Medium"/>
@@ -78,7 +78,7 @@
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnT-De-BxS">
-                                <rect key="frame" x="130" y="375" width="115" height="36"/>
+                                <rect key="frame" x="130" y="307.5" width="115" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -105,14 +105,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ElfRaus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-vD-6XY">
-                                <rect key="frame" x="16" y="686" width="343" height="87"/>
+                                <rect key="frame" x="16" y="575" width="343" height="87"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXU-M1-EWl">
-                                        <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="87"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="87"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NXU-M1-EWl" secondAttribute="height" multiplier="5:7" id="vDY-J8-V9f"/>
@@ -126,7 +126,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TG-x3-8dA">
-                                        <rect key="frame" x="70.333333333333329" y="0.0" width="61.999999999999986" height="87"/>
+                                        <rect key="frame" x="70" y="0.0" width="62.5" height="87"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1TG-x3-8dA" secondAttribute="height" multiplier="5:7" id="BcK-ff-RUb"/>
@@ -140,7 +140,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwF-Cw-jvl">
-                                        <rect key="frame" x="140.33333333333334" y="0.0" width="62.333333333333343" height="87"/>
+                                        <rect key="frame" x="140.5" y="0.0" width="62" height="87"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iwF-Cw-jvl" secondAttribute="height" multiplier="5:7" id="LLc-Bb-dGv"/>
@@ -154,7 +154,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ8-tb-Cyh">
-                                        <rect key="frame" x="210.66666666666666" y="0.0" width="61.999999999999972" height="87"/>
+                                        <rect key="frame" x="210.5" y="0.0" width="62.5" height="87"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UJ8-tb-Cyh" secondAttribute="height" multiplier="5:7" id="aSZ-Qz-NJ2"/>
@@ -168,7 +168,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-g0-0Nt">
-                                        <rect key="frame" x="280.66666666666669" y="0.0" width="62.333333333333314" height="87"/>
+                                        <rect key="frame" x="281" y="0.0" width="62" height="87"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ud7-g0-0Nt" secondAttribute="height" multiplier="5:7" id="i54-NY-6oD"/>
@@ -184,25 +184,25 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dn3-l2-Ifb">
-                                <rect key="frame" x="62.666666666666657" y="193.66666666666663" width="249.99999999999997" height="461"/>
+                                <rect key="frame" x="82" y="170.5" width="211" height="388.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kWu-jk-0QB">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="109.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="91"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-De-8Qw" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="AhK-De-8Qw" secondAttribute="height" multiplier="5:7" id="Fw5-CC-g9X"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4U-4t-ADO" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="73" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="B4U-4t-ADO" secondAttribute="height" multiplier="5:7" id="8Sq-UE-4RT"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-du-xe7" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="172" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="146" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="DKB-du-xe7" secondAttribute="height" multiplier="5:7" id="Xoy-So-nUg"/>
                                                 </constraints>
@@ -210,22 +210,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="02Z-14-rWs">
-                                        <rect key="frame" x="0.0" y="117.33333333333334" width="250" height="109"/>
+                                        <rect key="frame" x="0.0" y="99" width="211" height="91"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wv6-zb-kvP" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wv6-zb-kvP" secondAttribute="height" multiplier="5:7" id="0lT-qy-smR"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-9K-UeW" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="0.0" width="78" height="109"/>
+                                                <rect key="frame" x="73" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="aZl-9K-UeW" secondAttribute="height" multiplier="5:7" id="KQF-b3-oWz"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVF-mn-ONG" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="172" y="0.0" width="78" height="109"/>
+                                                <rect key="frame" x="146" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bVF-mn-ONG" secondAttribute="height" multiplier="5:7" id="cgR-CM-56o"/>
                                                 </constraints>
@@ -233,22 +233,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-TN-ZtG">
-                                        <rect key="frame" x="0.0" y="234.33333333333334" width="250" height="109.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="198" width="211" height="91.5"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-cd-3yc" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="91.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Gtl-cd-3yc" secondAttribute="height" multiplier="5:7" id="2UU-UH-zKG"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-wp-nOA" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="73" y="0.0" width="65" height="91.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oOU-wp-nOA" secondAttribute="height" multiplier="5:7" id="vDx-0P-CeR"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-uB-Z9P" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="172" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="146" y="0.0" width="65" height="91.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="TS7-uB-Z9P" secondAttribute="height" multiplier="5:7" id="m3p-nO-4UQ"/>
                                                 </constraints>
@@ -256,22 +256,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-31-q7c">
-                                        <rect key="frame" x="0.0" y="351.66666666666674" width="250" height="109.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="297.5" width="211" height="91"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHS-3i-Elg" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tHS-3i-Elg" secondAttribute="height" multiplier="5:7" id="pUJ-Pr-MJm"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-wH-U8e" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="73" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="i2J-wH-U8e" secondAttribute="height" multiplier="5:7" id="F3N-fp-zfe"/>
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thu-Ao-VVn" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="172" y="0.0" width="78" height="109.33333333333333"/>
+                                                <rect key="frame" x="146" y="0.0" width="65" height="91"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="thu-Ao-VVn" secondAttribute="height" multiplier="5:7" id="MFQ-Y8-WCo"/>
                                                 </constraints>
@@ -280,12 +280,12 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="PuI-cJ-L1b"/>
-                                    <constraint firstAttribute="width" constant="250" id="aJD-MX-wSu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="PuI-cJ-L1b"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="fmm-Vc-0Va"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De4-Se-sMu">
-                                <rect key="frame" x="16" y="98" width="343" height="85.666666666666686"/>
+                                <rect key="frame" x="16" y="74" width="343" height="86"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="De4-Se-sMu" secondAttribute="height" multiplier="20:5" id="7i7-jf-Lp8"/>
@@ -295,7 +295,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bum-Gy-C75">
-                                <rect key="frame" x="310" y="637" width="49" height="41"/>
+                                <rect key="frame" x="310" y="526" width="49" height="41"/>
                                 <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Next">
@@ -306,7 +306,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyS-f4-q1U">
-                                <rect key="frame" x="16" y="601" width="55" height="77"/>
+                                <rect key="frame" x="16" y="490" width="55" height="77"/>
                                 <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nyS-f4-q1U" secondAttribute="height" multiplier="5:7" id="Rvd-fR-gCa"/>
@@ -324,11 +324,12 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="De4-Se-sMu" secondAttribute="trailing" constant="16" id="06Z-t1-2ZS"/>
                             <constraint firstItem="6bk-vD-6XY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1XE-cN-H5J"/>
-                            <constraint firstItem="dn3-l2-Ifb" firstAttribute="firstBaseline" secondItem="De4-Se-sMu" secondAttribute="baseline" constant="16.333333333333332" symbolType="layoutAnchor" id="6X1-u4-Ct8"/>
+                            <constraint firstItem="dn3-l2-Ifb" firstAttribute="firstBaseline" secondItem="De4-Se-sMu" secondAttribute="baseline" constant="16.5" symbolType="layoutAnchor" id="6X1-u4-Ct8"/>
                             <constraint firstItem="dn3-l2-Ifb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="96q-jA-yqC"/>
                             <constraint firstItem="dn3-l2-Ifb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IlA-8D-76J"/>
                             <constraint firstItem="bum-Gy-C75" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="310" id="MB6-MB-2k9"/>
                             <constraint firstItem="nyS-f4-q1U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WLq-es-d54"/>
+                            <constraint firstItem="6bk-vD-6XY" firstAttribute="top" secondItem="dn3-l2-Ifb" secondAttribute="bottom" constant="16" id="dby-so-7uR"/>
                             <constraint firstItem="De4-Se-sMu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fYS-yP-UmE"/>
                             <constraint firstItem="De4-Se-sMu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="mcy-dU-qfE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bum-Gy-C75" secondAttribute="trailing" constant="16" id="oIK-57-PiK"/>
@@ -375,7 +376,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="29m-q7-kMH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6SS-47-snC">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
