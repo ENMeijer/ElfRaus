@@ -61,6 +61,26 @@ class ViewController: UIViewController {
         showHand()
     }
     
+    @IBAction func PlayerHandGoLeft(_ sender: UIButton) {
+        //show more cards to the left in the player hand
+    }
+    @IBAction func PlayerHandGoRight(_ sender: UIButton) {
+        //show more cards to the right in the player hand
+    }
+    
+    @IBAction func YellowButton(_ sender: UIButton) {
+        //only show yellow cards
+    }
+    @IBAction func RedButton(_ sender: UIButton) {
+        //only show red cards
+    }
+    @IBAction func GreenButton(_ sender: UIButton) {
+        //only show green cards
+    }
+    @IBAction func BlueButton(_ sender: UIButton) {
+        //only show blue cards
+    }
+    
     @IBAction func nextButton(_ sender: UIButton) {
         //next card
         showHand()
@@ -85,6 +105,7 @@ class ViewController: UIViewController {
         updateViewFromModel()
         
     }
+    
     
     func showHand(){
         hand = game.getCardsPlayer()
