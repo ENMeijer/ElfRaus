@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		210DC30E221EE0A000DF4CFC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DC30D221EE0A000DF4CFC /* Card.swift */; };
+		21359F3F222FD7B400EB75F5 /* ActRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21359F3E222FD7B400EB75F5 /* ActRModel.swift */; };
 		21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */; };
 		21F32B0322297E1C001701E2 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F32B0222297E1C001701E2 /* CardsModel.swift */; };
 		2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E13E221DB26F007E5536 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		210DC30D221EE0A000DF4CFC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		21359F3E222FD7B400EB75F5 /* ActRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActRModel.swift; sourceTree = "<group>"; };
 		21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElfRaus.swift; sourceTree = "<group>"; };
 		21F32B0222297E1C001701E2 /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
 		2F40E13B221DB26F007E5536 /* ElfRaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElfRaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 				2F40E145221DB272007E5536 /* Assets.xcassets */,
 				2F40E147221DB272007E5536 /* LaunchScreen.storyboard */,
 				2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
+				4026930222281C2200A33FBE /* elfRausModel2.actr */,
 				402692FC22281C2200A33FBE /* ACT-R */,
 				2F40E140221DB26F007E5536 /* ViewController.swift */,
 				4026932322281EFA00A33FBE /* PlayingCardView.swift */,
@@ -112,6 +115,7 @@
 				21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
 				210DC30D221EE0A000DF4CFC /* Card.swift */,
 				2F40E14A221DB272007E5536 /* Info.plist */,
+				21359F3E222FD7B400EB75F5 /* ActRModel.swift */,
 			);
 			path = ElfRaus;
 			sourceTree = "<group>";
@@ -124,7 +128,6 @@
 				402692FF22281C2200A33FBE /* BufferCondition.swift */,
 				4026930022281C2200A33FBE /* Chunk.swift */,
 				4026930122281C2200A33FBE /* Declarative.swift */,
-				4026930222281C2200A33FBE /* elfRausModel2.actr */,
 				4026930322281C2200A33FBE /* FocusRing.swift */,
 				4026930422281C2200A33FBE /* Instantiation.swift */,
 				4026930522281C2200A33FBE /* Model.swift */,
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21359F3F222FD7B400EB75F5 /* ActRModel.swift in Sources */,
 				4026931122281C2200A33FBE /* BufferCondition.swift in Sources */,
 				402693262228200400A33FBE /* PlayedCards.swift in Sources */,
 				4026931F22281C2200A33FBE /* Tokenizer.swift in Sources */,

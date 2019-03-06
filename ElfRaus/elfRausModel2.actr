@@ -14,12 +14,13 @@
         state start
 ==>
     =goal>
-        isa decision
         state wait-colour
     +action>
-        action find-colour
-)
+        isa move
+        choice "hello"
 
+)
+;;action find-colour
 ;; here between productions, swift finds most common colour in hand
 (p found-colour
     =goal>
