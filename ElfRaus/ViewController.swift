@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     }
     @IBAction func PlayerHandGoRight(_ sender: UIButton) {
         //show more cards to the right in the player hand
-        if playerCardsPivotView < hand.count-1 {
+        if playerCardsPivotView < hand.cards.count-1 {
             playerCardsPivotView = playerCardsPivotView+1
         }
     }
@@ -161,7 +161,7 @@ class ViewController: UIViewController {
         let playerCardsWithColor = CardsPlayer()
         hand = game.getCardsPlayer()
         if playerCardsColorView == nil {    //if no color is given, then return the full hand
-            return hand
+            return hand.cards
         }
         for card in hand.cards{
             if card.color == playerCardsColorView!{
@@ -169,14 +169,14 @@ class ViewController: UIViewController {
                 print("card appended with right color")
             }
         }
-        return playerCardsWithColor
+        return playerCardsWithColor.cards
     }
     
     
     func showHand(){
        
         print("\(getPlayerCardsByColor())")
-        hand = getPlayerCardsByColor()  // currently will crash if there is problem
+        hand.cards = getPlayerCardsByColor()  // currently will crash if there is problem
         for button in 0...cardButtons.endIndex-1{
             cardButtons[button].setPlayerCardView(handCards: hand.cards, cardIndex: button+playerCardsPivotView)
         }
