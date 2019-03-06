@@ -18,11 +18,12 @@
         state wait-colour
     +action>
         isa move
-        choice "hello"
+        colour hello
 
 )
 ;;action find-colour
 ;; here between productions, swift finds most common colour in hand
+
 (p found-colour
     =goal>
         isa decision
@@ -34,121 +35,13 @@
         isa decision
         state find-direction
         colour =colour
-    =imaginal>
+    +imaginal>
         isa card
         colour =colour
-        possible =yes
+        possible yes
 )
 
 ;; Selects the colour of the card and makes a retrieval request for which direction to go.
-(p find-direction-high
-    =goal>
-        isa decision
-        state find-direction
-        colour =colour
-    =imaginal>
-        isa card-state
-        colour =colour
-        possible =yes
-==>
-    =goal>
-        isa decision
-        state decide
-        colour =colour
-        direction =high
-    ?retrieval>
-        isa card
-        possible =yes
-        colour =colour
-        direction =high
-)
 
-(p find-direction-low
-    =goal>
-        isa decision
-        state find-direction
-        colour =colour
-        direction =low
-    =imaginal>
-        isa card-state
-        colour =colour
-        possible =yes
-==>
-    =goal>
-        isa decision
-        state decide
-        colour =colour
-        direction =low
-    ?retrieval>
-        isa card
-        possible =yes
-        colour =colour
-        direction =low
-)
-
-;; Selects the card with most colour and most cards in the same direction.
-(p select-move
-    =goal>
-        isa decision
-        state decide
-        colour =colour
-    =imaginal>
-        isa  card
-        colour  =colour
-        possible =yes
-    =retrieval>
-        isa  card
-        possible =yes
-        colour  =colour
-        direction =direction
-==>
-    =goal>
-        state play-card
-    +action>
-        isa  card
-        colour  =colour
-        direction =direction
-)
-
-(p failure-high
-    =goal>
-        isa decision
-        state decide
-        direction =high
-    =imaginal>
-        isa  card
-        colour  =colour
-        possible =yes
-    ?retrieval>
-        state   error
-==>
-    =goal>
-        state play-card
-    +action>
-        isa  card
-        colour  =colour
-        direction =low
-)
-
-(p failure-low
-    =goal>
-        isa decision
-        state decide
-        direction =low
-    =imaginal>
-        isa  card
-        colour  =colour
-        possible =yes
-    ?retrieval>
-        state   error
-==>
-    =goal>
-        state play-card
-    +action>
-        isa card
-        colour =colour
-        direction =high
-
-)
 
 (goal-focus goal)

@@ -36,6 +36,7 @@
 		4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026932322281EFA00A33FBE /* PlayingCardView.swift */; };
 		402693262228200400A33FBE /* PlayedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402693252228200400A33FBE /* PlayedCards.swift */; };
 		40F68C9E22240043004EBCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F68C9D22240043004EBCFC /* Main.storyboard */; };
+		BB22DA9A222FE919005EC811 /* testActR.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22DA99222FE919005EC811 /* testActR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		4026932322281EFA00A33FBE /* PlayingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		402693252228200400A33FBE /* PlayedCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayedCards.swift; sourceTree = "<group>"; };
 		40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BB22DA99222FE919005EC811 /* testActR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testActR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				2F40E147221DB272007E5536 /* LaunchScreen.storyboard */,
 				2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
 				4026930222281C2200A33FBE /* elfRausModel2.actr */,
+				BB22DA99222FE919005EC811 /* testActR.swift */,
 				402692FC22281C2200A33FBE /* ACT-R */,
 				2F40E140221DB26F007E5536 /* ViewController.swift */,
 				4026932322281EFA00A33FBE /* PlayingCardView.swift */,
@@ -227,6 +230,7 @@
 				21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
 				4026931722281C2200A33FBE /* Model.swift in Sources */,
 				21F32B0322297E1C001701E2 /* CardsModel.swift in Sources */,
+				BB22DA9A222FE919005EC811 /* testActR.swift in Sources */,
 				4026931A22281C2200A33FBE /* Production.swift in Sources */,
 				4026931822281C2200A33FBE /* Parser.swift in Sources */,
 				2F40E141221DB26F007E5536 /* ViewController.swift in Sources */,
