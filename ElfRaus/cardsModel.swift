@@ -15,17 +15,35 @@ class CardsModel{
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     
     var cards = [Card]()
+    var legalOptions : [Card]?
     
-    func drawCard(_ card:Card){
+    func drawCard(_ card:Card, allLegalOptions:[Int:Card]){
         cards.append(card)
         for color in 0...3{
             if colors[color] == card.color{
                 cardsPerColor[color] += 1
             }
         }
+        let index = card.identifier
+        if (allLegalOptions.index(forKey: index) != nil) {
+            print("key: ",allLegalOptions.index(forKey: index) as Any)
+            if legalOptions != nil{
+                legalOptions!.append(card)
+            }else{
+                legalOptions = [card]
+            }
+        }
+        print("draw: ", card.number)
+        print("options model: ",legalOptions as Any)
     }
+    //oh wow
     
     func playCard(_ card:Card){
+        for index in 0...legalOptions!.endIndex-1{
+            if(legalOptions![index].identifier == card.identifier){
+                legalOptions!.remove(at: index)
+            }
+        }
         for color in 0...3{
             if colors[color] == card.color{
                 cardsPerColor[color] -= 1
