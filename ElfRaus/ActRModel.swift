@@ -30,7 +30,7 @@ class ActRModel{
         model.modifyLastAction(slot: "colour", value: "red") // And run the model again for the next trial
         print(modelAction)
         model.run()
-        
+        print(model.buffers)
     }
     
     
