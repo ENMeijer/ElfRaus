@@ -2,6 +2,7 @@
 ;;;
 
 (add-dm
+    (test isa iet val drie)
     (goal isa decision state start)
 )
 
@@ -27,16 +28,16 @@
         isa decision
         state wait-colour
     =action>
-        colour = colour
+        colour =colour
 ==>
     =goal>
         isa decision
         state find-direction
-        colour = colour
+        colour =colour
     =imaginal>
         isa card
-        colour = colour
-        possible = yes
+        colour =colour
+        possible =yes
 )
 
 ;; Selects the colour of the card and makes a retrieval request for which direction to go.
@@ -44,45 +45,45 @@
     =goal>
         isa decision
         state find-direction
-        colour = colour
+        colour =colour
     =imaginal>
         isa card-state
-        colour = colour
-        possible = yes
+        colour =colour
+        possible =yes
 ==>
     =goal>
         isa decision
         state decide
-        colour = colour
-        direction = high
+        colour =colour
+        direction =high
     ?retrieval>
         isa card
-        possible = yes
-        colour = colour
-        direction = high
+        possible =yes
+        colour =colour
+        direction =high
 )
 
 (p find-direction-low
     =goal>
         isa decision
         state find-direction
-        colour = colour
-        direction = low
+        colour =colour
+        direction =low
     =imaginal>
         isa card-state
-        colour = colour
-        possible = yes
+        colour =colour
+        possible =yes
 ==>
     =goal>
         isa decision
         state decide
-        colour = colour
-        direction = low
+        colour =colour
+        direction =low
     ?retrieval>
         isa card
-        possible = yes
-        colour = colour
-        direction = low
+        possible =yes
+        colour =colour
+        direction =low
 )
 
 ;; Selects the card with most colour and most cards in the same direction.
@@ -90,34 +91,34 @@
     =goal>
         isa decision
         state decide
-        colour = colour
+        colour =colour
     =imaginal>
         isa  card
         colour  =colour
-        possible = yes
+        possible =yes
     =retrieval>
         isa  card
-        possible = yes
+        possible =yes
         colour  =colour
-        direction = direction
+        direction =direction
 ==>
     =goal>
         state play-card
     +action>
         isa  card
         colour  =colour
-        direction = direction
+        direction =direction
 )
 
 (p failure-high
     =goal>
         isa decision
         state decide
-        direction = high
+        direction =high
     =imaginal>
         isa  card
         colour  =colour
-        possible = yes
+        possible =yes
     ?retrieval>
         state   error
 ==>
@@ -126,18 +127,18 @@
     +action>
         isa  card
         colour  =colour
-        direction = low
+        direction =low
 )
 
 (p failure-low
     =goal>
         isa decision
         state decide
-        direction = low
+        direction =low
     =imaginal>
         isa  card
         colour  =colour
-        possible = yes
+        possible =yes
     ?retrieval>
         state   error
 ==>
@@ -145,8 +146,8 @@
         state play-card
     +action>
         isa card
-        colour= colour
-        direction = high
+        colour =colour
+        direction =high
 
 )
 
