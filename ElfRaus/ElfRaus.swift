@@ -23,6 +23,7 @@ class ElfRaus {
 //    var cardsPlayedYellow = [Int]()
     var playedCards = PlayedCards()
     var cardsModelClass = CardsModel()
+    let actRModel = ActRModel()
     
     
     var legalOptions = [Int:Card]()
@@ -102,6 +103,7 @@ class ElfRaus {
     }
     
     init(){
+        actRModel.turn(cards: cardsModelClass)
         var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
         
         //create all cards
