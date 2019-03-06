@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     //SET VARIABLES
     var game = ElfRaus()
-    var hand = [Card]()
+    var hand = CardsPlayer()
     var playerCardsPivotView = 0 {didSet{showHand()}}
     var playerCardsColorView:UIColor? = nil {didSet{showHand()}} //nil means no color; otherwise use one of the colors
 
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].backgroundColor == UIColor.lightGray){
-                _ = game.chooseCard(at: hand[cardNumber+playerCardsPivotView].identifier, "Player")
+                _ = game.chooseCard(at: hand.cards[cardNumber+playerCardsPivotView].identifier, "Player")
                 updateViewFromModel()
             }
         } else {
@@ -158,14 +158,14 @@ class ViewController: UIViewController {
     
     func getPlayerCardsByColor()-> [Card]{
         //only shows cards with a given attribute
-        var playerCardsWithColor:[Card] = []
+        let playerCardsWithColor = CardsPlayer()
         hand = game.getCardsPlayer()
         if playerCardsColorView == nil {    //if no color is given, then return the full hand
             return hand
         }
-        for card in hand{
+        for card in hand.cards{
             if card.color == playerCardsColorView!{
-                playerCardsWithColor.append(card)
+                playerCardsWithColor.drawCard(card)
                 print("card appended with right color")
             }
         }
@@ -174,27 +174,13 @@ class ViewController: UIViewController {
     
     
     func showHand(){
-        //hand = game.getCardsPlayer()
-        //hand.shuffle()
-        
-//        for button in 0...cardButtons.endIndex-1{
-//            cardButtons[button].setPlayerCardView(handCards: hand, cardIndex: button+playerCardsPivotView)
-//        }
-        
+       
         print("\(getPlayerCardsByColor())")
         hand = getPlayerCardsByColor()  // currently will crash if there is problem
         for button in 0...cardButtons.endIndex-1{
-            cardButtons[button].setPlayerCardView(handCards: hand, cardIndex: button+playerCardsPivotView)
+            cardButtons[button].setPlayerCardView(handCards: hand.cards, cardIndex: button+playerCardsPivotView)
         }
-        
-        //one way of handeling too few cards in the players hand... but maybe you find a better solution :)
-//        playerCard1.setPlayerCardView(handCards: hand, cardIndex: 0)
-//        playerCard2.setPlayerCardView(handCards: hand, cardIndex: 1)
-//        playerCard3.setPlayerCardView(handCards: hand, cardIndex: 2)
-//        playerCard4.setPlayerCardView(handCards: hand, cardIndex: 3)
-//        playerCard5.setPlayerCardView(handCards: hand, cardIndex: 4)
 
-        print("showHand")
 
     }
     

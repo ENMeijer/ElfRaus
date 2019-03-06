@@ -60,6 +60,7 @@
         direction high
     =imaginal>
         direction high
+        other-direction low
 )
 
 (p find-direction-low
@@ -79,6 +80,7 @@
         direction low
     =imaginal>
         direction low
+        other-direction high
     +retrieval>
         isa test
         colour =colour
@@ -96,6 +98,7 @@
         colour =colour
         possible =yes
         direction =direction
+        other-direction =other-direction
     ?retrieval>
         isa test
         colour =colour
@@ -121,17 +124,18 @@
         colour =colour
         possible =yes
         direction =direction
+        other-direction =other-direction
     ?retrieval>
         state  error
 ==>
     =goal>
         isa desision
         state test
-        direction other-direction
+        direction =other-direction
     +action>
         colour =colour
         possible =yes
-        direction other-direction
+        direction =other-direction
 )
 
 (goal-focus goal)

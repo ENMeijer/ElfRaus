@@ -24,12 +24,13 @@ class ElfRaus {
     var playedCards = PlayedCards()
     var cardsModelClass = CardsModel()
     let actRModel = ActRModel()
+    var cardsPlayerClass = CardsPlayer()
     
     
     var legalOptions = [Int:Card]()
     
-    func getCardsPlayer() -> [Card]{
-        return cardsPlayer
+    func getCardsPlayer() -> CardsPlayer{
+        return cardsPlayerClass
     }
     
     func getCardsModel() -> [Card]{
@@ -46,10 +47,11 @@ class ElfRaus {
                 if(player == "Player"){
                     cards[cardIndex].location = "Player"
                     cardsPlayer.append(cards[cardIndex])
+                    cardsPlayerClass.drawCard(cards[cardIndex])
                 } else{
                     cards[cardIndex].location = "Model"
                     cardsModel.append(cards[cardIndex])
-                    cardsModelClass.drawCard(cards[cardIndex])
+                    cardsModelClass.drawCard(cards[cardIndex], allLegalOptions: legalOptions)
                 }
                 cardsInDeck -= 1
             }
@@ -74,6 +76,7 @@ class ElfRaus {
             playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
             playedCards.printPlayedCards()
             if(player == "Player"){
+                cardsPlayerClass.playCard(cards[index])
                 for indexCardPlayer in 0...cardsPlayer.endIndex-1{
                     if(cardsPlayer[indexCardPlayer].identifier == index){
                         cardsPlayer.remove(at: indexCardPlayer)
@@ -122,14 +125,13 @@ class ElfRaus {
             deck.remove(at: card)
             cards[cardPlayer].location = "Player"
             cardsPlayer.append(cards[cardPlayer])
-//            cardsInDeck -= 1 //remove if playing with model
-            
-//uncomment when model works
+            cardsPlayerClass.drawCard(cards[cardPlayer])
+
             let cardModel = deck[card]
             deck.remove(at: card)
             cards[cardModel].location = "Model"
             cardsModel.append(cards[cardModel])
-            cardsModelClass.drawCard(cards[cardModel])
+            cardsModelClass.drawCard(cards[cardModel], allLegalOptions: legalOptions)
             cardsInDeck -= 2
 
         }
