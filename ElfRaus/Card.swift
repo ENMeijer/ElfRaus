@@ -19,11 +19,18 @@ struct Card {
     
     var identifier : Int
     
+    let direction : String
+    
     init(color : UIColor, number : Int, location : String, identifier : Int) {
         self.color = color
         self.number = number
         self.location = location
         self.identifier = identifier
+        if(number >= 11){
+            direction = "high"
+        }else{
+            direction = "low"
+        }
     }
     
 }

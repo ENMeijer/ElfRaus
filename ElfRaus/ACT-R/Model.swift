@@ -61,7 +61,7 @@ class Model {
             action.setSlot(slot: slot, value: value)
         }
     }
-    
+  
     /**
     Is there a chunk in the action buffer?
     - returns: Whether there is one
