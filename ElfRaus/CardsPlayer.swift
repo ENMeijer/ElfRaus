@@ -16,6 +16,9 @@ class CardsPlayer{
     var cards = [Card]() // all cards
     var hand = [Card]()  // all visible cards
     
+    // TODO: add function to show cards for colors
+    // TODO: add the functions for show hand from viewcontroller
+    
     func drawCard(_ card:Card){
         cards.append(card)
         for color in 0...3{
