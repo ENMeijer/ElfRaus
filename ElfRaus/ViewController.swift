@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     
     //ACTION FUNCTIONS
     @IBAction func drawButton(_ sender: UIButton) {
+        enableNextButton(true)
         //draw action
         //playerCard1.setTitle("test", for: .normal)
         game.drawCard("Player")
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
+        enableNextButton(true)
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].backgroundColor == UIColor.lightGray){
@@ -103,6 +105,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
+        enableNextButton(false)
         //next card
         showHand()
         var played = 0
@@ -129,7 +132,7 @@ class ViewController: UIViewController {
     
     //FUNCTIONS
     
-    func enableNextButton(isActive:Bool){
+    func enableNextButton(_ isActive:Bool){
         if isActive{
             nextButton.isEnabled = true
             nextButton.alpha = 1
@@ -141,7 +144,7 @@ class ViewController: UIViewController {
         
     }
     
-    func enableDrawButton(isActive:Bool){
+    func enableDrawButton(_ isActive:Bool){
         if isActive{
             drawButton.isEnabled = true
             drawButton.alpha = 1
