@@ -12,25 +12,29 @@ import UIKit
 class PlayingCardView: UIView {
     
     @IBInspectable
-    private var number: Int = 0 { didSet { setNeedsDisplay(); setNeedsLayout() } } // 0 makes it disappear
+    private var number: Int = 0 { didSet { setNeedsDisplay(); setNeedsLayout() } } // 0 makes it disappear, -11 makes the 11 only show slighly
     @IBInspectable
     private var color: UIColor = UIColor.black{ didSet { setNeedsDisplay(); setNeedsLayout() } }
     @IBInspectable
-    private var atLeastOneCard: Bool = false { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    private var atLeastOneCard: Bool = false { didSet { setNeedsDisplay(); setNeedsLayout() } } //card is invisable if no card is given
     
-    var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize { didSet { setNeedsDisplay() } }
+    //how opaque should 11 be at the beginning
+    private let howOpaque:CGFloat = 0.2
+    
     
     
     func setCardView(cardNumber:Int){
-        number = cardNumber
-        atLeastOneCard = true
+        switch cardNumber {
+        case 0: number = cardNumber; self.alpha = 1.0; atLeastOneCard = false
+        case -11: number = 11; self.alpha = howOpaque; atLeastOneCard = true
+        case 1...20: number = cardNumber; self.alpha = 1.0;  atLeastOneCard = true
+        default:  number = -1; self.alpha = 1.0; atLeastOneCard = true    // shows -1 if it fucked up
+        }
     }
     
     func setCardViewColor(cardColor:UIColor){
         color = cardColor
     }
-    
-    
     
     
     
@@ -42,14 +46,14 @@ class PlayingCardView: UIView {
         return NSAttributedString(string: string, attributes: [.paragraphStyle:paragraphStyle, .font: font, .foregroundColor:color])
     }
     
-    private var cornerString: NSAttributedString {
-        return centeredAttributedString(numberString, fontSize: cornerFontSize)
+    private var cardString: NSAttributedString {
+        return centeredAttributedString(numberString, fontSize: centerFontSize)
     }
     
 
-    private lazy var NumberLabel = createCornerLabel()
+    private lazy var NumberLabel = createCenterLabel()
     
-    private func createCornerLabel() -> UILabel {
+    private func createCenterLabel() -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
         addSubview(label)
@@ -57,7 +61,7 @@ class PlayingCardView: UIView {
     }
     
     private func configureLabel(_ label: UILabel) {
-        label.attributedText = cornerString
+        label.attributedText = cardString
         label.frame.size = CGSize.zero
         label.sizeToFit()
         label.isHidden = !atLeastOneCard
@@ -72,8 +76,7 @@ class PlayingCardView: UIView {
         super.layoutSubviews()
         
         configureLabel(NumberLabel)
-//        NumberLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
-        NumberLabel.center = CGPoint(x: bounds.maxX/2, y: bounds.maxY/2)
+        NumberLabel.center = CGPoint(x: bounds.maxX/2, y: bounds.maxY/2) // center card number lable
     }
     
     
@@ -90,16 +93,6 @@ class PlayingCardView: UIView {
             #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0).setFill()
         }
         roundedRect.fill()
-        
-        if atLeastOneCard {
-            if let faceCardImage = UIImage(named: numberString, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-                faceCardImage.draw(in: bounds.zoom(by: faceCardScale))
-            }
-        } else {
-            if let cardBackImage = UIImage(named: "cardback", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-                cardBackImage.draw(in: bounds)
-            }
-        }
     }
     
     
@@ -111,22 +104,16 @@ class PlayingCardView: UIView {
 
 extension PlayingCardView {
     private struct SizeRatio {
-        static let cornerFontSizeToBoundsHeight: CGFloat = 0.55
+        static let centerFontSizeToBoundsHeight: CGFloat = 0.55
         static let cornerRadiusToBoundsHeight: CGFloat = 0.06
-        static let cornerOffsetToCornerRadius: CGFloat = 0.33
-        static let faceCardImageSizeToBoundsSize: CGFloat = 0.75
     }
     
     private var cornerRadius: CGFloat {
         return bounds.size.height * SizeRatio.cornerRadiusToBoundsHeight
     }
     
-    private var cornerOffset: CGFloat {
-        return cornerRadius * SizeRatio.cornerOffsetToCornerRadius
-    }
-    
-    private var cornerFontSize: CGFloat {
-        return bounds.size.height * SizeRatio.cornerFontSizeToBoundsHeight
+    private var centerFontSize: CGFloat {
+        return bounds.size.height * SizeRatio.centerFontSizeToBoundsHeight
     }
     
     private var numberString: String {
