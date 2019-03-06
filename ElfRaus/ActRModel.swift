@@ -29,7 +29,7 @@ class ActRModel{
         // Do something with these two (i.e., decide who won)
         // Communicate the player's action back to the model by setting a slot // in the action buffer
         //model.modifyLastAction("opponent", value: playerAction.lowercaseString) // And run the model again for the next trial
-        print(modelAction)
+        print(modelAction ?? "0")
         model.run()
         
     }
