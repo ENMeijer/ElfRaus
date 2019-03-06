@@ -13,7 +13,8 @@ import UIKit
 class CardsPlayer{
     var cardsPerColor = [0,0,0,0] //yellow green red blue
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
-    var cards = [Card]()
+    var cards = [Card]() // all cards
+    var hand = [Card]()  // all visible cards
     
     func drawCard(_ card:Card){
         cards.append(card)

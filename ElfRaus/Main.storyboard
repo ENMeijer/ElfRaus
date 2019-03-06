@@ -139,11 +139,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundTable" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-TK-80C">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-vD-6XY" userLabel="Stack View PlayerHand">
-                                <rect key="frame" x="16" y="594.5" width="343" height="67.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-vD-6XY" userLabel="Stack View PlayerHand">
+                                <rect key="frame" x="16" y="603" width="343" height="59"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERR-jn-ZFQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="59"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="⬅️"/>
                                         <connections>
@@ -151,7 +151,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXU-M1-EWl">
-                                        <rect key="frame" x="49" y="0.0" width="48.5" height="67.5"/>
+                                        <rect key="frame" x="50" y="0.0" width="42.5" height="59"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NXU-M1-EWl" secondAttribute="height" multiplier="5:7" id="vDY-J8-V9f"/>
@@ -165,7 +165,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TG-x3-8dA">
-                                        <rect key="frame" x="98.5" y="0.0" width="48" height="67.5"/>
+                                        <rect key="frame" x="100.5" y="0.0" width="42" height="59"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1TG-x3-8dA" secondAttribute="height" multiplier="5:7" id="BcK-ff-RUb"/>
@@ -179,7 +179,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwF-Cw-jvl">
-                                        <rect key="frame" x="147.5" y="0.0" width="48" height="67.5"/>
+                                        <rect key="frame" x="150.5" y="0.0" width="42" height="59"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iwF-Cw-jvl" secondAttribute="height" multiplier="5:7" id="LLc-Bb-dGv"/>
@@ -193,7 +193,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ8-tb-Cyh">
-                                        <rect key="frame" x="196.5" y="0.0" width="48" height="67.5"/>
+                                        <rect key="frame" x="200.5" y="0.0" width="42" height="59"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UJ8-tb-Cyh" secondAttribute="height" multiplier="5:7" id="aSZ-Qz-NJ2"/>
@@ -207,7 +207,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-g0-0Nt">
-                                        <rect key="frame" x="245.5" y="0.0" width="48.5" height="67.5"/>
+                                        <rect key="frame" x="250.5" y="0.0" width="42.5" height="59"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ud7-g0-0Nt" secondAttribute="height" multiplier="5:7" id="i54-NY-6oD"/>
@@ -221,7 +221,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li5-70-zPN">
-                                        <rect key="frame" x="295" y="0.0" width="48" height="67.5"/>
+                                        <rect key="frame" x="301" y="0.0" width="42" height="59"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="➡️"/>
                                         <connections>
@@ -231,61 +231,61 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dn3-l2-Ifb" userLabel="Stack View PlayingField">
-                                <rect key="frame" x="16" y="168" width="280" height="348.5"/>
+                                <rect key="frame" x="16" y="168" width="280" height="357"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kWu-jk-0QB">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="81"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="83"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-De-8Qw" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="83"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4U-4t-ADO" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="96" y="0.0" width="88" height="83"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-du-xe7" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="192" y="0.0" width="88" height="83"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="02Z-14-rWs">
-                                        <rect key="frame" x="0.0" y="89" width="280" height="81"/>
+                                        <rect key="frame" x="0.0" y="91" width="280" height="83.5"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wv6-zb-kvP" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="83.5"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-9K-UeW" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="96" y="0.0" width="88" height="83.5"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVF-mn-ONG" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="192" y="0.0" width="88" height="83.5"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-TN-ZtG">
-                                        <rect key="frame" x="0.0" y="178" width="280" height="81"/>
+                                        <rect key="frame" x="0.0" y="182.5" width="280" height="83"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-cd-3yc" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="83"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-wp-nOA" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="96" y="0.0" width="88" height="83"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-uB-Z9P" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="81"/>
+                                                <rect key="frame" x="192" y="0.0" width="88" height="83"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-31-q7c">
-                                        <rect key="frame" x="0.0" y="267" width="280" height="81.5"/>
+                                        <rect key="frame" x="0.0" y="273.5" width="280" height="83.5"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHS-3i-Elg" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="81.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="83.5"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-wH-U8e" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="81.5"/>
+                                                <rect key="frame" x="96" y="0.0" width="88" height="83.5"/>
                                             </view>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thu-Ao-VVn" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="81.5"/>
+                                                <rect key="frame" x="192" y="0.0" width="88" height="83.5"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -307,7 +307,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LjV-Ht-irh" userLabel="Stack View Colors">
-                                <rect key="frame" x="16" y="524.5" width="343" height="62"/>
+                                <rect key="frame" x="16" y="533" width="343" height="62"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pI-27-fAD">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
