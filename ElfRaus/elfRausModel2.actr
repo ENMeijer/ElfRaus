@@ -42,6 +42,96 @@
 )
 
 ;; Selects the colour of the card and makes a retrieval request for which direction to go.
+;; still need to add retrieval request
+(p find-direction-high
+    =goal>
+        isa decision
+        state find-direction
+        colour =colour
+    =imaginal>
+        isa card
+        colour =colour
+        possible =yes
+==>
+    =goal>
+        isa decision
+        state decide
+        colour =colour
+        direction high
+    =imaginal>
+        direction high
+)
 
+(p find-direction-low
+    =goal>
+        isa decision
+        state find-direction
+        colour =colour
+    =imaginal>
+        isa card
+        colour =colour
+        possible =yes
+==>
+    =goal>
+        isa decision
+        state decide
+        colour =colour
+        direction low
+    =imaginal>
+        direction low
+    +retrieval>
+        isa test
+        colour =colour
+        possible =yes
+)
+
+(p test-retrieval
+    =goal>
+        isa decision
+        state decide
+        colour =colour
+        direction =direction
+    =imaginal>
+        isa card
+        colour =colour
+        possible =yes
+        direction =direction
+    ?retrieval>
+        isa test
+        colour =colour
+        possible =yes
+==>
+    =goal>
+        isa desision
+        state test
+    +action>
+        colour =colour
+        possible =yes
+        direction =direction
+)
+
+(p test-retrieval-failure
+    =goal>
+        isa decision
+        state decide
+        colour =colour
+        direction =direction
+    =imaginal>
+        isa card
+        colour =colour
+        possible =yes
+        direction =direction
+    ?retrieval>
+        state  error
+==>
+    =goal>
+        isa desision
+        state test
+        direction other-direction
+    +action>
+        colour =colour
+        possible =yes
+        direction other-direction
+)
 
 (goal-focus goal)
