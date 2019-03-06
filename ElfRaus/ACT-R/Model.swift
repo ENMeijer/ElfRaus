@@ -60,6 +60,7 @@ class Model {
         if let action = buffers["action"] {
             action.setSlot(slot: slot, value: value)
         }
+        print(buffers)
     }
   
     /**
