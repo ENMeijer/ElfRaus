@@ -36,9 +36,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var whiteButton: UIButton!
     
-    
-    
-    
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var drawButton: UIButton!
     
 
     @IBOutlet weak var opponentView: UILabel!
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].backgroundColor == UIColor.lightGray){
-                game.chooseCard(at: hand[cardNumber+playerCardsPivotView].identifier, "Player")
+                _ = game.chooseCard(at: hand[cardNumber+playerCardsPivotView].identifier, "Player")
                 updateViewFromModel()
             }
         } else {
@@ -66,32 +65,41 @@ class ViewController: UIViewController {
     
     @IBAction func PlayerHandGoLeft(_ sender: UIButton) {
         //show more cards to the left in the player hand
-        playerCardsPivotView = playerCardsPivotView-1
+        if playerCardsPivotView > 0{
+            playerCardsPivotView = playerCardsPivotView-1
+        }
     }
     @IBAction func PlayerHandGoRight(_ sender: UIButton) {
         //show more cards to the right in the player hand
-        playerCardsPivotView = playerCardsPivotView+1
+        if playerCardsPivotView < hand.count-1 {
+            playerCardsPivotView = playerCardsPivotView+1
+        }
     }
     
     @IBAction func YellowButton(_ sender: UIButton) {
         //only show yellow cards
         playerCardsColorView = UIColor.yellow
+        playerCardsPivotView = 0
     }
     @IBAction func RedButton(_ sender: UIButton) {
         //only show red cards
         playerCardsColorView = UIColor.red
+        playerCardsPivotView = 0
     }
     @IBAction func GreenButton(_ sender: UIButton) {
         //only show green cards
         playerCardsColorView = UIColor.green
+        playerCardsPivotView = 0
     }
     @IBAction func BlueButton(_ sender: UIButton) {
         //only show blue cards
         playerCardsColorView = UIColor.blue
+        playerCardsPivotView = 0
     }
     @IBAction func WhiteButton(_ sender: UIButton) {
         //show all colour cards
         playerCardsColorView = nil
+        playerCardsPivotView = 0
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
@@ -120,6 +128,30 @@ class ViewController: UIViewController {
     }
     
     //FUNCTIONS
+    
+    func enableNextButton(isActive:Bool){
+        if isActive{
+            nextButton.isEnabled = true
+            nextButton.alpha = 1
+        } else {
+            nextButton.isEnabled = false
+            nextButton.alpha = 0.5
+            
+        }
+        
+    }
+    
+    func enableDrawButton(isActive:Bool){
+        if isActive{
+            drawButton.isEnabled = true
+            drawButton.alpha = 1
+        } else {
+            drawButton.isEnabled = false
+            drawButton.alpha = 0.5
+            
+        }
+        
+    }
     
     func getPlayerCardsByColor()-> [Card]{
         //only shows cards with a given attribute
@@ -244,7 +276,7 @@ extension UIButton {
             //print("player has one card to few")
             self.setTitle("", for: .normal)
             self.setTitleColor(UIColor.black, for: .normal)
-            self.backgroundColor = UIColor.groupTableViewBackground
+            self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
             
         }
     }
