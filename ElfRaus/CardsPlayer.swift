@@ -14,10 +14,18 @@ class CardsPlayer{
     var cardsPerColor = [0,0,0,0] //yellow green red blue
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     var cards = [Card]() // all cards
-    var hand = [Card]()  // all visible cards
+    var view = [Card]()  // all visible cards
+    
+    var playerCardsPivotView = 0
+    var playerCardsColorView:UIColor? = nil //nil means no color; otherwise use one of the colors
     
     // TODO: add function to show cards for colors
     // TODO: add the functions for show hand from viewcontroller
+    
+    func getView()-> [Card]{
+        getPlayerCardsByColor()
+        return view
+    }
     
     func drawCard(_ card:Card){
         cards.append(card)
@@ -50,5 +58,40 @@ class CardsPlayer{
         }
         return 0 // if color not present
     }
+    
+    func playerHandGoLeft(){
+        if playerCardsPivotView > 0{
+            playerCardsPivotView = playerCardsPivotView-1
+        }
+    }
+    
+    func playerHandGoRight(){
+        if playerCardsPivotView < cards.count-1 {
+            playerCardsPivotView = playerCardsPivotView+1
+        }
+    }
+    
+    func showHandByColor(_ color:UIColor?){
+        playerCardsColorView = color
+        playerCardsPivotView = 0
+    }
+    
+    func getPlayerCardsByColor(){
+        //only shows cards with a given attribute
+        if playerCardsColorView == nil {    //if no color is given, then return the full hand
+            view = cards
+        } else {
+            view = []
+            for card in cards{
+                if card.color == playerCardsColorView!{
+                    view.append(card)
+                    print("card appended with right color")
+                }
+            }
+        }
+    }
+    
+    //???need to set the initial amount of cards
+    
     
 }

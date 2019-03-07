@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     //SET VARIABLES
     var game = ElfRaus()
     var hand = CardsPlayer()
-    var playerCardsPivotView = 0 {didSet{showHand()}}
-    var playerCardsColorView:UIColor? = nil {didSet{showHand()}} //nil means no color; otherwise use one of the colors
 
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     
@@ -56,7 +54,7 @@ class ViewController: UIViewController {
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].backgroundColor == UIColor.lightGray){
-                _ = game.chooseCard(at: hand.cards[cardNumber+playerCardsPivotView].identifier, "Player")
+                _ = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
                 updateViewFromModel()
             }
         } else {
@@ -67,41 +65,37 @@ class ViewController: UIViewController {
     
     @IBAction func PlayerHandGoLeft(_ sender: UIButton) {
         //show more cards to the left in the player hand
-        if playerCardsPivotView > 0{
-            playerCardsPivotView = playerCardsPivotView-1
-        }
+        hand.playerHandGoLeft()
     }
     @IBAction func PlayerHandGoRight(_ sender: UIButton) {
         //show more cards to the right in the player hand
-        if playerCardsPivotView < hand.cards.count-1 {
-            playerCardsPivotView = playerCardsPivotView+1
-        }
+        hand.playerHandGoRight()
     }
     
     @IBAction func YellowButton(_ sender: UIButton) {
         //only show yellow cards
-        playerCardsColorView = UIColor.yellow
-        playerCardsPivotView = 0
+        hand.showHandByColor(UIColor.yellow)
+        showHand()
     }
     @IBAction func RedButton(_ sender: UIButton) {
         //only show red cards
-        playerCardsColorView = UIColor.red
-        playerCardsPivotView = 0
+        hand.showHandByColor(UIColor.red)
+        showHand()
     }
     @IBAction func GreenButton(_ sender: UIButton) {
         //only show green cards
-        playerCardsColorView = UIColor.green
-        playerCardsPivotView = 0
+        hand.showHandByColor(UIColor.green)
+        showHand()
     }
     @IBAction func BlueButton(_ sender: UIButton) {
         //only show blue cards
-        playerCardsColorView = UIColor.blue
-        playerCardsPivotView = 0
+        hand.showHandByColor(UIColor.blue)
+        showHand()
     }
     @IBAction func WhiteButton(_ sender: UIButton) {
         //show all colour cards
-        playerCardsColorView = nil
-        playerCardsPivotView = 0
+        hand.showHandByColor(nil)
+        showHand()
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
@@ -156,32 +150,14 @@ class ViewController: UIViewController {
         
     }
     
-    func getPlayerCardsByColor()-> [Card]{
-        //only shows cards with a given attribute
-        let playerCardsWithColor = CardsPlayer()
-        hand = game.getCardsPlayer()
-        if playerCardsColorView == nil {    //if no color is given, then return the full hand
-            return hand.cards
-        }
-        for card in hand.cards{
-            if card.color == playerCardsColorView!{
-                playerCardsWithColor.drawCard(card)
-                print("card appended with right color")
-            }
-        }
-        return playerCardsWithColor.cards
-    }
+
     
     
     func showHand(){
-       
-        print("\(getPlayerCardsByColor())")
-        hand.cards = getPlayerCardsByColor()  // currently will crash if there is problem
+        hand = game.getCardsPlayer() // currently will crash if there is problem
         for button in 0...cardButtons.endIndex-1{
-            cardButtons[button].setPlayerCardView(handCards: hand.cards, cardIndex: button+playerCardsPivotView)
+            cardButtons[button].setPlayerCardView(handCards: hand.getView(), cardIndex: button+hand.playerCardsPivotView)
         }
-
-
     }
     
     func updateViewFromModel(){
