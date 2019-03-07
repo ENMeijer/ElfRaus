@@ -61,13 +61,13 @@ class CardsPlayer{
     
     func playerHandGoLeft(){
         if playerCardsPivotView > 0{
-            playerCardsPivotView = playerCardsPivotView-1
+            playerCardsPivotView -= 1
         }
     }
     
     func playerHandGoRight(){
-        if playerCardsPivotView < cards.count-1 {
-            playerCardsPivotView = playerCardsPivotView+1
+        if playerCardsPivotView < view.count-1 {
+            playerCardsPivotView += 1
         }
     }
     

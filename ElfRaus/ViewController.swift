@@ -34,27 +34,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var whiteButton: UIButton!
     
-    @IBOutlet weak var nextButton: UIButton!
+    
+    @IBOutlet var colorButtons: [UIButton]! {didSet { updateColorCountButtonView()}}
+    
+    
+    
+    @IBOutlet weak var nextButton: UIButton! {didSet{ enableNextButton(false)}}
     @IBOutlet weak var drawButton: UIButton!
     
 
-    @IBOutlet weak var opponentView: UILabel!
+    @IBOutlet weak var opponentView: UILabel! {didSet { updateOpponentsCardCountView()}}
     
     //ACTION FUNCTIONS
-    @IBAction func drawButton(_ sender: UIButton) {
-        enableNextButton(true)
-        //draw action
-        //playerCard1.setTitle("test", for: .normal)
-        game.drawCard("Player")
-        showHand()
-    }
     
     @IBAction func touchCard(_ sender: UIButton) {
         enableNextButton(true)
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].backgroundColor == UIColor.lightGray){
-                _ = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
+                let chouldChooseCard = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
+                enableNextButton(chouldChooseCard) //enables button after a card was successfully played
                 updateViewFromModel()
             }
         } else {
@@ -66,10 +65,12 @@ class ViewController: UIViewController {
     @IBAction func PlayerHandGoLeft(_ sender: UIButton) {
         //show more cards to the left in the player hand
         hand.playerHandGoLeft()
+        showHand()
     }
     @IBAction func PlayerHandGoRight(_ sender: UIButton) {
         //show more cards to the right in the player hand
         hand.playerHandGoRight()
+        showHand()
     }
     
     @IBAction func YellowButton(_ sender: UIButton) {
@@ -99,7 +100,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
-        enableNextButton(false)
         //next card
         showHand()
         var played = 0
@@ -118,10 +118,20 @@ class ViewController: UIViewController {
                 }
             //}
         }
-
         game.drawCard("Model")
+        enableNextButton(false)
         updateViewFromModel()
-        
+    }
+    
+    @IBAction func drawButton(_ sender: UIButton) {
+        enableNextButton(true) //after you have drawn you can end your round
+        //draw action
+        game.drawCard("Player")
+        showHand()
+    }
+    
+    @IBAction func scoreButton(_ sender: UIButton) {
+        //shows the score 
     }
     
     //FUNCTIONS
@@ -133,7 +143,6 @@ class ViewController: UIViewController {
         } else {
             nextButton.isEnabled = false
             nextButton.alpha = 0.5
-            
         }
         
     }
@@ -145,15 +154,11 @@ class ViewController: UIViewController {
         } else {
             drawButton.isEnabled = false
             drawButton.alpha = 0.5
-            
         }
-        
     }
     
-
-    
-    
     func showHand(){
+        //set start hand
         hand = game.getCardsPlayer() // currently will crash if there is problem
         for button in 0...cardButtons.endIndex-1{
             cardButtons[button].setPlayerCardView(handCards: hand.getView(), cardIndex: button+hand.playerCardsPivotView)
@@ -169,9 +174,7 @@ class ViewController: UIViewController {
         showHand()
         //update the number of cards a player has per color
         updateColorCountButtonView()
-
     }
-    
     
     func updatePlayingFieldView(){
         playingField[1].setCardView(cardNumber: game.playedCards.yellow_low ?? 0)
@@ -196,16 +199,30 @@ class ViewController: UIViewController {
     }
     
     func updateOpponentsCardCountView(){
-        //set opponents number of cards in the view
-        //currently not working due to nill exeption
-        //opponentView.text = "Opponent's cards: \((game.getCardsModel().count))"}
-        //opponentView.setNeedsLayout()
-        //opponentView.setNeedsDisplay()
+        if opponentView != nil{ // if the layer opponent already exists
+            if game.getCardsModel().count >= 0{ // if the oppoenent has 0 or more cards in hand
+                opponentView.text = "Opponent's cards: \(game.getCardsModel().count)"
+                opponentView.setNeedsLayout()
+                opponentView.setNeedsDisplay()
+            }
+        }
     }
     
     func updateColorCountButtonView(){
         //update count shown on the color buttons
         //missing other buttons
+        var cardsPerColor = hand.cardsPerColor
+        cardsPerColor.append(hand.cards.count) // calculate the total number of cards
+        if colorButtons != nil { // IF Color buttons are initialized
+            for index in 0...cardsPerColor.count-1{
+                if cardsPerColor[index] >= 0 {
+                    colorButtons[index].setTitle(String(cardsPerColor[index]), for: .normal)
+                    colorButtons[index].setNeedsLayout()
+                    colorButtons[index].setNeedsDisplay()
+                }
+                
+            }
+        }
     }
     
     func initPlayingField(arrayPlayingField:[PlayingCardView]){
