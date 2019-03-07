@@ -23,7 +23,7 @@ class CardsPlayer{
     // TODO: add the functions for show hand from viewcontroller
     
     func getView()-> [Card]{
-        getPlayerCardsByColor()
+        updateHandView()
         return view
     }
     
@@ -66,7 +66,7 @@ class CardsPlayer{
     }
     
     func playerHandGoRight(){
-        if playerCardsPivotView < view.count-1 {
+        if playerCardsPivotView < view.count-5 {
             playerCardsPivotView += 1
         }
     }
@@ -76,7 +76,18 @@ class CardsPlayer{
         playerCardsPivotView = 0
     }
     
-    func getPlayerCardsByColor(){
+    func showTheNewlyDrawnCard(){
+        // scroll until you see the new card
+        // update the view
+        if view.count <= 5{
+            playerCardsPivotView = 0
+        } else {
+            playerCardsPivotView = view.count-5
+        }
+        print(view.count)
+    }
+    
+    func updateHandView(){
         //only shows cards with a given attribute
         if playerCardsColorView == nil {    //if no color is given, then return the full hand
             view = cards

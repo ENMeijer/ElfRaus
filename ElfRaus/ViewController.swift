@@ -127,11 +127,12 @@ class ViewController: UIViewController {
         enableNextButton(true) //after you have drawn you can end your round
         //draw action
         game.drawCard("Player")
+        hand.showTheNewlyDrawnCard()
         showHand()
     }
     
     @IBAction func scoreButton(_ sender: UIButton) {
-        //shows the score 
+        //shows the score
     }
     
     //FUNCTIONS
