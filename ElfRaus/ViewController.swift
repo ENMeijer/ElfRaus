@@ -51,12 +51,13 @@ class ViewController: UIViewController {
     //ACTION FUNCTIONS
     
     @IBAction func touchCard(_ sender: UIButton) {
-        enableNextButton(true)
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].backgroundColor == UIColor.lightGray){
                 let chouldChooseCard = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
-                enableNextButton(chouldChooseCard) //enables button after a card was successfully played
+                if chouldChooseCard{
+                    enableNextButton(true) //enables button after a card was successfully played
+                }
                 updateViewFromModel()
             }
         } else {
@@ -130,6 +131,7 @@ class ViewController: UIViewController {
         enableNextButton(true) //after you have drawn you can end your round
         //draw action
         game.drawCard("Player")
+        hand = game.getCardsPlayer()
         hand.showTheNewlyDrawnCard()
         updateColorCountButtonView()
         showHand()

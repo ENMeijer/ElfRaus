@@ -13,7 +13,7 @@ import UIKit
 class CardsPlayer{
     var cardsPerColor = [0,0,0,0] //yellow green red blue
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
-    var cards = [Card]() // all cards
+    var cards = [Card](){ didSet{ updateHandView()}} // all cards
     var view = [Card]()  // all visible cards
     
     var playerCardsPivotView = 0
@@ -25,6 +25,18 @@ class CardsPlayer{
     func getView()-> [Card]{
         updateHandView()
         return view
+    }
+    
+    func playerHandGoLeft(){
+        if playerCardsPivotView > 0{
+            playerCardsPivotView -= 1
+        }
+    }
+    
+    func playerHandGoRight(){
+        if playerCardsPivotView < view.count-5 {
+            playerCardsPivotView += 1
+        }
     }
     
     func drawCard(_ card:Card){
@@ -59,18 +71,6 @@ class CardsPlayer{
         return 0 // if color not present
     }
     
-    func playerHandGoLeft(){
-        if playerCardsPivotView > 0{
-            playerCardsPivotView -= 1
-        }
-    }
-    
-    func playerHandGoRight(){
-        if playerCardsPivotView < view.count-5 {
-            playerCardsPivotView += 1
-        }
-    }
-    
     func showHandByColor(_ color:UIColor?){
         playerCardsColorView = color
         playerCardsPivotView = 0
@@ -84,7 +84,6 @@ class CardsPlayer{
         } else {
             playerCardsPivotView = view.count-5
         }
-        print(view.count)
     }
     
     func updateHandView(){
@@ -96,7 +95,6 @@ class CardsPlayer{
             for card in cards{
                 if card.color == playerCardsColorView!{
                     view.append(card)
-                    print("card appended with right color")
                 }
             }
         }
