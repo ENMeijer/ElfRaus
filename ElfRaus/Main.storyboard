@@ -464,6 +464,8 @@
                     <connections>
                         <outlet property="blueButton" destination="aTP-me-zFl" id="CE6-uq-Ah2"/>
                         <outlet property="drawButton" destination="nyS-f4-q1U" id="1X9-3j-mZK"/>
+                        <outlet property="goLeftButton" destination="ERR-jn-ZFQ" id="23e-Rd-P2L"/>
+                        <outlet property="goRightButton" destination="Li5-70-zPN" id="fWK-FN-oaf"/>
                         <outlet property="greenButton" destination="j7k-05-vam" id="PQg-Ek-umO"/>
                         <outlet property="nextButton" destination="bum-Gy-C75" id="shV-b7-kTA"/>
                         <outlet property="opponentView" destination="De4-Se-sMu" id="i0N-Ka-tCp"/>

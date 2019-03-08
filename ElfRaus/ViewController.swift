@@ -27,13 +27,16 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]! {didSet{updateViewFromModel()}}
 
+    @IBOutlet weak var goLeftButton: UIButton! {didSet{ enableGoThroughPlayerHand()}}
+    @IBOutlet weak var goRightButton: UIButton! {didSet{ enableGoThroughPlayerHand()}}
+    
+    
     
     @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var whiteButton: UIButton!
-    
     
     @IBOutlet var colorButtons: [UIButton]! {didSet { updateColorCountButtonView()}}
     
@@ -128,12 +131,10 @@ class ViewController: UIViewController {
         //draw action
         game.drawCard("Player")
         hand.showTheNewlyDrawnCard()
+        updateColorCountButtonView()
         showHand()
     }
-    
-    @IBAction func scoreButton(_ sender: UIButton) {
-        //shows the score
-    }
+
     
     //FUNCTIONS
     
@@ -158,12 +159,41 @@ class ViewController: UIViewController {
         }
     }
     
+    func enableGoThroughPlayerHand(){
+        hand = game.getCardsPlayer()
+        //check for going left
+        if goLeftButton != nil {
+            if(hand.playerCardsPivotView <= 0){
+                goLeftButton.isEnabled = false
+                goLeftButton.alpha = 0.5
+            } else {
+                goLeftButton.isEnabled = true
+                goLeftButton.alpha = 1
+            }
+        }
+        //check for going right
+        if goRightButton != nil{
+            if(hand.playerCardsPivotView >= hand.view.count-5){
+                goRightButton.isEnabled = false
+                goRightButton.alpha = 0.5
+            } else {
+                goRightButton.isEnabled = true
+                goRightButton.alpha = 1
+            }
+        }
+        
+    }
+    
+    
     func showHand(){
         //set start hand
         hand = game.getCardsPlayer() // currently will crash if there is problem
+        //display the numbers in hand
         for button in 0...cardButtons.endIndex-1{
             cardButtons[button].setPlayerCardView(handCards: hand.getView(), cardIndex: button+hand.playerCardsPivotView)
         }
+        //check if you can go right or left
+        enableGoThroughPlayerHand()
     }
     
     func updateViewFromModel(){
