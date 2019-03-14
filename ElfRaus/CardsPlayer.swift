@@ -14,10 +14,11 @@ class CardsPlayer{
     var cardsPerColor = [0,0,0,0] //yellow green red blue
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     var cards = [Card](){ didSet{ updateHandView()}} // all cards
-    var view = [Card]()  // all visible cards; should be replaced after cards are odered
+    var view = [Card]()  // all visible cards
+    var legalOptions : [Card]?
     
     var playerCardsPivotView = 0
-    var playerCardsColorView:UIColor? = nil //nil means no color; otherwise use one of the colors; should be replaced after cards are odered
+    var playerCardsColorView:UIColor? = nil //nil means no color; otherwise use one of the colors
     
     // TODO: add function to show cards for colors
     // TODO: add the functions for show hand from viewcontroller
@@ -37,6 +38,9 @@ class CardsPlayer{
         }
         return view[index]
     }
+    func getLegalOptions() -> [Card]?{
+        return legalOptions
+    }
     
     func playerHandGoLeft(){
         if playerCardsPivotView > 0{
@@ -50,16 +54,57 @@ class CardsPlayer{
         }
     }
     
-    func drawCard(_ card:Card){
+    func drawCard(_ card:Card, allLegalOptions:[Int:Card]){
         cards.append(card)
         for color in 0...3{
             if colors[color] == card.color{
                 cardsPerColor[color] += 1
             }
         }
+        let index = card.identifier
+        if (allLegalOptions.index(forKey: index) != nil) {
+            print("key: ",allLegalOptions.index(forKey: index) as Any)
+            if legalOptions != nil{
+                legalOptions!.append(card)
+            }else{
+                legalOptions = [card]
+            }
+        }
+        print("draw: ", card.number)
+        print("options player: ",legalOptions as Any)
     }
     
-    func playCard(_ card:Card){
+    private func checkLegalOptions(_ card:Card, allLegalOptions:[Int:Card]){
+        let index = card.identifier
+        if (allLegalOptions.index(forKey: index) != nil) {
+            var add = true
+            if(legalOptions != nil){
+                for cardLegal in legalOptions!{
+                    if(card.identifier == cardLegal.identifier){
+                        add = false
+                    }
+                }
+            }
+            if(add){
+                print("key: ",allLegalOptions.index(forKey: index) as Any)
+                if legalOptions != nil{
+                    legalOptions!.append(card)
+                }else{
+                    legalOptions = [card]
+                }
+            }
+        }
+    }
+    
+    func playCard(_ card:Card, allLegalOptions:[Int:Card]){
+        for index in 0...legalOptions!.endIndex-1{
+            if(legalOptions![index].identifier == card.identifier){
+                legalOptions!.remove(at: index)
+                if(legalOptions!.endIndex == 0){
+                    legalOptions = nil
+                }
+            }
+        }
         for color in 0...3{
             if colors[color] == card.color{
                 cardsPerColor[color] -= 1
@@ -71,6 +116,10 @@ class CardsPlayer{
                 break
             }
         }
+        for card in cards{
+            checkLegalOptions(card, allLegalOptions: allLegalOptions)
+        }
+        print(legalOptions)
     }
     
     func getAmountPerColor(color:UIColor) -> Int{
@@ -111,7 +160,12 @@ class CardsPlayer{
         }
     }
     
-    //???need to set the initial amount of cards
     
+    public func newTurn(allLegalOptions:[Int:Card]){
+        for card in cards{
+            checkLegalOptions(card, allLegalOptions: allLegalOptions)
+        }
+        print("options player: ", legalOptions)
+    }
     
 }

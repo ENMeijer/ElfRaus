@@ -25,6 +25,7 @@ class ElfRaus {
     var cardsModelClass = CardsModel()
     let actRModel = ActRModel()
     var cardsPlayerClass = CardsPlayer()
+    var currentTurn = Turn(cardOptions: nil)
     
     
     var legalOptions = [Int:Card]()
@@ -37,21 +38,35 @@ class ElfRaus {
         return cardsModel
     }
     
+    func newTurn(_ player:String){
+        if(player == "Player"){
+            cardsModelClass.newTurn(allLegalOptions: legalOptions)
+            currentTurn = Turn(cardOptions: cardsModelClass.getLegalOptions())
+        }
+        else{
+            cardsPlayerClass.newTurn(allLegalOptions: legalOptions)
+            currentTurn = Turn(cardOptions: cardsPlayerClass.getLegalOptions())
+        }
+    }
+    
     func drawCard(_ player: String){
         var cardIndex : Int
         print(cardsInDeck)
-        if(cardsInDeck > 0){
+        if(cardsInDeck > 0),(currentTurn.allowedToDrawCard()){
+            
             cardIndex = deck[0]
             deck.remove(at: 0)
             if(cardsInDeck > 0){
                 if(player == "Player"){
                     cards[cardIndex].location = "Player"
                     cardsPlayer.append(cards[cardIndex])
-                    cardsPlayerClass.drawCard(cards[cardIndex])
+                    cardsPlayerClass.drawCard(cards[cardIndex], allLegalOptions: legalOptions)
+                    currentTurn.drawCard(cardOptions: cardsPlayerClass.getLegalOptions())
                 } else{
                     cards[cardIndex].location = "Model"
                     cardsModel.append(cards[cardIndex])
                     cardsModelClass.drawCard(cards[cardIndex], allLegalOptions: legalOptions)
+                    currentTurn.drawCard(cardOptions: cardsModelClass.getLegalOptions())
                 }
                 cardsInDeck -= 1
             }
@@ -62,46 +77,51 @@ class ElfRaus {
     
     func chooseCard(at index : Int, _ player : String) -> Bool{
         print("chooseCard")
-
-        if (legalOptions.index(forKey: index) != nil) {
-            print("play card")
-            cards[index].location = "Played"
-            if(cards[index].number >= 11), (cards[index].number < 20){
-                legalOptions.updateValue(cards[index+1], forKey: index+1)
-            }
-            if(cards[index].number > 1), (cards[index].number <= 11){
-                legalOptions.updateValue(cards[index-1], forKey: index-1)
-            }
-            legalOptions.removeValue(forKey: index)
-            playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
-            playedCards.printPlayedCards()
-            if(player == "Player"){
-                cardsPlayerClass.playCard(cards[index])
-                for indexCardPlayer in 0...cardsPlayer.endIndex-1{
-                    if(cardsPlayer[indexCardPlayer].identifier == index){
-                        cardsPlayer.remove(at: indexCardPlayer)
-                        return true
-                        //break
-                        }
+        print(currentTurn.allowedToPlayCard())
+        if(currentTurn.allowedToPlayCard()){
+            if (legalOptions.index(forKey: index) != nil) {
+                print("play card")
+                cards[index].location = "Played"
+                if(cards[index].number >= 11), (cards[index].number < 20){
+                    legalOptions.updateValue(cards[index+1], forKey: index+1)
                 }
-            }else{
-                
-                for indexCardModel in 0...cardsModel.endIndex-1{
-                    if(cardsModel[indexCardModel].identifier == index){
-                        print("Model plays ", cardsModel[indexCardModel].number)
-                        cardsModelClass.playCard(cardsModel[indexCardModel])
-                        cardsModel.remove(at: indexCardModel)
-                        
-                        return true
-                        //break
+                if(cards[index].number > 1), (cards[index].number <= 11){
+                    legalOptions.updateValue(cards[index-1], forKey: index-1)
+                }
+                legalOptions.removeValue(forKey: index)
+                playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
+                playedCards.printPlayedCards()
+                if(player == "Player"){
+                    cardsPlayerClass.playCard(cards[index], allLegalOptions: legalOptions)
+                    for indexCardPlayer in 0...cardsPlayer.endIndex-1{
+                        if(cardsPlayer[indexCardPlayer].identifier == index){
+                            cardsPlayer.remove(at: indexCardPlayer)
+                            return true
+                            //break
+                            }
                     }
+                    currentTurn.playCard(cardOptions: cardsPlayerClass.getLegalOptions())
+                }else{
+                    
+                    for indexCardModel in 0...cardsModel.endIndex-1{
+                        if(cardsModel[indexCardModel].identifier == index){
+                            print("Model plays ", cardsModel[indexCardModel].number)
+                            cardsModelClass.playCard(cardsModel[indexCardModel], allLegalOptions: legalOptions)
+                            cardsModel.remove(at: indexCardModel)
+                            
+                            return true
+                            //break
+                        }
+                    }
+                    currentTurn.playCard(cardOptions: cardsModelClass.getLegalOptions())
                 }
+              return true
             }
-          return true
-        } else{
-            print(index)
-            return false
+            
         }
+        print(index)
+        return false
+        
         
     }
     
@@ -125,7 +145,7 @@ class ElfRaus {
             deck.remove(at: card)
             cards[cardPlayer].location = "Player"
             cardsPlayer.append(cards[cardPlayer])
-            cardsPlayerClass.drawCard(cards[cardPlayer])
+            cardsPlayerClass.drawCard(cards[cardPlayer], allLegalOptions: legalOptions)
 
             let cardModel = deck[card]
             deck.remove(at: card)
@@ -135,6 +155,7 @@ class ElfRaus {
             cardsInDeck -= 2
 
         }
+        newTurn("Model")
     }
     
 }

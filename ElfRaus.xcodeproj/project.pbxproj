@@ -10,6 +10,7 @@
 		210DC30E221EE0A000DF4CFC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DC30D221EE0A000DF4CFC /* Card.swift */; };
 		21359F3F222FD7B400EB75F5 /* ActRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21359F3E222FD7B400EB75F5 /* ActRModel.swift */; };
 		21359F41222FF69F00EB75F5 /* CardsPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21359F40222FF69F00EB75F5 /* CardsPlayer.swift */; };
+		2156BDB9223A627800DA7264 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDB8223A627800DA7264 /* Turn.swift */; };
 		21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */; };
 		21F32B0322297E1C001701E2 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F32B0222297E1C001701E2 /* CardsModel.swift */; };
 		2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E13E221DB26F007E5536 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		210DC30D221EE0A000DF4CFC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		21359F3E222FD7B400EB75F5 /* ActRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActRModel.swift; sourceTree = "<group>"; };
 		21359F40222FF69F00EB75F5 /* CardsPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPlayer.swift; sourceTree = "<group>"; };
+		2156BDB8223A627800DA7264 /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElfRaus.swift; sourceTree = "<group>"; };
 		21F32B0222297E1C001701E2 /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
 		2F40E13B221DB26F007E5536 /* ElfRaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElfRaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				40F68C9D22240043004EBCFC /* Main.storyboard */,
 				402693252228200400A33FBE /* PlayedCards.swift */,
 				21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
+				2156BDB8223A627800DA7264 /* Turn.swift */,
 				210DC30D221EE0A000DF4CFC /* Card.swift */,
 				2F40E14A221DB272007E5536 /* Info.plist */,
 				21359F3E222FD7B400EB75F5 /* ActRModel.swift */,
@@ -231,6 +234,7 @@
 				4026931F22281C2200A33FBE /* Tokenizer.swift in Sources */,
 				4026931622281C2200A33FBE /* Instantiation.swift in Sources */,
 				4026931922281C2200A33FBE /* Procedural.swift in Sources */,
+				2156BDB9223A627800DA7264 /* Turn.swift in Sources */,
 				4026931E22281C2200A33FBE /* Temporal.swift in Sources */,
 				4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */,
 				21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
