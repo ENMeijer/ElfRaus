@@ -17,6 +17,10 @@ class CardsModel{
     var cards = [Card]()
     var legalOptions : [Card]?
     
+    public func getLegalOptions() -> [Card]?{
+        return legalOptions
+    }
+    
     func drawCard(_ card:Card, allLegalOptions:[Int:Card]){
         cards.append(card)
         for color in 0...3{
@@ -38,10 +42,35 @@ class CardsModel{
     }
     //oh wow
     
-    func playCard(_ card:Card){
+    private func checkLegalOptions(_ card:Card, allLegalOptions:[Int:Card]){
+        let index = card.identifier
+        if (allLegalOptions.index(forKey: index) != nil) {
+            var add = true
+            if(legalOptions != nil){
+                for cardLegal in legalOptions!{
+                    if(card.identifier == cardLegal.identifier){
+                        add = false
+                    }
+                }
+            }
+            if(add){
+                print("key: ",allLegalOptions.index(forKey: index) as Any)
+                if legalOptions != nil{
+                    legalOptions!.append(card)
+                }else{
+                    legalOptions = [card]
+                }
+            }
+        }
+    }
+    
+    func playCard(_ card:Card, allLegalOptions:[Int:Card]){
         for index in 0...legalOptions!.endIndex-1{
             if(legalOptions![index].identifier == card.identifier){
                 legalOptions!.remove(at: index)
+                if(legalOptions!.endIndex == 0){
+                    legalOptions = nil
+                }
             }
         }
         for color in 0...3{
@@ -55,6 +84,9 @@ class CardsModel{
                 break
             }
         }
+        for card in cards{
+            checkLegalOptions(card, allLegalOptions: allLegalOptions)
+        }
     }
     
     func getAmountPerColor(color:UIColor) -> Int{
@@ -64,6 +96,13 @@ class CardsModel{
             }
         }
         return 0 // if color not present
+    }
+    
+    public func newTurn(allLegalOptions:[Int:Card]){
+        for card in cards{
+            checkLegalOptions(card, allLegalOptions: allLegalOptions)
+        }
+        print("options model: ", legalOptions)
     }
     
 }

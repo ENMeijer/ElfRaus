@@ -105,6 +105,7 @@ class ViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: UIButton) {
         //next card
+        game.newTurn("Player")
         showHand()
         var played = 0
         var cardsModel = game.getCardsModel()
@@ -120,9 +121,13 @@ class ViewController: UIViewController {
                 } else{
                     card+=1
                 }
+            
             //}
         }
         game.drawCard("Model")
+        game.drawCard("Model")
+        game.drawCard("Model")
+        game.newTurn("Model")
         enableNextButton(false)
         updateViewFromModel()
     }
