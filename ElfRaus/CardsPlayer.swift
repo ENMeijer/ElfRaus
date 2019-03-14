@@ -14,10 +14,10 @@ class CardsPlayer{
     var cardsPerColor = [0,0,0,0] //yellow green red blue
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     var cards = [Card](){ didSet{ updateHandView()}} // all cards
-    var view = [Card]()  // all visible cards
+    var view = [Card]()  // all visible cards; should be replaced after cards are odered
     
     var playerCardsPivotView = 0
-    var playerCardsColorView:UIColor? = nil //nil means no color; otherwise use one of the colors
+    var playerCardsColorView:UIColor? = nil //nil means no color; otherwise use one of the colors; should be replaced after cards are odered
     
     // TODO: add function to show cards for colors
     // TODO: add the functions for show hand from viewcontroller
@@ -25,6 +25,17 @@ class CardsPlayer{
     func getView()-> [Card]{
         updateHandView()
         return view
+    }
+    
+    func getCardAtPositionView(at index:Int)-> Card?{
+        updateHandView()
+        print(index)
+        print("view length\(view.count)")
+        if index >= view.endIndex || index < view.startIndex{
+            print("card does not exist")
+            return nil
+        }
+        return view[index]
     }
     
     func playerHandGoLeft(){

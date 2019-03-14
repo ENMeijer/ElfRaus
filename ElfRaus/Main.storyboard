@@ -165,70 +165,70 @@
                                             <action selector="PlayerHandGoLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nZw-qU-sHN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXU-M1-EWl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXU-M1-EWl" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                         <rect key="frame" x="50" y="0.0" width="42.5" height="59"/>
-                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="0.026821082746478875" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NXU-M1-EWl" secondAttribute="height" multiplier="5:7" id="vDY-J8-V9f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="1">
+                                        <state key="normal" title="?">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7p-e0-cLb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TG-x3-8dA">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TG-x3-8dA" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                         <rect key="frame" x="100.5" y="0.0" width="42" height="59"/>
-                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="0.026821082746478875" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1TG-x3-8dA" secondAttribute="height" multiplier="5:7" id="BcK-ff-RUb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="2">
+                                        <state key="normal" title="?">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="47j-Fx-mtZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwF-Cw-jvl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwF-Cw-jvl" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                         <rect key="frame" x="150.5" y="0.0" width="42" height="59"/>
-                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="0.026821082746478875" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iwF-Cw-jvl" secondAttribute="height" multiplier="5:7" id="LLc-Bb-dGv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="3">
+                                        <state key="normal" title="?">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u3L-S4-FC9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ8-tb-Cyh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ8-tb-Cyh" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                         <rect key="frame" x="200.5" y="0.0" width="42" height="59"/>
-                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="0.026821082746478875" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UJ8-tb-Cyh" secondAttribute="height" multiplier="5:7" id="aSZ-Qz-NJ2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="4">
+                                        <state key="normal" title="?">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UJ5-tP-ARb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-g0-0Nt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-g0-0Nt" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                         <rect key="frame" x="250.5" y="0.0" width="42.5" height="59"/>
-                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="0.026821082746478875" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ud7-g0-0Nt" secondAttribute="height" multiplier="5:7" id="i54-NY-6oD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="5">
+                                        <state key="normal" title="?">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -251,57 +251,93 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kWu-jk-0QB">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="97"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-De-8Qw" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-Ce-nFD" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4U-4t-ADO" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaC-UP-L3R" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="96" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-du-xe7" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oux-um-IAP" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="192" y="0.0" width="88" height="97"/>
-                                            </view>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="02Z-14-rWs">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5WX-93-ltF">
                                         <rect key="frame" x="0.0" y="105" width="280" height="97"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wv6-zb-kvP" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgr-ec-kUx" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-9K-UeW" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaB-q4-SFJ" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="96" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVF-mn-ONG" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFs-zy-qxz" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="192" y="0.0" width="88" height="97"/>
-                                            </view>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-TN-ZtG">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-Mb-97j">
                                         <rect key="frame" x="0.0" y="210" width="280" height="97"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-cd-3yc" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPa-Fm-dFp" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-wp-nOA" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGo-Cu-g7Y" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="96" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-uB-Z9P" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQ9-Fl-cEP" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="192" y="0.0" width="88" height="97"/>
-                                            </view>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-31-q7c">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-fX-WVs">
                                         <rect key="frame" x="0.0" y="315" width="280" height="97"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHS-3i-Elg" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LW-Tu-EQN" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-wH-U8e" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOK-fU-Zko" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="96" y="0.0" width="88" height="97"/>
-                                            </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thu-Ao-VVn" customClass="PlayingCardView" customModule="ElfRaus" customModuleProvider="target">
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCK-E4-zsD" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
                                                 <rect key="frame" x="192" y="0.0" width="88" height="97"/>
-                                            </view>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -470,37 +506,36 @@
                         <outlet property="greenButton" destination="j7k-05-vam" id="PQg-Ek-umO"/>
                         <outlet property="nextButton" destination="bum-Gy-C75" id="shV-b7-kTA"/>
                         <outlet property="opponentView" destination="De4-Se-sMu" id="i0N-Ka-tCp"/>
-                        <outlet property="playerCard1" destination="NXU-M1-EWl" id="7co-SI-MdS"/>
-                        <outlet property="playerCard2" destination="1TG-x3-8dA" id="7Is-9h-ZnO"/>
-                        <outlet property="playerCard3" destination="iwF-Cw-jvl" id="KK3-GN-GHZ"/>
-                        <outlet property="playerCard4" destination="UJ8-tb-Cyh" id="uA2-d7-jfs"/>
-                        <outlet property="playerCard5" destination="Ud7-g0-0Nt" id="ROp-H8-Xbc"/>
+                        <outlet property="playerCard1" destination="NXU-M1-EWl" id="P4a-Yj-8QG"/>
+                        <outlet property="playerCard2" destination="1TG-x3-8dA" id="BT2-Db-fV4"/>
+                        <outlet property="playerCard3" destination="iwF-Cw-jvl" id="7j9-lh-Lu3"/>
+                        <outlet property="playerCard4" destination="UJ8-tb-Cyh" id="PeV-Yv-t54"/>
+                        <outlet property="playerCard5" destination="Ud7-g0-0Nt" id="Z8F-bh-Zde"/>
                         <outlet property="redButton" destination="7wT-HS-tKe" id="Qe3-9d-Ium"/>
                         <outlet property="whiteButton" destination="oub-96-UCv" id="ZvR-Wi-SMt"/>
                         <outlet property="yellowButton" destination="5pI-27-fAD" id="6q1-yF-qZO"/>
-                        <outletCollection property="playingField" destination="DKB-du-xe7" collectionClass="NSMutableArray" id="gXn-3f-S7a"/>
-                        <outletCollection property="cardButtons" destination="NXU-M1-EWl" collectionClass="NSMutableArray" id="b0C-HD-sOC"/>
-                        <outletCollection property="cardButtons" destination="1TG-x3-8dA" collectionClass="NSMutableArray" id="ngS-IH-oju"/>
-                        <outletCollection property="cardButtons" destination="iwF-Cw-jvl" collectionClass="NSMutableArray" id="app-ma-0gO"/>
-                        <outletCollection property="cardButtons" destination="UJ8-tb-Cyh" collectionClass="NSMutableArray" id="670-Ev-aFg"/>
-                        <outletCollection property="cardButtons" destination="Ud7-g0-0Nt" collectionClass="NSMutableArray" id="o6L-e3-XQ7"/>
-                        <outletCollection property="playingField" destination="AhK-De-8Qw" collectionClass="NSMutableArray" id="dws-O5-pPK"/>
-                        <outletCollection property="playingField" destination="B4U-4t-ADO" collectionClass="NSMutableArray" id="LmT-9w-p4Z"/>
-                        <outletCollection property="playingField" destination="DKB-du-xe7" collectionClass="NSMutableArray" id="eFh-pa-9CC"/>
-                        <outletCollection property="playingField" destination="wv6-zb-kvP" collectionClass="NSMutableArray" id="Mgh-zl-UEo"/>
-                        <outletCollection property="playingField" destination="aZl-9K-UeW" collectionClass="NSMutableArray" id="9gI-xy-7c6"/>
-                        <outletCollection property="playingField" destination="bVF-mn-ONG" collectionClass="NSMutableArray" id="k3s-Yb-v40"/>
-                        <outletCollection property="playingField" destination="Gtl-cd-3yc" collectionClass="NSMutableArray" id="ozq-nZ-bGT"/>
-                        <outletCollection property="playingField" destination="oOU-wp-nOA" collectionClass="NSMutableArray" id="k8H-s2-2Yb"/>
-                        <outletCollection property="playingField" destination="TS7-uB-Z9P" collectionClass="NSMutableArray" id="HHx-L2-FJh"/>
-                        <outletCollection property="playingField" destination="tHS-3i-Elg" collectionClass="NSMutableArray" id="9Aj-l5-pQp"/>
-                        <outletCollection property="playingField" destination="i2J-wH-U8e" collectionClass="NSMutableArray" id="Fce-yO-Raw"/>
-                        <outletCollection property="playingField" destination="thu-Ao-VVn" collectionClass="NSMutableArray" id="88Y-TR-vlh"/>
                         <outletCollection property="colorButtons" destination="5pI-27-fAD" collectionClass="NSMutableArray" id="wBS-Td-KSq"/>
                         <outletCollection property="colorButtons" destination="j7k-05-vam" collectionClass="NSMutableArray" id="7PW-fR-Wbk"/>
                         <outletCollection property="colorButtons" destination="7wT-HS-tKe" collectionClass="NSMutableArray" id="azc-wh-dQn"/>
                         <outletCollection property="colorButtons" destination="aTP-me-zFl" collectionClass="NSMutableArray" id="cHe-OD-ioF"/>
                         <outletCollection property="colorButtons" destination="oub-96-UCv" collectionClass="NSMutableArray" id="Frb-p4-psn"/>
+                        <outletCollection property="playingField" destination="1Kc-Ce-nFD" collectionClass="NSMutableArray" id="uFb-sT-GBz"/>
+                        <outletCollection property="playingField" destination="aaC-UP-L3R" collectionClass="NSMutableArray" id="T9g-yR-hKu"/>
+                        <outletCollection property="playingField" destination="oux-um-IAP" collectionClass="NSMutableArray" id="1TN-6O-eQO"/>
+                        <outletCollection property="playingField" destination="vgr-ec-kUx" collectionClass="NSMutableArray" id="Agx-1l-3T7"/>
+                        <outletCollection property="playingField" destination="XaB-q4-SFJ" collectionClass="NSMutableArray" id="Apf-rL-IAQ"/>
+                        <outletCollection property="playingField" destination="OFs-zy-qxz" collectionClass="NSMutableArray" id="r7N-cY-aQg"/>
+                        <outletCollection property="playingField" destination="wPa-Fm-dFp" collectionClass="NSMutableArray" id="9ln-Q4-EfD"/>
+                        <outletCollection property="playingField" destination="aGo-Cu-g7Y" collectionClass="NSMutableArray" id="4S5-Qw-WS9"/>
+                        <outletCollection property="playingField" destination="LQ9-Fl-cEP" collectionClass="NSMutableArray" id="Mgy-T6-OG0"/>
+                        <outletCollection property="playingField" destination="4LW-Tu-EQN" collectionClass="NSMutableArray" id="nrr-oU-CUX"/>
+                        <outletCollection property="playingField" destination="iOK-fU-Zko" collectionClass="NSMutableArray" id="fDG-s0-399"/>
+                        <outletCollection property="playingField" destination="gCK-E4-zsD" collectionClass="NSMutableArray" id="f7c-gB-m6s"/>
+                        <outletCollection property="cardButtons" destination="NXU-M1-EWl" collectionClass="NSMutableArray" id="Jd9-Xm-7ws"/>
+                        <outletCollection property="cardButtons" destination="1TG-x3-8dA" collectionClass="NSMutableArray" id="ZGN-QX-zyo"/>
+                        <outletCollection property="cardButtons" destination="iwF-Cw-jvl" collectionClass="NSMutableArray" id="oDP-x6-3Bp"/>
+                        <outletCollection property="cardButtons" destination="UJ8-tb-Cyh" collectionClass="NSMutableArray" id="CLW-cx-0wW"/>
+                        <outletCollection property="cardButtons" destination="Ud7-g0-0Nt" collectionClass="NSMutableArray" id="PW7-Aa-hVs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
