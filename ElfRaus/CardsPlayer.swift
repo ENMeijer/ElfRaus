@@ -30,8 +30,6 @@ class CardsPlayer{
     
     func getCardAtPositionView(at index:Int)-> Card?{
         updateHandView()
-        print(index)
-        print("view length\(view.count)")
         if index >= view.endIndex || index < view.startIndex{
             print("card does not exist")
             return nil

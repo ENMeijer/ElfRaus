@@ -55,8 +55,9 @@ class ViewController: UIViewController {
     
     @IBAction func touchCard(_ sender: cardView) {
         if let cardNumber = cardButtons.index(of: sender) {
+            print("index of button\(cardNumber)")
             // only send information to model if card is present
-            if(cardButtons[cardNumber].isEnabled){
+            if(cardButtons[cardNumber].alpha == 1){
                 let chouldChooseCard = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
                 if chouldChooseCard{
                     enableNextButton(true) //enables button after a card was successfully played
@@ -199,10 +200,7 @@ class ViewController: UIViewController {
     func showHand(){
         //set start hand
         hand = game.getCardsPlayer() // currently will crash if there is problem
-        //display the numbers in hand
-//        for indexButton in 0...cardButtons.endIndex-1{
-//            cardButtons[indexButton].setHandCardView(card:hand.getCardAtPositionView(at:indexButton+hand.playerCardsPivotView))
-//        }
+
         for indexButton in 0...cardButtons.endIndex-1{
             if hand.cards.count >= indexButton+hand.playerCardsPivotView {
                 cardButtons[indexButton].setHandCardView(card: hand.getCardAtPositionView(at: indexButton + hand.playerCardsPivotView))

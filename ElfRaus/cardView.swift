@@ -34,9 +34,10 @@ class cardView: UIButton {
             self.alpha = 1
             self.atLeastOneCard = true
         } else {
-            self.isEnabled = false
+            print("there is a nil card in hand")
+            self.isEnabled = true //??? set false
             self.number = 0
-            self.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.02682108275)
+            self.color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
             self.alpha = howOpaque
         }
     }
