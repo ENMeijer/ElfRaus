@@ -105,31 +105,34 @@ class ViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: UIButton) {
         //next card
-        game.newTurn("Player")
-        showHand()
-        var played = 0
-        var cardsModel = game.getCardsModel()
-        cardsModel.shuffle()
-        var card = 0
-        while (card < 5),(card<cardsModel.endIndex){
-            //if(card < cardsModel.endIndex){
-                print(card, cardsModel.endIndex)
-                let valid = game.chooseCard(at: cardsModel[card].identifier, "Model")
-                if valid{
-                    played += 1
-                    card = 0
-                } else{
-                    card+=1
-                }
-            
-            //}
+        print("next ", game.currentTurn.allowedToNextTurn())
+        if(game.currentTurn.allowedToNextTurn() ){
+            game.newTurn("Player")
+            showHand()
+            var played = 0
+            var cardsModel = game.getCardsModel()
+            cardsModel.shuffle()
+            var card = 0
+            while (card<cardsModel.endIndex){
+                //if(card < cardsModel.endIndex){
+                    print(card, cardsModel.endIndex)
+                    let valid = game.chooseCard(at: cardsModel[card].identifier, "Model")
+                    if valid{
+                        played += 1
+                        card = 0
+                    } else{
+                        card+=1
+                    }
+                
+                //}
+            }
+            game.drawCard("Model")
+            game.drawCard("Model")
+            game.drawCard("Model")
+            game.newTurn("Model")
+            enableNextButton(false)
+            updateViewFromModel()
         }
-        game.drawCard("Model")
-        game.drawCard("Model")
-        game.drawCard("Model")
-        game.newTurn("Model")
-        enableNextButton(false)
-        updateViewFromModel()
     }
     
     @IBAction func drawButton(_ sender: UIButton) {

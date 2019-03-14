@@ -93,6 +93,7 @@ class CardsPlayer{
                 if(legalOptions!.endIndex == 0){
                     legalOptions = nil
                 }
+                break
             }
         }
         for color in 0...3{

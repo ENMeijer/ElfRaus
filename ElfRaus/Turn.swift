@@ -33,24 +33,28 @@ struct Turn {
     }
     
     public func allowedToNextTurn() -> Bool {
+        print(playedCards)
         if(drawnCards == 3){
             if(playedCards > 0){
                 return true
             } else if(cardOptions == nil){
                 return true
             }
+        } else if(playedCards > 0){
+            return true
         }
         return false
     }
     
     public mutating func drawCard(cardOptions : [Card]?){
-        drawnCards += 1
+        drawnCards = drawnCards+1
         self.cardOptions = cardOptions
     }
     
     public mutating func playCard(cardOptions : [Card]?){
-        playedCards += 1
+        playedCards = playedCards+1
         self.cardOptions = cardOptions
+        print(playedCards)
     }
     
     
