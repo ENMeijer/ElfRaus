@@ -150,7 +150,6 @@ class ElfRaus {
     }
     
     init(){
-        actRModel.turn(cards: cardsModelClass)
         var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
         
         //create all cards
@@ -177,7 +176,7 @@ class ElfRaus {
             cardsModel.append(cards[cardModel])
             cardsModelClass.drawCard(cards[cardModel], allLegalOptions: legalOptions)
             cardsInDeck -= 2
-
+            
         }
         newTurn("Model")
     }
