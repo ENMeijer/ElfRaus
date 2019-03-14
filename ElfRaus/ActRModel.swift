@@ -10,28 +10,49 @@ import Foundation
 
 class ActRModel{
     
-    private var cards = CardsModel()
+    private var modelCards = CardsModel()
     let model = Model()
     
 
     init() {
         model.loadModel(fileName: "elfRausModel2")
         print("model loaded")
+        for card in modelCards.cards{
+            addCardToDM(card: card, model: model)
+        }
+        
     }
     
     public func turn(cards:CardsModel){
-        self.cards = cards
-        model.run()
+        self.modelCards = cards
+        for card in modelCards.cards{
+            addCardToDM(card: card, model: model)
+        }
         
+        model.run()
         //let playerAction = sender.currentTitle! // The player action
         let modelAction = model.lastAction(slot: "colour") // The model action
-        // Do something with these two (i.e., decide who won)
-        // Communicate the player's action back to the model by setting a slot // in the action buffer
-        model.modifyLastAction(slot: "colour", value: "red") // And run the model again for the next trial
-        print(modelAction)
+        model.modifyLastAction(slot: "colour", value: "Model")
         model.run()
-        print(model.buffers)
+        //print(modelAction)
+        let modelDecision = model.lastAction(slot: "direction")
+        print("model decision: ", modelDecision ?? nil)
+        print("dm of model: ", model.dm.chunks)
+        //print(model.buffers)
+        print("waiting? ", model.waitingForAction)
     }
     
     
+    func addCardToDM (card: Card, model: Model){
+        let newChunk = Chunk(s: "card", m: model)
+        //newChunk.setSlot(slot: "isa", value: "card")
+        newChunk.setSlot(slot: "colour", value: card.location)
+        newChunk.setSlot(slot: "direction", value: card.direction)
+        newChunk.setSlot(slot: "possible", value: "yes")
+        model.dm.addToDMOrStrengthen(chunk: newChunk.copy())
+        model.dm.addToDMOrStrengthen(chunk: newChunk.copy())
+    }
 }
+
+
+
