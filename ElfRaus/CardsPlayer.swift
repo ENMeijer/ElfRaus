@@ -28,6 +28,14 @@ class CardsPlayer{
         return view
     }
     
+    func getCardAtPositionView(at index:Int)-> Card?{
+        updateHandView()
+        if index >= view.endIndex || index < view.startIndex{
+            print("card does not exist")
+            return nil
+        }
+        return view[index]
+    }
     func getLegalOptions() -> [Card]?{
         return legalOptions
     }
