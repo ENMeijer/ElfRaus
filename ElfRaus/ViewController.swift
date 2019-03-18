@@ -55,16 +55,13 @@ class ViewController: UIViewController {
     
     @IBAction func touchCard(_ sender: cardView) {
         if let cardNumber = cardButtons.index(of: sender) {
-            //print("index of button \(cardNumber)")
             // only send information to model if card is present
             if(cardButtons[cardNumber].alpha == 1){
                 let shouldChooseCard = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
                 if shouldChooseCard{
-                    //print("next turn: ", game.currentTurn.allowedToNextTurn(), shouldChooseCard)
                     if(game.currentTurn.allowedToNextTurn()){
                         enableNextButton(true)
                     }
-                    //print("removes card")
                 }
                 updateViewFromModel()
             }

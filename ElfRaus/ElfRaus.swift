@@ -57,6 +57,10 @@ class ElfRaus {
              turnModel()
         }else if(cardsModelClass.getLegalOptions()!.endIndex == 1){
             chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
+        }else if(cardsModelClass.getLegalOptions()!.endIndex == cardsModelClass.cards.endIndex), (cardsModelClass.getLegalOptions()!.endIndex > 9){
+            for option in legalOptions {
+                chooseCard(at: option.value.identifier, "model")
+            }
         }else{
             let choice = actRModel.turn(cards: cardsModelClass)
             print(choice)
