@@ -12,6 +12,10 @@ import UIKit
 struct Card {
     
     var color : UIColor
+    var colorString = ""
+    
+    private var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
+    private let colorsString = ["yellow", "green", "red", "blue"]
     
     var number : Int
     
@@ -30,7 +34,12 @@ struct Card {
             direction = "high"
         }else{
             direction = "low"
+        for colorCount in 0...3{
+            if color == colors[colorCount]{
+                colorString = colorsString[colorCount]
+            }
         }
+    }
     }
     
     

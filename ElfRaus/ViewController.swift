@@ -116,6 +116,7 @@ class ViewController: UIViewController {
         var cardsModel = game.getCardsModel()
         cardsModel.shuffle()
         var card = 0
+        game.turnModel()
         while (card < 5),(card<cardsModel.endIndex){
             //if(card < cardsModel.endIndex){
                 print(card, cardsModel.endIndex)

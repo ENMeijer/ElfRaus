@@ -49,6 +49,10 @@ class ElfRaus {
         }
     }
     
+    func turnModel(){
+        actRModel.turn(cards: cardsModelClass)
+    }
+    
     func drawCard(_ player: String){
         var cardIndex : Int
         print(cardsInDeck)
