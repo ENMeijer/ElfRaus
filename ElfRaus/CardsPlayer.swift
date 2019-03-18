@@ -131,6 +131,25 @@ class CardsPlayer{
     }
     
     func showHandByColor(_ color:UIColor?){
+        //TODO: change only pivot if shown different color
+        //??? should only change the pivot, after the hand is ordered; currently not working
+//        switch color {
+//        case colors[0]:
+//            //show from yellow onward
+//            playerCardsPivotView = 0
+//        case colors[1]:
+//            //show from green onward
+//            playerCardsPivotView = cardsPerColor[0]
+//        case colors[2]:
+//            //show from green onward
+//            playerCardsPivotView = cardsPerColor[0]+cardsPerColor[1]
+//        case colors[3]:
+//            //show from green onward
+//            playerCardsPivotView = cardsPerColor[0]+cardsPerColor[1]+cardsPerColor[2]
+//        default:
+//            playerCardsPivotView = 0
+//        }
+        // ??? current setting while the hand is not ordered
         playerCardsColorView = color
         playerCardsPivotView = 0
     }

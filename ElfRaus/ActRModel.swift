@@ -17,9 +17,6 @@ class ActRModel{
     init() {
         model.loadModel(fileName: "elfRausModel2")
         print("model loaded")
-        for card in modelCards.cards{
-            addCardToDM(card: card, model: model)
-        }
         
     }
     
@@ -33,17 +30,18 @@ class ActRModel{
         modelCards.getLegalOptionsColors()
         model.run()
         //let playerAction = sender.currentTitle! // The player action
-        let modelAction = model.lastAction(slot: "colour") // The model action
+        var modelAction = model.lastAction(slot: "colour") // The model action
         let mostCommonColor = modelCards.getMaxLegalOptionsColor()
         if mostCommonColor != "false" {
+            
             model.modifyLastAction(slot: "colour", value: mostCommonColor)
         }
         model.run()
         //print(modelAction)
         let modelDecision = model.lastAction(slot: "direction")
-        
-        print("model decision: ", modelDecision ?? nil)
-        print("dm of model: ", model.dm.chunks)
+        modelAction = mostCommonColor
+        print("model decision: ", modelDecision, modelAction)
+        //print("dm of model: ", model.dm.chunks)
         //print(model.buffers)
         print("waiting? ", model.waitingForAction)
         
