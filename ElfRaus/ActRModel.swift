@@ -17,9 +17,6 @@ class ActRModel{
     init() {
         model.loadModel(fileName: "elfRausModel2")
         print("model loaded")
-        for card in modelCards.cards{
-            addCardToDM(card: card, model: model)
-        }
         
     }
     
