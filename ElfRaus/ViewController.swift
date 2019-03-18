@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     
     //SET OUTLETS
-    @IBOutlet var playingField: [cardView]! {didSet{print("playingField set");initPlayingField()}}
+    @IBOutlet var playingField: [cardView]! {didSet{initPlayingField()}}
 
     @IBOutlet weak var playerCard1: cardView!
     @IBOutlet weak var playerCard2: cardView!
@@ -224,8 +224,6 @@ class ViewController: UIViewController {
     
     func updatePlayingFieldView(){
         if playingField != nil{
-            print("there is something in playingField")
-            print(game.playedCards.yellow_low ?? 0)
             playingField[0].setCardView(cardNumber: game.playedCards.yellow_low ?? 0)
             playingField[1].setCardView(cardNumber: game.playedCards.yellow_11 ? 11:-11)
             playingField[2].setCardView(cardNumber: game.playedCards.yellow_high ?? 0)
