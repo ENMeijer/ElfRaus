@@ -95,7 +95,8 @@ class CardsPlayer{
     }
     
     func playCard(_ card:Card, allLegalOptions:[Int:Card]){
-        for index in 0...legalOptions!.endIndex-1{
+        print(legalOptions!.endIndex-1)
+        for index in 0...(legalOptions!.endIndex-1){
             if(legalOptions![index].identifier == card.identifier){
                 legalOptions!.remove(at: index)
                 if(legalOptions!.endIndex == 0){

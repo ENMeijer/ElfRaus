@@ -104,6 +104,7 @@ class CardsModel{
                 if(legalOptions!.endIndex == 0){
                     legalOptions = nil
                 }
+                return
             }
         }
         for color in 0...3{
