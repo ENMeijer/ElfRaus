@@ -65,18 +65,24 @@ class cardView: UIButton {
     private func configureButton() {
         self.setAttributedTitle(cardString, for: .normal)
     }
+    
+    private var cardString: NSAttributedString {
+        return centeredAttributedString(numberString, fontSize: centerFontSize)
+    }
  
     private func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        return NSAttributedString(string: string, attributes: [.paragraphStyle:paragraphStyle, .font: font, .foregroundColor:color])
+        let shadow = NSShadow()
+        shadow.shadowColor = UIColor.black
+        shadow.shadowOffset = CGSize(width: 0, height: 0)
+        shadow.shadowBlurRadius = 1.0
+        return NSAttributedString(string: string, attributes: [.paragraphStyle:paragraphStyle, .font: font, .foregroundColor:color,  NSAttributedString.Key.shadow: shadow])
     }
     
-    private var cardString: NSAttributedString {
-        return centeredAttributedString(numberString, fontSize: centerFontSize)
-    }
+
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setNeedsDisplay()
