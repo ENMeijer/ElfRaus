@@ -4,21 +4,43 @@
 //
 //  Created by A. Bliek on 01/03/2019.
 //  Copyright © 2019 Eline Meijer. All rights reserved.
-//
+//NOT WORKING
 
 import Foundation
 import UIKit
 
 
 class CardsModel{
-    var cardsPerColor = [0,0,0,0] //yellow green red blue
-    var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
+    private var cardsPerColor = [0,0,0,0] //yellow green red blue
+    private var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
+    private let colorString = ["yellow", "green", "red", "blue"]
     
     var cards = [Card]()
-    var legalOptions : [Card]?
+    private var legalOptions : [Card]?
+    private var legalOptionsColors = [0,0,0,0] //yellow green red blue
     
     public func getLegalOptions() -> [Card]?{
         return legalOptions
+    }
+    
+    public func getLegalOptionsColors() -> [Int]{
+        return legalOptionsColors
+    }
+    
+    public func getMaxLegalOptionsColor() -> String{
+        var maxColor = -1
+        var maxAmount = 0
+        for color in 0...3{
+            if(legalOptionsColors[color]>maxAmount){
+                maxColor = color
+                maxAmount = legalOptionsColors[color]
+            }
+        }
+        if(maxColor > -1){
+            return colorString[maxColor]
+        }else{
+            return "false"
+        }
     }
     
     func drawCard(_ card:Card, allLegalOptions:[Int:Card]){
@@ -36,11 +58,16 @@ class CardsModel{
             }else{
                 legalOptions = [card]
             }
+            for color in 0...3{
+                if colors[color] == card.color{
+                    legalOptionsColors[color] += 1
+                }
+            }
         }
         print("draw: ", card.number)
         print("options model: ",legalOptions as Any)
     }
-    //oh wow
+    
     
     private func checkLegalOptions(_ card:Card, allLegalOptions:[Int:Card]){
         let index = card.identifier
@@ -59,6 +86,12 @@ class CardsModel{
                     legalOptions!.append(card)
                 }else{
                     legalOptions = [card]
+                    
+                }
+                for color in 0...3{
+                    if colors[color] == card.color{
+                        legalOptionsColors[color] += 1
+                    }
                 }
             }
         }
@@ -76,6 +109,7 @@ class CardsModel{
         for color in 0...3{
             if colors[color] == card.color{
                 cardsPerColor[color] -= 1
+                legalOptionsColors[color] -= 1
             }
         }
         for indexCard in 0...cards.endIndex{
