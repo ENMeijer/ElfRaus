@@ -12,10 +12,9 @@ import UIKit
 struct Card {
     
     var color : UIColor
-    var colorString = ""
     
     private var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
-    private let colorsString = ["yellow", "green", "red", "blue"]
+    private let colorsStrings = ["yellow", "green", "red", "blue"]
     
     var number : Int
     
@@ -24,6 +23,7 @@ struct Card {
     var identifier : Int
     
     let direction : String
+    let colorString : String
     
     init(color : UIColor, number : Int, location : String, identifier : Int) {
         self.color = color
@@ -31,17 +31,24 @@ struct Card {
         self.location = location
         self.identifier = identifier
         if(number >= 11){
-            direction = "high"
+            self.direction = "high"
         }else{
-            direction = "low"
-        for colorCount in 0...3{
-            if color == colors[colorCount]{
-                colorString = colorsString[colorCount]
-            }
+            self.direction = "low"
+        }
+        if color == UIColor.yellow{
+            colorString = "yellow"
+        }else if color == UIColor.red {
+            colorString = "red"
+        }else if color == UIColor.blue {
+            colorString = "blue"
+        }else{
+            colorString = "green"
+        }
+        //for colorCount in 0...3{
+          //  if color == colors[colorCount]{
+            //    colorString = colorsStrings[colorCount]
+            
         }
     }
-    }
-    
-    
-    
-}
+
+
