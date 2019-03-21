@@ -34,7 +34,7 @@ class cardView: UIButton {
             self.alpha = 1
             self.atLeastOneCard = true
         } else {
-            //print("there is a nil card in hand")
+            print("there is a nil card in hand")
             self.isEnabled = true //??? set false
             self.number = 0
             self.color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
@@ -49,7 +49,7 @@ class cardView: UIButton {
         case 0: number = cardNumber; self.alpha = 1.0; atLeastOneCard = false
         case -11: number = 11; self.alpha = howOpaque; atLeastOneCard = true
         case 1...20: number = cardNumber; self.alpha = 1.0;  atLeastOneCard = true
-        default:  number = -1; self.alpha = 1.0; atLeastOneCard = true    // shows -1 if it fucked up
+        default:  number = -1; self.alpha = 1.0; atLeastOneCard = true; print("calles default")    // shows -1 if it fucked up
         }
     }
     

@@ -132,6 +132,7 @@ class ViewController: UIViewController {
             enableNextButton(true)
         }
         showHand()
+        updateNextDrawButton()
     }
 
     
@@ -190,13 +191,27 @@ class ViewController: UIViewController {
         hand = game.getCardsPlayer()
 
         for indexButton in 0...cardButtons.endIndex-1{
-            if hand.selectedCards.count >= indexButton+hand.playerCardsPivotView {
+            if hand.view.count >= indexButton{
                 cardButtons[indexButton].setHandCardView(card: hand.getCardAtPositionView(at: indexButton + hand.playerCardsPivotView))
+            } else {
+                cardButtons[indexButton].setHandCardView(card: nil)
             }
         }
         //check if you can go right or left
         enableGoThroughPlayerHand()
     }
+    
+    func updateNextDrawButton(){
+        enableDrawButton(game.currentTurn.allowedToDrawCard())
+        enableNextButton(game.currentTurn.allowedToNextTurn())
+        if game.currentTurn.allowedToPlayCard(){
+            enableDrawButton(false)
+            enableNextButton(false)
+        }
+
+    }
+    
+    
     
     func updateViewFromModel(){
         //update playing field view
@@ -207,6 +222,8 @@ class ViewController: UIViewController {
         showHand()
         //update the number of cards a player has per color
         updateColorCountButtonView()
+        //update draw and next button
+        updateNextDrawButton()
     }
     
     func updatePlayingFieldView(){
@@ -285,27 +302,6 @@ class ViewController: UIViewController {
         }
     }
     
-}
-
-
-//EXTENSIONS
-// handles setting hand with too few cards
-extension UIButton {
-    func setPlayerCardView(handCards: [Card], cardIndex: Int){
-        //only accepts this
-        if (cardIndex < handCards.count && cardIndex>=0) {
-            self.setTitle(String(handCards[cardIndex].number), for: .normal)
-            self.setTitleColor(handCards[cardIndex].color, for: .normal)
-            self.backgroundColor = UIColor.lightGray
-            
-        }else {
-            //print("player has one card to few")
-            self.setTitle("", for: .normal)
-            self.setTitleColor(UIColor.black, for: .normal)
-            self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-            
-        }
-    }
 }
 
 

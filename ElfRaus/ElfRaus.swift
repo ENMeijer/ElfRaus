@@ -54,11 +54,15 @@ class ElfRaus {
             return
         }else if(cardsModelClass.getLegalOptions() == nil), (currentTurn.allowedToDrawCard()){
              drawCard("model")
+            actRModel.addCardToDM(card: cardsModelClass.cards[cardsModelClass.cards.endIndex-1], model: actRModel.model)
              turnModel()
         }else if(cardsModelClass.getLegalOptions()!.endIndex == 1){
+            actRModel.removeCardFromDM(model: actRModel.model, card: cardsModelClass.getLegalOptions()![0])
             chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
+            
         }else if(cardsModelClass.getLegalOptions()!.endIndex == cardsModelClass.cards.endIndex), (cardsModelClass.getLegalOptions()!.endIndex > 9){
             for option in legalOptions {
+                actRModel.removeCardFromDM(model: actRModel.model, card: option.value)
                 chooseCard(at: option.value.identifier, "model")
             }
         }else{
@@ -163,7 +167,7 @@ class ElfRaus {
         print(cards[0])
         deck.shuffle()
 
-        let numberOfDistributedCards = 5
+        let numberOfDistributedCards = 25
         for card in 1...numberOfDistributedCards {
             let cardPlayer = deck[card]
             deck.remove(at: card)
@@ -179,6 +183,7 @@ class ElfRaus {
             cardsInDeck -= 2
             
         }
+        actRModel.addAllcardsOfhandToDM(cards: cardsModelClass, model: actRModel.model)
         newTurn("Model")
     }
     

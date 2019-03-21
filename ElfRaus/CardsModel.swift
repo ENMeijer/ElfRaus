@@ -28,16 +28,24 @@ class CardsModel{
         return legalOptionsColors
     }
     
+  
+    
     public func getMaxLegalOptionsColor() -> String{
         var maxColor = -1
         var maxAmount = 0
         for color in 0...3{
-            if(legalOptionsColors[color]>maxAmount){
-                maxColor = color
-                maxAmount = legalOptionsColors[color]
+            if(legalOptionsColors[color]>0){
+                if(cardsPerColor[color] > maxAmount){
+                    maxColor = color
+                    maxAmount = cardsPerColor[color]
+                }
             }
         }
         if(maxColor > -1){
+            print("cards per color: ", cardsPerColor)
+            print("color array : ", legalOptionsColors)
+            print("color array: ", colorString[maxColor])
+            print("max Color : ", maxColor)
             return colorString[maxColor]
         }else{
             return "false"
@@ -105,7 +113,7 @@ class CardsModel{
                 if(legalOptions!.endIndex == 0){
                     legalOptions = nil
                 }
-                return
+                break
             }
         }
         for color in 0...3{
