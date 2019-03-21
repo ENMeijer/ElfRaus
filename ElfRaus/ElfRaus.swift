@@ -125,6 +125,7 @@ class ElfRaus {
                             }
                     }
                     currentTurn.playCard(cardOptions: cardsPlayerClass.getLegalOptions())
+                    
                 }else{
                     
                     for indexCardModel in 0...cardsModel.endIndex-1{

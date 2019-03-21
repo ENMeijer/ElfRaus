@@ -18,6 +18,7 @@ class CardsModel{
     var cards = [Card]()
     private var legalOptions : [Card]?
     private var legalOptionsColors = [0,0,0,0] //yellow green red blue
+    var won = false
     
     public func getLegalOptions() -> [Card]?{
         return legalOptions
@@ -121,6 +122,9 @@ class CardsModel{
         }
         for card in cards{
             checkLegalOptions(card, allLegalOptions: allLegalOptions)
+        }
+        if(cards.endIndex==0){
+            won = true
         }
     }
     

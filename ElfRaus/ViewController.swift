@@ -54,10 +54,11 @@ class ViewController: UIViewController {
     //ACTION FUNCTIONS
     
     @IBAction func touchCard(_ sender: cardView) {
+        //print("hand: ",hand.cards)
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].alpha == 1){
-                let shouldChooseCard = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
+                let shouldChooseCard = game.chooseCard(at: hand.view[cardNumber].identifier, "Player")
                 if shouldChooseCard{
                     if(game.currentTurn.allowedToNextTurn()){
                         enableNextButton(true)
@@ -172,7 +173,7 @@ class ViewController: UIViewController {
         }
         //check for going right
         if goRightButton != nil{
-            if(hand.playerCardsPivotView >= hand.view.count-5){
+            if(hand.playerCardsPivotView >= hand.selectedCards.count-5){
                 goRightButton.isEnabled = false
                 goRightButton.alpha = 0.5
             } else {
@@ -186,10 +187,10 @@ class ViewController: UIViewController {
     
     func showHand(){
         //set start hand
-        hand = game.getCardsPlayer() // currently will crash if there is problem
+        hand = game.getCardsPlayer()
 
         for indexButton in 0...cardButtons.endIndex-1{
-            if hand.cards.count >= indexButton+hand.playerCardsPivotView {
+            if hand.selectedCards.count >= indexButton+hand.playerCardsPivotView {
                 cardButtons[indexButton].setHandCardView(card: hand.getCardAtPositionView(at: indexButton + hand.playerCardsPivotView))
             }
         }
