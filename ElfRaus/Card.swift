@@ -20,7 +20,7 @@ struct Card {
     
     var location : String
     
-    var identifier : Int
+    var identifier = 0
     
     let direction : String
     let colorString : String

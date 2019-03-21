@@ -56,7 +56,15 @@ class CardsPlayer{
         updateView()
     }
     
+    func orderCards(){
+        print(cards[0].identifier)
+        if(cards.endIndex > 1){
+            cards.sort(by: { $0.identifier < $1.identifier  })
+        }
+    }
+    
     func updateView(){
+        
         view = []
         if (selectedCards.endIndex>5),(selectedCards.endIndex >= (5+playerCardsPivotView)){
             view = Array(selectedCards[(0+playerCardsPivotView) ..< (5+playerCardsPivotView)])
@@ -84,6 +92,7 @@ class CardsPlayer{
                 legalOptions = [card]
             }
         }
+        orderCards()
         print("draw: ", card.number)
         print("options player: ",legalOptions as Any)
     }
@@ -166,6 +175,7 @@ class CardsPlayer{
     }
     
     func updateHandView(){
+        
         //only shows cards with a given attribute
         if playerCardsColorView == nil {    //if no color is given, then return the full hand
             selectedCards = cards
@@ -183,6 +193,7 @@ class CardsPlayer{
     
     
     public func newTurn(allLegalOptions:[Int:Card]){
+        orderCards()
         for card in cards{
             checkLegalOptions(card, allLegalOptions: allLegalOptions)
         }
