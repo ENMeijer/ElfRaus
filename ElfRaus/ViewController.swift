@@ -53,7 +53,8 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var nextButton: UIButton! {didSet{ enableNextButton(false)}}
-    @IBOutlet weak var drawButton: UIButton!
+    @IBOutlet weak var drawButton: cardView! {didSet{ updateDrawButton()}}
+    
     
 
     @IBOutlet weak var opponentView: UILabel! {didSet { updateOpponentsCardCountView()}}
@@ -180,16 +181,6 @@ class ViewController: UIViewController {
         
     }
     
-    func enableDrawButton(_ isActive:Bool){
-        if isActive{
-            drawButton.isEnabled = true
-            drawButton.alpha = 1
-        } else {
-            drawButton.isEnabled = false
-            drawButton.alpha = 0.5
-        }
-    }
-    
     func enableGoThroughPlayerHand(){
         hand = game.getCardsPlayer()
         //check for going left
@@ -232,15 +223,20 @@ class ViewController: UIViewController {
     }
     
     func updateNextDrawButton(){
-        enableDrawButton(game.currentTurn.allowedToDrawCard())
+        drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
         enableNextButton(game.currentTurn.allowedToNextTurn())
         if game.currentTurn.allowedToPlayCard(){
-            enableDrawButton(false)
+            drawButton.enableDrawButton(false)
             //enableNextButton(false)
         }else if(game.cardsInDeck == 0){
             enableNextButton(true)
         }
-
+        updateDrawButton()
+    }
+    
+    func updateDrawButton(){
+        drawButton.setDrawButton(cardsLeft: game.cardsInDeck)
+        drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
     }
     
     
@@ -256,6 +252,7 @@ class ViewController: UIViewController {
         updateColorCountButtonView()
         //update draw and next button
         updateNextDrawButton()
+        updateDrawButton()
     }
     
     func updatePlayingFieldView(){

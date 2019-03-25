@@ -154,7 +154,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundTable" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-TK-80C">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="76c-vy-4XR">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="76c-vy-4XR">
                                 <rect key="frame" x="16" y="469" width="343" height="182"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-vD-6XY" userLabel="Stack View PlayerHandTop">
@@ -310,25 +310,25 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dn3-l2-Ifb" userLabel="Stack View PlayingField">
-                                <rect key="frame" x="16" y="102" width="280" height="297"/>
+                                <rect key="frame" x="16" y="102" width="285" height="297"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kWu-jk-0QB">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="68"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="68"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-Ce-nFD" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="68"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaC-UP-L3R" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="68"/>
+                                                <rect key="frame" x="97.5" y="0.0" width="90" height="68"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oux-um-IAP" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="68"/>
+                                                <rect key="frame" x="195.5" y="0.0" width="89.5" height="68"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -336,22 +336,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-Mb-97j">
-                                        <rect key="frame" x="0.0" y="76" width="280" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="76" width="285" height="68.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPa-Fm-dFp" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="68.5"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGo-Cu-g7Y" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="97.5" y="0.0" width="90" height="68.5"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQ9-Fl-cEP" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="195.5" y="0.0" width="89.5" height="68.5"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -359,22 +359,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5WX-93-ltF">
-                                        <rect key="frame" x="0.0" y="152.5" width="280" height="68"/>
+                                        <rect key="frame" x="0.0" y="152.5" width="285" height="68"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgr-ec-kUx" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="68"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaB-q4-SFJ" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="68"/>
+                                                <rect key="frame" x="97.5" y="0.0" width="90" height="68"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFs-zy-qxz" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="68"/>
+                                                <rect key="frame" x="195.5" y="0.0" width="89.5" height="68"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -382,22 +382,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-fX-WVs">
-                                        <rect key="frame" x="0.0" y="228.5" width="280" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="228.5" width="285" height="68.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LW-Tu-EQN" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="68.5"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOK-fU-Zko" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="97.5" y="0.0" width="90" height="68.5"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCK-E4-zsD" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="195.5" y="0.0" width="89.5" height="68.5"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -407,6 +407,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="500" id="51U-mh-AeM"/>
                                     <constraint firstAttribute="width" priority="750" constant="1000" id="EeO-uL-I1M"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="fmm-Vc-0Va"/>
                                 </constraints>
@@ -497,12 +498,15 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="sRR-fi-33o"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bUY-uC-bTX" userLabel="Stack View RightButtons">
-                                <rect key="frame" x="304" y="102" width="55" height="162"/>
+                                <rect key="frame" x="309" y="102" width="50" height="148"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bum-Gy-C75">
-                                        <rect key="frame" x="0.0" y="0.0" width="55" height="77"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
                                         <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="bbc-4S-wYh"/>
@@ -515,19 +519,14 @@
                                             <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J7c-4J-iIk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyS-f4-q1U">
-                                        <rect key="frame" x="0.0" y="85" width="55" height="77"/>
-                                        <color key="backgroundColor" red="0.99157005548477173" green="0.069143213331699371" blue="0.0069281449541449547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds7-UO-twk" customClass="cardView" customModule="ElfRaus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78" width="50" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="3DM-k2-3Rm"/>
-                                            <constraint firstAttribute="width" secondItem="nyS-f4-q1U" secondAttribute="height" multiplier="5:7" id="Rvd-fR-gCa"/>
+                                            <constraint firstAttribute="width" secondItem="Ds7-UO-twk" secondAttribute="height" multiplier="5:7" id="5nu-4d-jfI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Draw">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="drawButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awe-bM-rg6"/>
+                                            <action selector="drawButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yu7-pf-PKM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -561,7 +560,7 @@
                     <navigationItem key="navigationItem" id="g1L-a0-abS"/>
                     <connections>
                         <outlet property="blueButton" destination="aTP-me-zFl" id="CE6-uq-Ah2"/>
-                        <outlet property="drawButton" destination="nyS-f4-q1U" id="1X9-3j-mZK"/>
+                        <outlet property="drawButton" destination="Ds7-UO-twk" id="vj4-57-nuc"/>
                         <outlet property="goLeftButton" destination="ERR-jn-ZFQ" id="23e-Rd-P2L"/>
                         <outlet property="goRightButton" destination="Li5-70-zPN" id="fWK-FN-oaf"/>
                         <outlet property="greenButton" destination="j7k-05-vam" id="PQg-Ek-umO"/>
