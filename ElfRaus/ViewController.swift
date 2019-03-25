@@ -25,6 +25,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerCard4: cardView!
     @IBOutlet weak var playerCard5: cardView!
     
+    @IBOutlet weak var playerCard6: cardView!
+    @IBOutlet weak var playerCard7: cardView!
+    @IBOutlet weak var playerCard8: cardView!
+    @IBOutlet weak var playerCard9: cardView!
+    @IBOutlet weak var playerCard10: cardView!
+    
+    
     @IBOutlet var cardButtons: [cardView]! {didSet{showHand()}}
     
     

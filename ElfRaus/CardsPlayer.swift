@@ -18,6 +18,7 @@ class CardsPlayer{
     var view = [Card]()  // all visible cards
     var legalOptions : [Card]?
     var won = false
+    let cardsInPlayersHand = 10
     
     var playerCardsPivotView = 0
     var playerCardsColorView:UIColor? = nil //nil means no color; otherwise use one of the colors
@@ -50,7 +51,8 @@ class CardsPlayer{
     }
     
     func playerHandGoRight(){
-        if playerCardsPivotView < selectedCards.count-5 {
+        if playerCardsPivotView < selectedCards.count-cardsInPlayersHand {
+            // - the amount of cards
             playerCardsPivotView += 1
         }
         updateView()
@@ -66,8 +68,8 @@ class CardsPlayer{
     func updateView(){
         
         view = []
-        if (selectedCards.endIndex>5),(selectedCards.endIndex >= (5+playerCardsPivotView)){
-            view = Array(selectedCards[(0+playerCardsPivotView) ..< (5+playerCardsPivotView)])
+        if (selectedCards.endIndex>cardsInPlayersHand),(selectedCards.endIndex >= (cardsInPlayersHand+playerCardsPivotView)){
+            view = Array(selectedCards[(0+playerCardsPivotView) ..< (cardsInPlayersHand+playerCardsPivotView)])
         } else if(playerCardsPivotView>0){
             playerCardsPivotView = playerCardsPivotView-1
             updateView()
@@ -167,10 +169,10 @@ class CardsPlayer{
     func showTheNewlyDrawnCard(){
         // scroll until you see the new card
         // update the view
-        if selectedCards.count <= 5{
+        if selectedCards.count <= cardsInPlayersHand{
             playerCardsPivotView = 0
         } else {
-            playerCardsPivotView = selectedCards.count-5
+            playerCardsPivotView = selectedCards.count-cardsInPlayersHand
         }
     }
     
