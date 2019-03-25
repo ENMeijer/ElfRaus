@@ -49,7 +49,7 @@ class cardView: UIButton {
         case 0: number = cardNumber; self.alpha = 1.0; atLeastOneCard = false
         case -11: number = 11; self.alpha = howOpaque; atLeastOneCard = true
         case 1...20: number = cardNumber; self.alpha = 1.0;  atLeastOneCard = true
-        default:  number = -1; self.alpha = 1.0; atLeastOneCard = true    // shows -1 if it fucked up
+        default:  number = -1; self.alpha = 1.0; atLeastOneCard = true; print("calles default")    // shows -1 if it fucked up
         }
     }
     

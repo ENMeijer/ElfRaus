@@ -39,18 +39,23 @@ struct Turn {
             } else if(cardOptions == nil){
                 return true
             }
+        }else if(playedCards > 0){
+            return true
         }
         return false
     }
     
     public mutating func drawCard(cardOptions : [Card]?){
-        drawnCards += 1
+        drawnCards = drawnCards + 1
         self.cardOptions = cardOptions
+        print("drawn cards :", drawnCards)
     }
     
     public mutating func playCard(cardOptions : [Card]?){
-        playedCards += 1
+        print("in play Card")
+        playedCards = playedCards + 1
         self.cardOptions = cardOptions
+        print("played cards: ",playedCards)
     }
     
     

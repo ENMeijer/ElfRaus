@@ -54,18 +54,19 @@ class ViewController: UIViewController {
     //ACTION FUNCTIONS
     
     @IBAction func touchCard(_ sender: cardView) {
+        //print("hand: ",hand.cards)
         if let cardNumber = cardButtons.index(of: sender) {
-            print("index of button\(cardNumber)")
             // only send information to model if card is present
             if(cardButtons[cardNumber].alpha == 1){
-                let chouldChooseCard = game.chooseCard(at: hand.cards[cardNumber+hand.playerCardsPivotView].identifier, "Player")
-                if chouldChooseCard{
-                    enableNextButton(true) //enables button after a card was successfully played
-                    print("removes card")
+                let shouldChooseCard = game.chooseCard(at: hand.view[cardNumber].identifier, "Player")
+                if shouldChooseCard{
+                    if(game.currentTurn.allowedToNextTurn()){
+                        enableNextButton(true)
+                    }
                 }
                 updateViewFromModel()
             }
-        } else {
+        }else {
             print("choosen card was not in cardButtons")
         }
         showHand()
@@ -110,48 +111,35 @@ class ViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: UIButton) {
         //next card
-        game.newTurn("Player")
-        showHand()
-        var played = 0
-        var cardsModel = game.getCardsModel()
-        cardsModel.shuffle()
-        var card = 0
-        game.turnModel()
-        while (card < 5),(card<cardsModel.endIndex){
-            //if(card < cardsModel.endIndex){
-                print(card, cardsModel.endIndex)
-                let valid = game.chooseCard(at: cardsModel[card].identifier, "Model")
-                if valid{
-                    played += 1
-                    card = 0
-                } else{
-                    card+=1
-                }
-            
-            //}
+        if(game.currentTurn.allowedToNextTurn()){
+            game.newTurn("Player")
+            showHand()
+            game.turnModel()
+            game.newTurn("Model")
+            enableNextButton(false)
+            updateViewFromModel()
         }
-        game.drawCard("Model")
-        game.drawCard("Model")
-        game.drawCard("Model")
-        game.newTurn("Model")
-        enableNextButton(false)
-        updateViewFromModel()
     }
     
     @IBAction func drawButton(_ sender: UIButton) {
-        enableNextButton(true) //after you have drawn you can end your round
+        
         //draw action
         game.drawCard("Player")
         hand = game.getCardsPlayer()
         hand.showTheNewlyDrawnCard()
         updateColorCountButtonView()
+        if(game.currentTurn.allowedToNextTurn()){
+            enableNextButton(true)
+        }
         showHand()
+        updateNextDrawButton()
     }
 
     
     //FUNCTIONS
     
     func enableNextButton(_ isActive:Bool){
+        print("enable")
         if isActive{
             nextButton.isEnabled = true
             nextButton.alpha = 1
@@ -186,7 +174,7 @@ class ViewController: UIViewController {
         }
         //check for going right
         if goRightButton != nil{
-            if(hand.playerCardsPivotView >= hand.view.count-5){
+            if(hand.playerCardsPivotView >= hand.selectedCards.count-5){
                 goRightButton.isEnabled = false
                 goRightButton.alpha = 0.5
             } else {
@@ -200,16 +188,30 @@ class ViewController: UIViewController {
     
     func showHand(){
         //set start hand
-        hand = game.getCardsPlayer() // currently will crash if there is problem
+        hand = game.getCardsPlayer()
 
         for indexButton in 0...cardButtons.endIndex-1{
-            if hand.cards.count >= indexButton+hand.playerCardsPivotView {
+            if hand.view.count >= indexButton{
                 cardButtons[indexButton].setHandCardView(card: hand.getCardAtPositionView(at: indexButton + hand.playerCardsPivotView))
+            } else {
+                cardButtons[indexButton].setHandCardView(card: nil)
             }
         }
         //check if you can go right or left
         enableGoThroughPlayerHand()
     }
+    
+    func updateNextDrawButton(){
+        enableDrawButton(game.currentTurn.allowedToDrawCard())
+        enableNextButton(game.currentTurn.allowedToNextTurn())
+        if game.currentTurn.allowedToPlayCard(){
+            enableDrawButton(false)
+            enableNextButton(false)
+        }
+
+    }
+    
+    
     
     func updateViewFromModel(){
         //update playing field view
@@ -220,6 +222,8 @@ class ViewController: UIViewController {
         showHand()
         //update the number of cards a player has per color
         updateColorCountButtonView()
+        //update draw and next button
+        updateNextDrawButton()
     }
     
     func updatePlayingFieldView(){
@@ -300,25 +304,5 @@ class ViewController: UIViewController {
     
 }
 
-
-//EXTENSIONS
-// handles setting hand with too few cards
-extension UIButton {
-    func setPlayerCardView(handCards: [Card], cardIndex: Int){
-        //only accepts this
-        if (cardIndex < handCards.count && cardIndex>=0) {
-            self.setTitle(String(handCards[cardIndex].number), for: .normal)
-            self.setTitleColor(handCards[cardIndex].color, for: .normal)
-            self.backgroundColor = UIColor.lightGray
-            
-        }else {
-            //print("player has one card to few")
-            self.setTitle("", for: .normal)
-            self.setTitleColor(UIColor.black, for: .normal)
-            self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-            
-        }
-    }
-}
 
 

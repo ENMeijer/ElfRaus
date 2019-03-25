@@ -40,7 +40,7 @@ class Model {
      - returns: the value of the slot as String or nil if it doesn't exist
     */
     func lastAction(slot: String) -> String? {
-        print(buffers)
+        //print(buffers)
         print(waitingForAction)
         if let action = buffers["action"] {
             if let value = action.slotvals[slot] {
@@ -60,7 +60,7 @@ class Model {
         if let action = buffers["action"] {
             action.setSlot(slot: slot, value: value)
         }
-        print(buffers)
+        //print(buffers)
     }
   
     /**
@@ -132,7 +132,7 @@ class Model {
             var inst: Instantiation?
             for (_,p) in procedural.productions {
                 if let result = p.instantiate() {
-//                    print("Matching \(result.p.name) with utility \(result.u)")
+                    print("Matching \(result.p.name) with utility \(result.u)")
                     if inst == nil {
                         inst = result
                     } else if result.u > inst!.u {
@@ -140,7 +140,9 @@ class Model {
                     }
                 }
             }
-            if inst == nil && buffers["temporal"] == nil { return } // no matching productions and no running clock
+            if inst == nil && buffers["temporal"] == nil {
+                print("no pruductions available")
+                return} // no matching productions and no running clock
             time += 0.05
             if time > startTime + maxTime { return }
             if inst == nil {
