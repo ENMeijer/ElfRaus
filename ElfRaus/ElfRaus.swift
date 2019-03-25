@@ -63,6 +63,35 @@ class ElfRaus {
         }
     }
     
+    func turnModel(){
+        if(currentTurn.allowedToNextTurn()){
+            return
+        }else if(cardsModelClass.getLegalOptions() == nil), (currentTurn.allowedToDrawCard()){
+             drawCard("model")
+            actRModel.addCardToDM(card: cardsModelClass.cards[cardsModelClass.cards.endIndex-1], model: actRModel.model)
+             turnModel()
+        }else if(cardsModelClass.getLegalOptions()!.endIndex == 1){
+            actRModel.removeCardFromDM(model: actRModel.model, card: cardsModelClass.getLegalOptions()![0])
+            chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
+            
+        }else if(cardsModelClass.getLegalOptions()!.endIndex == cardsModelClass.cards.endIndex), (cardsModelClass.getLegalOptions()!.endIndex > 9){
+            for option in legalOptions {
+                actRModel.removeCardFromDM(model: actRModel.model, card: option.value)
+                chooseCard(at: option.value.identifier, "model")
+            }
+        }else{
+            let choice = actRModel.turn(cards: cardsModelClass)
+            print(choice)
+            for option in legalOptions{
+                if(option.value.colorString == choice[0]){
+                    if(option.value.direction == choice[1]){
+                        chooseCard(at: option.value.identifier, "model")
+                    }
+                }
+            }
+        }
+    }
+    
     func drawCard(_ player: String){
         var cardIndex : Int
         print(cardsInDeck)
@@ -88,9 +117,9 @@ class ElfRaus {
         }
     }
     
-    
+    //index = indentifier = index in array cards
     func chooseCard(at index : Int, _ player : String) -> Bool{
-        print("chooseCard")
+        print("chooseCard", player)
         print(currentTurn.allowedToPlayCard())
         if(currentTurn.allowedToPlayCard()){
             if (legalOptions.index(forKey: index) != nil) {
@@ -110,26 +139,25 @@ class ElfRaus {
                     for indexCardPlayer in 0...cardsPlayer.endIndex-1{
                         if(cardsPlayer[indexCardPlayer].identifier == index){
                             cardsPlayer.remove(at: indexCardPlayer)
-                            currentTurn.playCard(cardOptions: cardsPlayerClass.getLegalOptions())
-                            return true
-                            //break
+                            break
                             }
                     }
+                    currentTurn.playCard(cardOptions: cardsPlayerClass.getLegalOptions())
                     
                 }else{
                     
                     for indexCardModel in 0...cardsModel.endIndex-1{
                         if(cardsModel[indexCardModel].identifier == index){
-                            print("Model plays ", cardsModel[indexCardModel].number)
+                            //print("Model plays ", cardsModel[indexCardModel].number)
                             cardsModelClass.playCard(cardsModel[indexCardModel], allLegalOptions: legalOptions)
                             cardsModel.remove(at: indexCardModel)
-                            currentTurn.playCard(cardOptions: cardsModelClass.getLegalOptions())
-                            return true
-                            //break
+                            
+                            break
                         }
                     }
                     
                 }
+                
               return true
             }
             
@@ -141,7 +169,6 @@ class ElfRaus {
     }
     
     init(){
-        actRModel.turn(cards: cardsModelClass)
         var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
         
         //create all cards
@@ -154,7 +181,7 @@ class ElfRaus {
         print(cards[0])
         deck.shuffle()
 
-        let numberOfDistributedCards = 5
+        let numberOfDistributedCards = 25
         for card in 1...numberOfDistributedCards {
             let cardPlayer = deck[card]
             deck.remove(at: card)
@@ -168,8 +195,9 @@ class ElfRaus {
             cardsModel.append(cards[cardModel])
             cardsModelClass.drawCard(cards[cardModel], allLegalOptions: legalOptions)
             cardsInDeck -= 2
-
+            
         }
+        actRModel.addAllcardsOfhandToDM(cards: cardsModelClass, model: actRModel.model)
         newTurn("Model")
     }
     

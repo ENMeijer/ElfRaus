@@ -2,19 +2,28 @@
 ;;;
 
 (add-dm
-    (test isa iet val drie)
     (goal isa decision state start)
 )
 
 (set-all-baselevels -100 10) ;; time offset and number of references
 
 ;; Start production, does action to determine most colour in hand
-(p find-colour
+(p start
     =goal>
         isa decision
         state start
 ==>
     =goal>
+        isa decision
+        state find-colour
+)
+(p find-colour
+    =goal>
+        isa decision
+        state find-colour
+==>
+    =goal>
+        isa decision
         state wait-colour
     +action>
         isa move
@@ -34,9 +43,7 @@
     =goal>
         isa decision
         state find-direction
-        colour =colour
     +imaginal>
-        isa card
         colour =colour
         possible yes
 )
@@ -47,80 +54,67 @@
     =goal>
         isa decision
         state find-direction
-        colour =colour
     =imaginal>
-        isa card
         colour =colour
-        possible =yes
+        possible yes
 ==>
     =goal>
         isa decision
         state decide
-        colour =colour
-        direction high
     =imaginal>
         direction high
         other-direction low
+    +retrieval>
+        isa card
+        colour =colour
+        possible yes
 )
 
 (p find-direction-low
     =goal>
         isa decision
         state find-direction
-        colour =colour
     =imaginal>
-        isa card
         colour =colour
-        possible =yes
+        possible yes
 ==>
     =goal>
         isa decision
         state decide
-        colour =colour
-        direction low
     =imaginal>
         direction low
         other-direction high
     +retrieval>
-        isa test
+        isa card
         colour =colour
-        possible =yes
+        possible yes
 )
 
 (p test-retrieval
     =goal>
         isa decision
         state decide
-        colour =colour
-        direction =direction
-    =imaginal>
-        isa card
+    =retrieval>
         colour =colour
         possible =yes
         direction =direction
-        other-direction =other-direction
-    ?retrieval>
-        isa test
-        colour =colour
-        possible =yes
+        number =number
 ==>
     =goal>
-        isa desision
-        state test
+        isa decision
+        state end
     +action>
         colour =colour
         possible =yes
         direction =direction
+        number =number
 )
 
 (p test-retrieval-failure
     =goal>
         isa decision
         state decide
-        colour =colour
-        direction =direction
     =imaginal>
-        isa card
         colour =colour
         possible =yes
         direction =direction
@@ -129,13 +123,51 @@
         state  error
 ==>
     =goal>
-        isa desision
-        state test
+        isa decision
+        state decide
+    +retrieval>
+        isa card
+        colour =colour
+        possible =yes
         direction =other-direction
+)
+
+(p retrieve-other-direction
+    =goal>
+        isa decision
+        state decide
+    =retrieval>
+        colour =colour
+        possible =yes
+        direction =other-direction
+        number =number
+    =imaginal>
+        colour =colour
+        possible =yes
+        direction =direction
+        other-direction =other-direction
+==>
     +action>
         colour =colour
         possible =yes
         direction =other-direction
+        number =number
+    =goal>
+        isa decision
+        state end
+)
+(p start-new-turn
+    =goal>
+        isa decision
+        state end
+    =action>
+        colour =colour
+        possible =yes
+        direction =direction
+==>
+    =goal>
+        isa decision
+        state start
 )
 
 (goal-focus goal)

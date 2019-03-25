@@ -14,8 +14,10 @@ class CardsPlayer{
     var cardsPerColor = [0,0,0,0] //yellow green red blue
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     var cards = [Card](){ didSet{ updateHandView()}} // all cards
+    var selectedCards = [Card]()
     var view = [Card]()  // all visible cards
     var legalOptions : [Card]?
+    var won = false
     
     var playerCardsPivotView = 0
     var playerCardsColorView:UIColor? = nil //nil means no color; otherwise use one of the colors
@@ -30,11 +32,11 @@ class CardsPlayer{
     
     func getCardAtPositionView(at index:Int)-> Card?{
         updateHandView()
-        if index >= view.endIndex || index < view.startIndex{
-            print("card does not exist")
+        if index >= selectedCards.endIndex || index < selectedCards.startIndex{
+            //print("card does not exist")
             return nil
         }
-        return view[index]
+        return selectedCards[index]
     }
     func getLegalOptions() -> [Card]?{
         return legalOptions
@@ -44,11 +46,33 @@ class CardsPlayer{
         if playerCardsPivotView > 0{
             playerCardsPivotView -= 1
         }
+        updateView()
     }
     
     func playerHandGoRight(){
-        if playerCardsPivotView < view.count-5 {
+        if playerCardsPivotView < selectedCards.count-5 {
             playerCardsPivotView += 1
+        }
+        updateView()
+    }
+    
+    func orderCards(){
+        print(cards[0].identifier)
+        if(cards.endIndex > 1){
+            cards.sort(by: { $0.identifier < $1.identifier  })
+        }
+    }
+    
+    func updateView(){
+        
+        view = []
+        if (selectedCards.endIndex>5),(selectedCards.endIndex >= (5+playerCardsPivotView)){
+            view = Array(selectedCards[(0+playerCardsPivotView) ..< (5+playerCardsPivotView)])
+        } else if(playerCardsPivotView>0){
+            playerCardsPivotView = playerCardsPivotView-1
+            updateView()
+        }else{
+            view = selectedCards
         }
     }
     
@@ -68,6 +92,7 @@ class CardsPlayer{
                 legalOptions = [card]
             }
         }
+        orderCards()
         print("draw: ", card.number)
         print("options player: ",legalOptions as Any)
     }
@@ -95,7 +120,8 @@ class CardsPlayer{
     }
     
     func playCard(_ card:Card, allLegalOptions:[Int:Card]){
-        for index in 0...legalOptions!.endIndex-1{
+        print(legalOptions!.endIndex-1)
+        for index in 0...(legalOptions!.endIndex-1){
             if(legalOptions![index].identifier == card.identifier){
                 legalOptions!.remove(at: index)
                 if(legalOptions!.endIndex == 0){
@@ -118,6 +144,9 @@ class CardsPlayer{
         for card in cards{
             checkLegalOptions(card, allLegalOptions: allLegalOptions)
         }
+        if(cards.endIndex == 0){
+            won = true
+        }
         print(legalOptions)
     }
     
@@ -138,29 +167,33 @@ class CardsPlayer{
     func showTheNewlyDrawnCard(){
         // scroll until you see the new card
         // update the view
-        if view.count <= 5{
+        if selectedCards.count <= 5{
             playerCardsPivotView = 0
         } else {
-            playerCardsPivotView = view.count-5
+            playerCardsPivotView = selectedCards.count-5
         }
     }
     
     func updateHandView(){
+        
         //only shows cards with a given attribute
         if playerCardsColorView == nil {    //if no color is given, then return the full hand
-            view = cards
+            selectedCards = cards
+            updateView()
         } else {
-            view = []
+            selectedCards = []
             for card in cards{
                 if card.color == playerCardsColorView!{
-                    view.append(card)
+                    selectedCards.append(card)
                 }
             }
+            updateView()
         }
     }
     
     
     public func newTurn(allLegalOptions:[Int:Card]){
+        orderCards()
         for card in cards{
             checkLegalOptions(card, allLegalOptions: allLegalOptions)
         }
