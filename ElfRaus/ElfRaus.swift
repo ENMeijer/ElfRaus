@@ -188,6 +188,10 @@ class ElfRaus {
             cards[cardPlayer].location = "Player"
             cardsPlayer.append(cards[cardPlayer])
             cardsPlayerClass.drawCard(cards[cardPlayer], allLegalOptions: legalOptions)
+            if(cards[cardPlayer].number == 11 ){
+                legalOptions.updateValue(cards[cardPlayer], forKey: cards[cardPlayer].identifier)
+            }
+            
 
             let cardModel = deck[card]
             deck.remove(at: card)
@@ -195,10 +199,42 @@ class ElfRaus {
             cardsModel.append(cards[cardModel])
             cardsModelClass.drawCard(cards[cardModel], allLegalOptions: legalOptions)
             cardsInDeck -= 2
+            if(cards[cardModel].number == 11 ){
+                legalOptions.updateValue(cards[cardPlayer], forKey: cards[cardModel].identifier)
+            }
             
         }
         actRModel.addAllcardsOfhandToDM(cards: cardsModelClass, model: actRModel.model)
-        newTurn("Model")
+        var startPlayer = ["","","",""]
+        if(legalOptions.count > 0){
+        for card in legalOptions{
+            print(card.value.colorString)
+            if(card.value.colorString == "red"){
+                startPlayer[0] = card.value.location
+                break
+            }else if(card.value.colorString == "yellow"){
+                startPlayer[1] = card.value.location
+            }else if(card.value.colorString == "green"){
+                startPlayer[2] = card.value.location
+            }else if(card.value.colorString == "blue"){
+                startPlayer[3] = card.value.location
+            }
+        }
+        for player in startPlayer{
+            print(player)
+            if(player == "Model"){
+                newTurn("Player")
+                print("Start Player = Model!!!!!!!!!!!!!!!!!!!!!!!!!")
+                break
+            }else if(player == "Player"){
+                newTurn("Model")
+                print("Start Player = Player!!!!!!!!!!!!!!!!!!!!!!!!!")
+                break
+            }
+        }
+        }else{ //if no one has an 11, then the player stats
+            newTurn("Model")
+        }
     }
     
 }
