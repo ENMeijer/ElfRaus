@@ -33,6 +33,7 @@ struct Turn {
     }
     
     public func allowedToNextTurn() -> Bool {
+        print(playedCards)
         if(drawnCards == 3){
             if(playedCards > 0){
                 return true

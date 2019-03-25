@@ -118,13 +118,36 @@ class ViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: UIButton) {
         //next card
-        if(game.currentTurn.allowedToNextTurn()){
-            game.newTurn("Player")
-            showHand()
-            game.turnModel()
-            game.newTurn("Model")
-            enableNextButton(false)
-            updateViewFromModel()
+        if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
+            if(game.currentTurn.allowedToNextTurn()){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                enableNextButton(false)
+                updateViewFromModel()
+            } else if(game.cardsInDeck == 0){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                enableNextButton(false)
+                updateViewFromModel()
+            }
+        }else if(game.cardsPlayerClass.won){
+            let alert = UIAlertController(title: "Winning?", message: "You won!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yeah", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yeah", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }else{
+            let alert = UIAlertController(title: "Winning?", message: "The model won!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Oww", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Oww", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         }
     }
     
@@ -213,7 +236,9 @@ class ViewController: UIViewController {
         enableNextButton(game.currentTurn.allowedToNextTurn())
         if game.currentTurn.allowedToPlayCard(){
             enableDrawButton(false)
-            enableNextButton(false)
+            //enableNextButton(false)
+        }else if(game.cardsInDeck == 0){
+            enableNextButton(true)
         }
 
     }
