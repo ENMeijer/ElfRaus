@@ -204,7 +204,7 @@ class ViewController: UIViewController {
         }
         //check for going right
         if goRightButton != nil{
-            if(hand.playerCardsPivotView >= hand.selectedCards.count-5){
+            if(hand.playerCardsPivotView >= hand.selectedCards.count-cardButtons.endIndex){
                 goRightButton.isEnabled = false
                 goRightButton.alpha = 0.5
             } else {

@@ -10,25 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.835372"
+            timestampString = "575208313.096481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "316"
-            endingLineNumber = "316">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.8357919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            endingLineNumber = "316"
             landmarkName = "initPlayingField()"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,7 +26,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.836131"
+            timestampString = "575208313.096886"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "updateColorCountButtonView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElfRaus/ViewController.swift"
+            timestampString = "575208313.097183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -103,7 +105,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.836444"
+            timestampString = "575208313.097469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -151,7 +153,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.836763"
+            timestampString = "575208313.097744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -199,7 +201,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.8370841"
+            timestampString = "575208313.09802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -262,7 +264,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.837484"
+            timestampString = "575208313.098296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -325,7 +327,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.837797"
+            timestampString = "575208313.098574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -388,7 +390,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.838156"
+            timestampString = "575208313.098847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -404,12 +406,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.83845"
+            timestampString = "575208313.0991189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "301"
             endingLineNumber = "301"
-            landmarkName = "initPlayingField()"
+            landmarkName = "updateColorCountButtonView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -420,11 +422,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.838743"
+            timestampString = "575208313.099393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "311"
             endingLineNumber = "311"
+            landmarkName = "updateColorCountButtonView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElfRaus/ViewController.swift"
+            timestampString = "575208313.099668"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -436,28 +454,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.839094"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "updatePlayingFieldView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.839431"
+            timestampString = "575208313.099943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "244"
             endingLineNumber = "244"
-            landmarkName = "updatePlayingFieldView()"
+            landmarkName = "updateNextDrawButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -468,7 +470,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/CardsPlayer.swift"
-            timestampString = "575208061.839721"
+            timestampString = "575208313.100226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -484,7 +486,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/cardView.swift"
-            timestampString = "575206251.474408"
+            timestampString = "575208313.100502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -500,7 +502,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/cardView.swift"
-            timestampString = "575206251.474948"
+            timestampString = "575208313.1005501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -516,7 +518,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/cardView.swift"
-            timestampString = "575206251.475222"
+            timestampString = "575208313.10059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -532,7 +534,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/cardView.swift"
-            timestampString = "575206251.475454"
+            timestampString = "575208313.100629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -548,7 +550,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/cardView.swift"
-            timestampString = "575206251.4756809"
+            timestampString = "575208313.100666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -612,7 +614,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElfRaus/ViewController.swift"
-            timestampString = "575208061.839842"
+            timestampString = "575208313.100746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
