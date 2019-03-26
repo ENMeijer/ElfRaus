@@ -59,6 +59,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var opponentView: UILabel! {didSet { updateOpponentsCardCountView()}}
     
+    
+    
     //ACTION FUNCTIONS
     
     @IBAction func touchCard(_ sender: cardView) {
@@ -155,14 +157,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func drawButton(_ sender: UIButton) {
-        
-        //draw action
-        game.drawCard("Player")
-        hand = game.getCardsPlayer()
-        hand.showTheNewlyDrawnCard()
-        updateColorCountButtonView()
-        if(game.currentTurn.allowedToNextTurn()){
-            enableNextButton(true)
+        if game.currentTurn.allowedToDrawCard() {
+            //draw action
+            game.drawCard("Player")
+            hand = game.getCardsPlayer()
+            hand.showTheNewlyDrawnCard()
+            updateColorCountButtonView()
+            if(game.currentTurn.allowedToNextTurn()){
+                enableNextButton(true)
+            }
         }
         showHand()
         updateNextDrawButton()

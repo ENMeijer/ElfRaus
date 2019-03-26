@@ -17,6 +17,7 @@
 		2F40E141221DB26F007E5536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40E140221DB26F007E5536 /* ViewController.swift */; };
 		2F40E146221DB272007E5536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E145221DB272007E5536 /* Assets.xcassets */; };
 		2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E147221DB272007E5536 /* LaunchScreen.storyboard */; };
+		4000093D224A44400099BC3E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000093C224A44400099BC3E /* MainMenuViewController.swift */; };
 		4007D560223A67BB00EA4E17 /* cardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007D55F223A67BB00EA4E17 /* cardView.swift */; };
 		4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FD22281C2200A33FBE /* ACTRWindowView.swift */; };
 		4026931022281C2200A33FBE /* BufferAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FE22281C2200A33FBE /* BufferAction.swift */; };
@@ -55,6 +56,7 @@
 		2F40E145221DB272007E5536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F40E148221DB272007E5536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F40E14A221DB272007E5536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4000093C224A44400099BC3E /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		4007D55F223A67BB00EA4E17 /* cardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardView.swift; sourceTree = "<group>"; };
 		402692FD22281C2200A33FBE /* ACTRWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTRWindowView.swift; sourceTree = "<group>"; };
 		402692FE22281C2200A33FBE /* BufferAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAction.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		2F40E13D221DB26F007E5536 /* ElfRaus */ = {
 			isa = PBXGroup;
 			children = (
+				4000093C224A44400099BC3E /* MainMenuViewController.swift */,
 				4007D55F223A67BB00EA4E17 /* cardView.swift */,
 				21F32B0222297E1C001701E2 /* CardsModel.swift */,
 				2F40E145221DB272007E5536 /* Assets.xcassets */,
@@ -234,6 +237,7 @@
 				4026931F22281C2200A33FBE /* Tokenizer.swift in Sources */,
 				4026931622281C2200A33FBE /* Instantiation.swift in Sources */,
 				4026931922281C2200A33FBE /* Procedural.swift in Sources */,
+				4000093D224A44400099BC3E /* MainMenuViewController.swift in Sources */,
 				2156BDB9223A627800DA7264 /* Turn.swift in Sources */,
 				4026931E22281C2200A33FBE /* Temporal.swift in Sources */,
 				4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */,
