@@ -19,6 +19,7 @@ class cardView: UIButton {
     @IBInspectable
     private var atLeastOneCard: Bool = false { didSet { setNeedsDisplay(); setNeedsLayout() } } //card is invisable if no card is given
     private var interactable = false //interactable for hand cards, not interactable for table cards; dependent on card location
+    private var cardBackgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
     //how opaque should 11 be at the beginning
     private let howOpaque:CGFloat = 0.2
@@ -38,6 +39,28 @@ class cardView: UIButton {
             self.isEnabled = true //??? set false
             self.number = 0
             self.color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+            self.alpha = howOpaque
+        }
+    }
+    
+    func setDrawButton(cardsLeft:Int){
+        if cardsLeft<=0{
+            self.isEnabled = false
+        } else {
+            self.number = cardsLeft
+            self.color = UIColor.black
+            self.alpha = 1
+            self.atLeastOneCard = true
+            self.cardBackgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        }
+    }
+    
+    func enableDrawButton(_ isActive:Bool){
+        if isActive{
+            self.isEnabled = true
+            self.alpha = 1
+        } else {
+            self.isEnabled = false
             self.alpha = howOpaque
         }
     }
@@ -93,7 +116,7 @@ class cardView: UIButton {
         let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         roundedRect.addClip()
         if atLeastOneCard {
-            UIColor.white.setFill()
+            cardBackgroundColor.setFill()
         } else {
             #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0).setFill()
         }
@@ -121,6 +144,7 @@ extension cardView {
         switch number {
         case 0: return ""
         case 1...20: return String(number)
+        case 21...80: return String(number) //needed for the draw card pile
         default: return "?"
         }
     }

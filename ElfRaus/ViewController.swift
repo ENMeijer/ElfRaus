@@ -25,6 +25,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerCard4: cardView!
     @IBOutlet weak var playerCard5: cardView!
     
+    @IBOutlet weak var playerCard6: cardView!
+    @IBOutlet weak var playerCard7: cardView!
+    @IBOutlet weak var playerCard8: cardView!
+    @IBOutlet weak var playerCard9: cardView!
+    @IBOutlet weak var playerCard10: cardView!
+    
+    
     @IBOutlet var cardButtons: [cardView]! {didSet{showHand()}}
     
     
@@ -46,7 +53,8 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var nextButton: UIButton! {didSet{ enableNextButton(false)}}
-    @IBOutlet weak var drawButton: UIButton!
+    @IBOutlet weak var drawButton: cardView! {didSet{ updateDrawButton()}}
+    
     
 
     @IBOutlet weak var opponentView: UILabel! {didSet { updateOpponentsCardCountView()}}
@@ -173,16 +181,6 @@ class ViewController: UIViewController {
         
     }
     
-    func enableDrawButton(_ isActive:Bool){
-        if isActive{
-            drawButton.isEnabled = true
-            drawButton.alpha = 1
-        } else {
-            drawButton.isEnabled = false
-            drawButton.alpha = 0.5
-        }
-    }
-    
     func enableGoThroughPlayerHand(){
         hand = game.getCardsPlayer()
         //check for going left
@@ -197,7 +195,7 @@ class ViewController: UIViewController {
         }
         //check for going right
         if goRightButton != nil{
-            if(hand.playerCardsPivotView >= hand.selectedCards.count-5){
+            if(hand.playerCardsPivotView >= hand.selectedCards.count-cardButtons.endIndex){
                 goRightButton.isEnabled = false
                 goRightButton.alpha = 0.5
             } else {
@@ -225,15 +223,20 @@ class ViewController: UIViewController {
     }
     
     func updateNextDrawButton(){
-        enableDrawButton(game.currentTurn.allowedToDrawCard())
+        drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
         enableNextButton(game.currentTurn.allowedToNextTurn())
         if game.currentTurn.allowedToPlayCard(){
-            enableDrawButton(false)
+            drawButton.enableDrawButton(false)
             //enableNextButton(false)
         }else if(game.cardsInDeck == 0){
             enableNextButton(true)
         }
-
+        updateDrawButton()
+    }
+    
+    func updateDrawButton(){
+        drawButton.setDrawButton(cardsLeft: game.cardsInDeck)
+        drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
     }
     
     
@@ -249,6 +252,7 @@ class ViewController: UIViewController {
         updateColorCountButtonView()
         //update draw and next button
         updateNextDrawButton()
+        updateDrawButton()
     }
     
     func updatePlayingFieldView(){
