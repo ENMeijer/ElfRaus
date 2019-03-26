@@ -49,6 +49,14 @@ class CardsPlayer{
         updateView()
     }
     
+    public func countScore() -> Int {
+        var score = 0
+        for card in cards{
+            score = score + card.number
+        }
+        return score
+    }
+    
     func playerHandGoRight(){
         if playerCardsPivotView < selectedCards.count-5 {
             playerCardsPivotView += 1

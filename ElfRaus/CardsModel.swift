@@ -28,6 +28,15 @@ class CardsModel{
         return legalOptionsColors
     }
     
+    
+    public func countScore() -> Int {
+        var score = 0
+        for card in cards{
+            score = score + card.number
+        }
+        return score
+    }
+    
   
     
     public func getMaxLegalOptionsColor() -> String{
