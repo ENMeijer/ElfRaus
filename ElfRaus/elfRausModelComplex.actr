@@ -1,0 +1,231 @@
+;;; Model of Elf Raus ACT-R
+;;;
+
+(add-dm
+    (goal isa decision state start)
+)
+
+(set-all-baselevels -100 10) ;; time offset and number of references
+
+;; Start production, does action to determine most colour in hand
+(p start
+	
+    =goal>
+        isa decision
+        state start
+==>
+    =goal>
+        isa decision
+        state retrieve-options
+)
+(p find-colour
+    =goal>
+        isa decision
+        state retrieve-options
+==>
+    =goal>
+        isa decision
+        state look-at-cards
+    +action>
+        isa move
+        colour hello
+        direction joejoe
+        number no-number
+
+)
+;;action find-colour
+;; here between productions, swift finds colour  and direction in hand
+
+(p look for colour-direction
+    =goal>
+        isa decision
+        state look-at-cards
+    =action>
+        colour =colour
+        direction =direction
+        number =number
+==>
+    =goal>
+        isa decision
+        state start-retrieve-card
+        number =number
+    =imaginal>
+    	colour =colour
+    	direction =direction
+    	number =number
+)
+
+;; Selects the colour of the card and makes a retrieval request for which direction to go.
+;; model looks at own cards, which ones are possible and how important are they to be played. 
+(p find-direction-high
+    =goal>
+        isa decision
+        state start-retrieve-card
+        number <20
+   =imaginal>
+    	colour =colour
+    	direction high
+    	number =number
+==>
+    =goal>
+        isa decision
+        state retrieve
+    =imaginal>
+        direction high
+        colour =colour
+        number =number+1
+    +retrieval>
+        isa card
+        colour =colour
+        direction high
+        possible no
+    	number =number+1
+)
+
+(p find-direction-low
+    =goal>
+        isa decision
+        state start-retrieve-card
+        number >1
+   =imaginal>
+    	colour =colour
+    	direction low
+    	number =number
+==>
+    =goal>
+        isa decision
+        state retrieve
+    =imaginal>
+        direction low
+        colour =colour
+        number =number-1
+    +retrieval>
+        isa card
+        colour =colour
+        direction low
+        possible no
+    	number =number-1
+)
+(p test-retrieval
+    =goal>
+        isa decision
+        state retrieve
+    =retrieval>
+        colour =colour
+        possible =possible
+        direction =direction
+        number =number
+==>
+    =goal>
+        isa decision
+        state start-retrieve-card
+        number =number
+    +action>
+    	isa card-present
+        colour =colour
+        direction =direction
+        number =number
+)
+
+(p test-retrieval-failure
+    =goal>
+        isa decision
+        state retrieve
+    =imaginal>
+        colour =colour
+        possible =possible
+        direction =direction
+        number =number
+    ?retrieval>
+        state  error
+==>
+    =goal>
+        isa decision
+        state start-retrieve-card
+        number =number
+    =imaginal>
+    	colour =colour
+        possible =possible
+        direction =direction
+        number =number
+	+action>
+    	isa card-not-present
+        colour =colour
+        direction =direction
+        number =number
+)
+
+;; Ending production, here after, remember which cards are played by opponent
+(p number-above-20
+	=goal>
+		isa decision
+		state retrieve
+		number 20
+	=imaginal>
+		colour =colour
+        direction =direction
+==>
+	+retrieval>
+		isa player-card
+		colour=colour
+		direction =direction
+)
+
+(p number-1
+	=goal>
+		isa decision
+		state retrieve
+		number 1
+	=imaginal>
+		colour =colour
+        direction =direction
+==>
+	=goal>
+		state retrieve-players-card
+	+retrieval>
+		isa player-card
+		colour=colour
+		direction =direction
+)
+	
+;;	Remembering  the opponents cards. 
+(p retrieve-player-card
+	=goal>
+		state retrieve-players-card
+	?retrieval>
+		isa player-card
+		colour =colour
+		direction =direction
+==>
+	+action>
+		isa player-card
+		colour =colour
+		direction =direction
+)
+
+(p retrieve-player-card
+	=goal>
+		state retrieve-players-card
+	?retrieval>
+		state error
+==>
+	+action>
+		isa no-card-player
+	=goal>
+		state end
+)
+
+;; start for the new turn
+(p start-new-turn
+    =goal>
+        isa decision
+        state end
+==>
+    =goal>
+        isa decision
+        state start
+    +action>
+    	state start-new-turn
+)
+
+(goal-focus goal)
