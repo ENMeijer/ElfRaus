@@ -136,14 +136,16 @@ class ViewController: UIViewController {
                 updateViewFromModel()
             }
         }else if(game.cardsPlayerClass.won){
-            let alert = UIAlertController(title: "Winning?", message: "You won!", preferredStyle: .alert)
+            let m = "You won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
+            let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Yeah", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "Yeah", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
         }else{
-            let alert = UIAlertController(title: "Winning?", message: "The model won!", preferredStyle: .alert)
+            let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
+            let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Oww", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "Oww", style: .cancel, handler: nil))
@@ -170,7 +172,7 @@ class ViewController: UIViewController {
     //FUNCTIONS
     
     func enableNextButton(_ isActive:Bool){
-        print("enable")
+        //print("enable")
         if isActive{
             nextButton.isEnabled = true
             nextButton.alpha = 1
@@ -237,6 +239,9 @@ class ViewController: UIViewController {
     func updateDrawButton(){
         drawButton.setDrawButton(cardsLeft: game.cardsInDeck)
         drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
+        if(game.cardsInDeck>60){ //make it visible at the start of the game, otherwise when model starts the button will not get visible
+            drawButton.enableDrawButton(true)
+        }
     }
     
     

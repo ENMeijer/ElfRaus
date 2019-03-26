@@ -14,11 +14,12 @@ class CardsModel{
     private var cardsPerColor = [0,0,0,0] //yellow green red blue
     private var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     private let colorString = ["yellow", "green", "red", "blue"]
-    
     var cards = [Card]()
     private var legalOptions : [Card]?
     private var legalOptionsColors = [0,0,0,0] //yellow green red blue
     var won = false
+    
+
     
     public func getLegalOptions() -> [Card]?{
         return legalOptions
@@ -28,6 +29,34 @@ class CardsModel{
         return legalOptionsColors
     }
     
+    
+    public func ableToPlayAllCards(hand:[Card], possibleCards:[Card]) -> Bool{
+        print("in ableToPlay: "+String(hand.count) + " " + String(possibleCards.count))
+        if(hand.count > 0),(possibleCards.count > 0),(possibleCards.count < 8),(hand.count != possibleCards.count){
+            for card in 0...hand.endIndex-1 {
+                if(possibleCards[0].identifier-1 == hand[card].identifier){
+                    var p = possibleCards
+                    p.remove(at: 0)
+                    p.append(hand[card])
+                    var h = hand
+                    h.remove(at: card)
+                    return ableToPlayAllCards(hand: h, possibleCards: p)
+                }else if(possibleCards[0].identifier+1 == hand[card].identifier){
+                    var p = possibleCards
+                    p.remove(at: 0)
+                    p.append(hand[card])
+                    var h = hand
+                    h.remove(at: card)
+                    return ableToPlayAllCards(hand: h, possibleCards: p)
+                }
+            }
+        }else if(hand.count == possibleCards.count){
+            return true
+        }else if(hand.count == 0){
+            return true
+        }
+        return false
+    }
     
     public func countScore() -> Int {
         var score = 0

@@ -130,7 +130,8 @@ class CardsPlayer{
     }
     
     func playCard(_ card:Card, allLegalOptions:[Int:Card]){
-        print(legalOptions!.endIndex-1)
+        //print(legalOptions!.endIndex-1)
+        if(legalOptions != nil){
         for index in 0...(legalOptions!.endIndex-1){
             if(legalOptions![index].identifier == card.identifier){
                 legalOptions!.remove(at: index)
@@ -158,6 +159,7 @@ class CardsPlayer{
             won = true
         }
         print(legalOptions)
+        }
     }
     
     func getAmountPerColor(color:UIColor) -> Int{

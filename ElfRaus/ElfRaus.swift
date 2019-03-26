@@ -74,14 +74,13 @@ class ElfRaus {
             actRModel.removeCardFromDM(model: actRModel.model, card: cardsModelClass.getLegalOptions()![0])
             chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
             
-        }else if(cardsModelClass.getLegalOptions()!.endIndex == cardsModelClass.cards.endIndex), (cardsModelClass.getLegalOptions()!.endIndex > 9){
-            for option in legalOptions {
-                actRModel.removeCardFromDM(model: actRModel.model, card: option.value)
-                chooseCard(at: option.value.identifier, "model")
+        }else if(cardsModelClass.ableToPlayAllCards(hand: cardsModelClass.cards, possibleCards: cardsModelClass.getLegalOptions()!)){
+            print("in play all cards")
+            while(cardsModelClass.cards.count > 0){
+                chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
             }
         }else{
             let choice = actRModel.turn(cards: cardsModelClass)
-            print(choice)
             for option in legalOptions{
                 if(option.value.colorString == choice[0]){
                     if(option.value.direction == choice[1]){
@@ -94,7 +93,6 @@ class ElfRaus {
     
     func drawCard(_ player: String){
         var cardIndex : Int
-        print(cardsInDeck)
         if(cardsInDeck > 0),(currentTurn.allowedToDrawCard()){
             
             cardIndex = deck[0]
@@ -113,17 +111,16 @@ class ElfRaus {
                 }
                 cardsInDeck -= 1
             }
-            print(cardIndex)
         }
     }
     
     //index = indentifier = index in array cards
     func chooseCard(at index : Int, _ player : String) -> Bool{
-        print("chooseCard", player)
-        print(currentTurn.allowedToPlayCard())
+        //print("chooseCard", player)
+        //print(currentTurn.allowedToPlayCard())
         if(currentTurn.allowedToPlayCard()){
             if (legalOptions.index(forKey: index) != nil) {
-                print("play card")
+                //print("play card")
                 cards[index].location = "Played"
                 if(cards[index].number >= 11), (cards[index].number < 20){
                     legalOptions.updateValue(cards[index+1], forKey: index+1)
@@ -133,7 +130,7 @@ class ElfRaus {
                 }
                 legalOptions.removeValue(forKey: index)
                 playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
-                playedCards.printPlayedCards()
+                //playedCards.printPlayedCards()
                 if(player == "Player"){
                     cardsPlayerClass.playCard(cards[index], allLegalOptions: legalOptions)
                     for indexCardPlayer in 0...cardsPlayer.endIndex-1{
@@ -162,7 +159,6 @@ class ElfRaus {
             }
             
         }
-        print(index)
         return false
         
         
@@ -178,10 +174,9 @@ class ElfRaus {
             }
             legalOptions.updateValue(cards[color*20+10], forKey: color*20+10)
         }
-        print(cards[0])
         deck.shuffle()
 
-        let numberOfDistributedCards = 25
+        let numberOfDistributedCards = 20
         for card in 1...numberOfDistributedCards {
             let cardPlayer = deck[card]
             deck.remove(at: card)
@@ -208,7 +203,6 @@ class ElfRaus {
         var startPlayer = ["","","",""]
         if(legalOptions.count > 0){
             for card in legalOptions{
-                print(card.value.colorString)
                 if(card.value.colorString == "red"){
                     startPlayer[0] = card.value.location
                     break
@@ -221,21 +215,19 @@ class ElfRaus {
                 }
             }
             for player in startPlayer{
-                print(player)
                 if(player == "Model"){
                     newTurn("Player")
                     turnModel()
-                    print("Start Player = Model!!!!!!!!!!!!!!!!!!!!!!!!!")
                     break
                 }else if(player == "Player"){
                     newTurn("Model")
-                    print("Start Player = Player!!!!!!!!!!!!!!!!!!!!!!!!!")
                     break
                 }
             }
         }else{ //if no one has an 11, then the player stats
             newTurn("Model")
         }
+
     }
     
 }

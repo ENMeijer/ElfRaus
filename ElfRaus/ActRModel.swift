@@ -15,7 +15,7 @@ class ActRModel{
 
     init() {
         model.loadModel(fileName: "elfRausModel2")
-        print("model loaded")
+        //print("model loaded")
         for card in modelCards.cards{
             addCardToDM(card: card, model: model)
         }
@@ -23,15 +23,14 @@ class ActRModel{
     }
     
     public func turn(cards:CardsModel) -> [String]{
-        print("!!!!!!!!!!!!!Model ActR!!!!!!!!!!!!!!!")
         self.modelCards = cards
-        print(model.buffers)
+        //print(model.buffers)
         //Set Legal options of hand in the chunks in DM to possible: "yes"
         //addAllcardsOfhandToDM(cards: cards, model: model)
         setLegalOptions(cards: cards, model: model)
         
         //Let the model run
-        print("dm of model: ", model.dm.chunks)
+        //print("dm of model: ", model.dm.chunks)
         model.run()
         var modelCardColor = model.lastAction(slot: "colour") // The model action
         
@@ -45,19 +44,19 @@ class ActRModel{
         modelCardColor = mostCommonColor
         let modelCardDirection = model.lastAction(slot: "direction")
         let modelCardNumber = model.lastAction(slot: "number")
-        print(model.lastAction(slot: "number"))
-        print(modelCardNumber, modelCardDirection)
+        //print(model.lastAction(slot: "number"))
+        //print(modelCardNumber, modelCardDirection)
         var modelCardNumberInt : Int = 0
         if modelCardNumber != nil{
             modelCardNumberInt = (modelCardNumber! as NSString).integerValue
-            print("Card Number ",modelCardNumberInt)
+            //print("Card Number ",modelCardNumberInt)
         }else{
             modelCardNumberInt = 21
         }
         print("model decision: ", modelCardDirection!, modelCardColor!, modelCardNumberInt)
 
         //let playerAction = sender.currentTitle! // The player action
-        print("waiting? ", model.waitingForAction)
+        //print("waiting? ", model.waitingForAction)
         
         //Remove choosen card from DM
         let choosenChunk = getChunk(nameChunk: "card\(modelCardColor!)\(modelCardNumberInt)", model: model)
@@ -84,7 +83,7 @@ class ActRModel{
     
     func getCardChunk(card: Card, model: Model) -> Chunk{
         let nameChunk = "card\(card.colorString)\(card.number)"
-        print(model.dm.chunks)
+        //print(model.dm.chunks)
         let index = model.dm.chunks.index(forKey: nameChunk)
         let chunk = model.dm.chunks[index!].value
         return chunk
