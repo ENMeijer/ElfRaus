@@ -12,6 +12,7 @@ class ActRModel{
     
     private var modelCards = CardsModel()
     let model = Model()
+    let complexModel = Model()
 
     init() {
         model.loadModel(fileName: "elfRausModel2")
@@ -22,11 +23,13 @@ class ActRModel{
         
     }
     
+    
+    
     public func turn(cards:CardsModel) -> [String]{
         self.modelCards = cards
         //print(model.buffers)
         //Set Legal options of hand in the chunks in DM to possible: "yes"
-        //addAllcardsOfhandToDM(cards: cards, model: model)
+        addAllcardsOfhandToDM(cards: cards, model: model)
         setLegalOptions(cards: cards, model: model)
         
         //Let the model run

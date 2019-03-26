@@ -43,6 +43,7 @@
 		40F25DD8224A896A00C48F32 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */; };
 		40F68C9E22240043004EBCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F68C9D22240043004EBCFC /* Main.storyboard */; };
 		BB22DA9A222FE919005EC811 /* testActR.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22DA99222FE919005EC811 /* testActR.swift */; };
+		BBEB1800224A62E1006F51F4 /* elfRausModelComplex.actr in Resources */ = {isa = PBXBuildFile; fileRef = BBEB17FF224A62E1006F51F4 /* elfRausModelComplex.actr */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DifficultyViewController.swift; path = ElfRaus/DifficultyViewController.swift; sourceTree = "<group>"; };
 		40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BB22DA99222FE919005EC811 /* testActR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testActR.swift; sourceTree = "<group>"; };
+		BBEB17FF224A62E1006F51F4 /* elfRausModelComplex.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = elfRausModelComplex.actr; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				2F40E145221DB272007E5536 /* Assets.xcassets */,
 				2F40E147221DB272007E5536 /* LaunchScreen.storyboard */,
 				2F40E13E221DB26F007E5536 /* AppDelegate.swift */,
+				BBEB17FF224A62E1006F51F4 /* elfRausModelComplex.actr */,
 				4026930222281C2200A33FBE /* elfRausModel2.actr */,
 				BB22DA99222FE919005EC811 /* testActR.swift */,
 				402692FC22281C2200A33FBE /* ACT-R */,
@@ -226,6 +229,7 @@
 				2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */,
 				2F40E146221DB272007E5536 /* Assets.xcassets in Resources */,
 				40F68C9E22240043004EBCFC /* Main.storyboard in Resources */,
+				BBEB1800224A62E1006F51F4 /* elfRausModelComplex.actr in Resources */,
 				4026931422281C2200A33FBE /* elfRausModel2.actr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
