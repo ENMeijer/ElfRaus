@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+//class ViewController: UIViewController, GameAndHandVariables {
+class ViewController: UIViewControllerAndVariablesPassedAround {
     //SET VARIABLES
-    var game = ElfRaus()
-    var hand = CardsPlayer()
+    //var game = ElfRaus()
+    //var hand = CardsPlayer()
+    //included in UIViewControllerAndVariablesPassedAround, because these two need to be passed around
 
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     
@@ -145,6 +146,8 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Yeah", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
+            //the game is over
+            self.gameRunning = false
         }else{
             let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
             let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
@@ -153,6 +156,8 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Oww", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
+            //the game is over
+            self.gameRunning = false
         }
     }
     

@@ -39,6 +39,8 @@
 		4026932022281C2200A33FBE /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930E22281C2200A33FBE /* Vision.swift */; };
 		4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026932322281EFA00A33FBE /* PlayingCardView.swift */; };
 		402693262228200400A33FBE /* PlayedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402693252228200400A33FBE /* PlayedCards.swift */; };
+		40DCD5BF224A5FCB00D26022 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCD5BE224A5FCB00D26022 /* DifficultyViewController.swift */; };
+		40DCD5C7224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */; };
 		40F68C9E22240043004EBCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F68C9D22240043004EBCFC /* Main.storyboard */; };
 		BB22DA9A222FE919005EC811 /* testActR.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22DA99222FE919005EC811 /* testActR.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		4026930E22281C2200A33FBE /* Vision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		4026932322281EFA00A33FBE /* PlayingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		402693252228200400A33FBE /* PlayedCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayedCards.swift; sourceTree = "<group>"; };
+		40DCD5BE224A5FCB00D26022 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
+		40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAndVariablesPassedAround.swift; sourceTree = "<group>"; };
 		40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BB22DA99222FE919005EC811 /* testActR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testActR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +116,8 @@
 		2F40E13D221DB26F007E5536 /* ElfRaus */ = {
 			isa = PBXGroup;
 			children = (
+				40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */,
+				40DCD5BE224A5FCB00D26022 /* DifficultyViewController.swift */,
 				4000093C224A44400099BC3E /* MainMenuViewController.swift */,
 				4007D55F223A67BB00EA4E17 /* cardView.swift */,
 				21F32B0222297E1C001701E2 /* CardsModel.swift */,
@@ -249,6 +255,7 @@
 				4026931822281C2200A33FBE /* Parser.swift in Sources */,
 				2F40E141221DB26F007E5536 /* ViewController.swift in Sources */,
 				21359F41222FF69F00EB75F5 /* CardsPlayer.swift in Sources */,
+				40DCD5C7224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift in Sources */,
 				4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */,
 				2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */,
 				210DC30E221EE0A000DF4CFC /* Card.swift in Sources */,
@@ -261,6 +268,7 @@
 				4026931322281C2200A33FBE /* Declarative.swift in Sources */,
 				4026931C22281C2200A33FBE /* SlotCondition.swift in Sources */,
 				4026931D22281C2200A33FBE /* Support.swift in Sources */,
+				40DCD5BF224A5FCB00D26022 /* DifficultyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
