@@ -80,6 +80,8 @@ class ElfRaus {
                 chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
             }
         }else{
+            let ComplexChoice = actRModel.turnComplexModel(cards: cardsModelClass)
+            print(ComplexChoice)
             let choice = actRModel.turn(cards: cardsModelClass)
             for option in legalOptions{
                 if(option.value.colorString == choice[0]){
