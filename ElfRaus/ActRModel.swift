@@ -13,6 +13,8 @@ class ActRModel{
     private var modelCards = CardsModel()
     let model = Model()
     let complexModel = Model()
+    
+    private var weightsPerColDir = ["yellow-low": 0, "yellow-high": 0, "green-low": 0,"green-high": 0, "red-low": 0, "red-high": 0, "blue-low": 0, "blue-high": 0]
 
     init() {
         model.loadModel(fileName: "elfRausModel2")
@@ -23,7 +25,53 @@ class ActRModel{
         
     }
     
-    
+    public func turnComplexModel(cards: CardsModel) -> [String] {
+        self.modelCards = cards
+        addAllcardsOfhandToDM(cards: cards, model: complexModel)
+        setLegalOptions(cards: cards, model: complexModel)
+        
+        print(complexModel.dm.chunks)
+        let legalOptions = cards.getLegalOptions()
+        complexModel.run() //Run the model until it waits for action of legal cards
+        print(complexModel.buffers)
+        var colour =  model.lastAction(slot: "colour")
+        var direction = model.lastAction(slot: "direction")
+        var number = 11
+        
+        for legalCard in 0...legalOptions!.endIndex-1 {
+            colour = legalOptions![legalCard].colorString
+            direction = legalOptions![legalCard].direction
+            number = legalOptions![legalCard].number
+            
+            complexModel.modifyLastAction(slot: "colour", value: "\(colour)")
+            complexModel.modifyLastAction(slot: "direction", value: "\(direction)")
+            complexModel.modifyLastAction(slot: "number", value: "\(number)")
+            complexModel.run()
+            
+            while model.lastAction(slot: "isa") != "no-more=cards" {
+                complexModel.run()
+                if model.lastAction(slot: "isa") == "card-present"{
+                    number = (model.lastAction(slot: "number")! as NSString).integerValue
+                    self.weightsPerColDir["\(colour)-\(direction)"]! += number
+                }
+            }
+            if model.lastAction(slot: "isa") == "player-card" {
+                self.weightsPerColDir ["\(colour)-\(direction)"]! -= 10
+            }
+            
+        }
+        complexModel.run()
+        var maxWeight = -1
+        var maxKey = ""
+        for index in weightsPerColDir{
+            if maxWeight < index.value {
+                maxWeight = index.value
+                maxKey = index.key
+            }
+        }
+        let choosenColDir = maxKey.components(separatedBy: "-")
+        return choosenColDir
+    }
     
     public func turn(cards:CardsModel) -> [String]{
         self.modelCards = cards
