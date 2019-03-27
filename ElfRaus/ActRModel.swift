@@ -14,14 +14,19 @@ class ActRModel{
     let model = Model()
     let complexModel = Model()
     
-    private var weightsPerColDir = ["yellow-low": 0, "yellow-high": 0, "green-low": 0,"green-high": 0, "red-low": 0, "red-high": 0, "blue-low": 0, "blue-high": 0]
+    public var weightsPerColDir = ["yellow-low": 0, "yellow-high": 0, "green-low": 0,"green-high": 0, "red-low": 0, "red-high": 0, "blue-low": 0, "blue-high": 0]
 
     init() {
         model.loadModel(fileName: "elfRausModel2")
         //print("model loaded")
+        complexModel.loadModel(fileName: "elfRausModelComplex")
         for card in modelCards.cards{
             addCardToDM(card: card, model: model)
         }
+        for card in modelCards.cards{
+            addCardToDM(card: card, model: complexModel)
+        }
+        
         
     }
     
@@ -33,7 +38,6 @@ class ActRModel{
         print(complexModel.dm.chunks)
         let legalOptions = cards.getLegalOptions()
         complexModel.run() //Run the model until it waits for action of legal cards
-        print(complexModel.buffers)
         var colour =  model.lastAction(slot: "colour")
         var direction = model.lastAction(slot: "direction")
         var number = 11
@@ -43,24 +47,42 @@ class ActRModel{
             direction = legalOptions![legalCard].direction
             number = legalOptions![legalCard].number
             
-            complexModel.modifyLastAction(slot: "colour", value: "\(colour)")
-            complexModel.modifyLastAction(slot: "direction", value: "\(direction)")
-            complexModel.modifyLastAction(slot: "number", value: "\(number)")
-            complexModel.run()
+            complexModel.modifyLastAction(slot: "colour", value: "\(colour!)")
+            complexModel.modifyLastAction(slot: "direction", value: "\(direction!)")
+            if direction == "high" {
+                complexModel.modifyLastAction(slot: "number", value: "\(number+1)")}
+                else{complexModel.modifyLastAction(slot: "number", value: "\(number-1)") }
             
-            while model.lastAction(slot: "isa") != "no-more=cards" {
-                complexModel.run()
-                if model.lastAction(slot: "isa") == "card-present"{
-                    number = (model.lastAction(slot: "number")! as NSString).integerValue
-                    self.weightsPerColDir["\(colour)-\(direction)"]! += number
+            while number <= 20 && number >= 1 {
+                print (number)
+                if complexModel.lastAction(slot: "isa") == "card-present"{
+                    let numberCard = (complexModel.lastAction(slot: "number")! as NSString).integerValue
+                    print("numberCard:",numberCard)
+                    
+                    self.weightsPerColDir.updateValue(numberCard, forKey: "\(colour!)-\(direction!)")
                 }
+                if direction == "high"{
+                    number += 1
+                }else{
+                    number -= 1
+                }
+                complexModel.modifyLastAction(slot: "number", value: "\(number)")
+                complexModel.run()
             }
-            if model.lastAction(slot: "isa") == "player-card" {
-                self.weightsPerColDir ["\(colour)-\(direction)"]! -= 10
+            print("weight for \(colour!),\(direction!)", self.weightsPerColDir["\(colour!)-\(direction!)"])
+            print(" buffer3 : ", complexModel.buffers)
+            complexModel.modifyLastAction(slot: "next", value: "no")
+            print(" buffer4 : ", complexModel.buffers)
+            complexModel.run()
+            if complexModel.lastAction(slot: "isa") == "player-card-played" {
+                self.weightsPerColDir ["\(colour!)-\(direction!)"]! -= 10
             }
-            
+            complexModel.run()
+            if legalCard != (legalOptions?.endIndex)!-1{
+            complexModel.run()
+            }
         }
-        complexModel.run()
+        
         var maxWeight = -1
         var maxKey = ""
         for index in weightsPerColDir{
@@ -69,6 +91,7 @@ class ActRModel{
                 maxKey = index.key
             }
         }
+        print("weights: ", weightsPerColDir)
         let choosenColDir = maxKey.components(separatedBy: "-")
         return choosenColDir
     }
@@ -118,7 +141,11 @@ class ActRModel{
     
     func addCardToDM (card: Card, model: Model){
         let newChunk = Chunk(s: "card\(card.colorString)\(card.number)", m: model)
-        newChunk.setSlot(slot: "isa", value: "card")
+        if card.location == "Model" {
+            newChunk.setSlot(slot: "isa", value: "card")
+        }else{
+            newChunk.setSlot(slot: "isa", value: "player-card")
+        }
         newChunk.setSlot(slot: "colour", value: card.colorString)
         newChunk.setSlot(slot: "direction", value: card.direction)
         newChunk.setSlot(slot: "possible", value: "no")

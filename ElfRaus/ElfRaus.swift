@@ -81,11 +81,12 @@ class ElfRaus {
             }
         }else{
             let ComplexChoice = actRModel.turnComplexModel(cards: cardsModelClass)
-            print(ComplexChoice)
-            let choice = actRModel.turn(cards: cardsModelClass)
+            print("model choice: ",ComplexChoice)
+            //let choice = actRModel.turn(cards: cardsModelClass)
             for option in legalOptions{
-                if(option.value.colorString == choice[0]){
-                    if(option.value.direction == choice[1]){
+                /// WHICH MODEL you want to play with. choice = simple model. complexchoice = complex model
+                if(option.value.colorString == ComplexChoice[0]){
+                    if(option.value.direction == ComplexChoice[1]){
                         chooseCard(at: option.value.identifier, "model")
                     }
                 }
@@ -124,6 +125,8 @@ class ElfRaus {
             if (legalOptions.index(forKey: index) != nil) {
                 //print("play card")
                 cards[index].location = "Played"
+                //Add the played card to the DM of the model
+                actRModel.addCardToDM(card: cards[index], model: actRModel.complexModel)
                 if(cards[index].number >= 11), (cards[index].number < 20){
                     legalOptions.updateValue(cards[index+1], forKey: index+1)
                 }
@@ -135,6 +138,7 @@ class ElfRaus {
                 //playedCards.printPlayedCards()
                 if(player == "Player"){
                     cardsPlayerClass.playCard(cards[index], allLegalOptions: legalOptions)
+        
                     for indexCardPlayer in 0...cardsPlayer.endIndex-1{
                         if(cardsPlayer[indexCardPlayer].identifier == index){
                             cardsPlayer.remove(at: indexCardPlayer)
