@@ -53,7 +53,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     
     
-    @IBOutlet weak var nextButton: UIButton! {didSet{ updateNextButton()}}
+    @IBOutlet weak var nextButton: UIButton! {didSet{ nextButton.isEnabled = true}} //needs to be true if the model started
     @IBOutlet weak var drawButton: cardView! {didSet{ updateDrawButton()}}
     
     
@@ -140,7 +140,8 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             
             self.present(alert, animated: true)
             //the game is over
-            self.gameRunning = false
+            self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
+            self.updateRound()
         }else{
             let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
             let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
@@ -150,7 +151,8 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             
             self.present(alert, animated: true)
             //the game is over
-            self.gameRunning = false
+            self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
+            self.updateRound()
         }
     }
     
@@ -161,10 +163,36 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             hand = game.getCardsPlayer()
             hand.showTheNewlyDrawnCard()
             updateColorCountButtonView()
+            //animation
+            perform(#selector(flip), with: nil, afterDelay: 0)
+            perform(#selector(flipBack), with: nil, afterDelay: 1.3)
         }
         showHand()
         updateNextDrawButton()
+        
+        
     }
+    
+    
+    //ANIMATIONS
+    @objc func flip() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        //self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
+        
+        
+        UIView.transition(with: drawButton, duration: 1.0, options: transitionOptions, animations: {
+            self.drawButton.setHandCardView(card: self.game.cards[self.game.deck[0]])
+        })
+    }
+    @objc func flipBack() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        self.drawButton.setHandCardView(card: self.game.cards[self.game.deck[0]])
+        UIView.transition(with: drawButton, duration: 1.0, options: transitionOptions, animations: {
+            self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
+        })
+        updateNextDrawButton()
+    }
+    
 
     
     //FUNCTIONS
