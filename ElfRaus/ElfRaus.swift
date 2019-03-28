@@ -221,6 +221,7 @@ class ElfRaus {
                 if(player == "Model"){
                     newTurn("Player")
                     turnModel()
+                    newTurn("Model")
                     break
                 }else if(player == "Player"){
                     newTurn("Model")
