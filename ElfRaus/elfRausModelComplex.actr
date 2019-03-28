@@ -62,45 +62,23 @@
         colour =colour
         direction high
         number =number
+        direction =direction
 ==>
     =goal>
         isa decision
         state retrieve
     =imaginal>
-        direction high
+        direction =direction
         colour =colour
         number =number
     +retrieval>
         isa card
         colour =colour
-        direction high
+        direction =direction
         possible no
         number =number
 )
 
-(p find-direction-low
-    =goal>
-        isa decision
-        state start-retrieve-card
-    =imaginal>
-        colour =colour
-        direction low
-        number =number
-==>
-    =goal>
-        isa decision
-        state retrieve
-    =imaginal>
-        direction low
-        colour =colour
-        number =number
-    +retrieval>
-        isa card
-        colour =colour
-        direction low
-        possible no
-        number =number
-)
 (p test-retrieval
     =goal>
         isa decision

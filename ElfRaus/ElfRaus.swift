@@ -23,10 +23,10 @@ class ElfRaus {
 //    var cardsPlayedYellow = [Int]()
     var playedCards = PlayedCards()
     var cardsModelClass = CardsModel()
-    let actRModel = ActRModel()
+    let actRModel = ActRModel() //Act
     var cardsPlayerClass = CardsPlayer()
     var currentTurn = Turn(cardOptions: nil)
-    
+    var playingActRModel = "simpleModel"  //Can also be "complexModel"
     
     var legalOptions = [Int:Card]()
     
@@ -70,7 +70,6 @@ class ElfRaus {
             return
         }else if(cardsModelClass.getLegalOptions() == nil), (currentTurn.allowedToDrawCard()){
              drawCard("model")
-            actRModel.addCardToDM(card: cardsModelClass.cards[cardsModelClass.cards.endIndex-1], model: actRModel.model)
              turnModel()
         }else if(cardsModelClass.getLegalOptions()!.endIndex == 1){
             actRModel.removeCardFromDM(model: actRModel.model, card: cardsModelClass.getLegalOptions()![0])
@@ -82,13 +81,18 @@ class ElfRaus {
                 chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
             }
         }else{
-            let ComplexChoice = actRModel.turnComplexModel(cards: cardsModelClass)
-            print("model choice: ",ComplexChoice)
+            var choice = [""]
+            if playingActRModel == "simpleModel" {
+                choice = actRModel.turn(cards: cardsModelClass)
+            }else{
+                choice = actRModel.turnComplexModel(cards: cardsModelClass)
+            }
+            print("model choice: ",choice)
             //let choice = actRModel.turn(cards: cardsModelClass)
             for option in legalOptions{
                 /// WHICH MODEL you want to play with. choice = simple model. complexchoice = complex model
-                if(option.value.colorString == ComplexChoice[0]){
-                    if(option.value.direction == ComplexChoice[1]){
+                if(option.value.colorString == choice[0]){
+                    if(option.value.direction == choice[1]){
                         chooseCard(at: option.value.identifier, "model")
                     }
                 }
@@ -167,6 +171,10 @@ class ElfRaus {
         }
         
         
+    }
+    
+    func changeModelDifficulty (Model:String ){
+        self.playingActRModel = Model
     }
     
     init(){
