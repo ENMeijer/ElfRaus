@@ -70,7 +70,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].alpha == 1){
-                let _ = game.chooseCard(at: hand.view[cardNumber].identifier, "Player") //??? return no longer needed
+                game.chooseCard(at: hand.view[cardNumber].identifier, "Player")
                 updateViewFromModel()
             }
         }else {
@@ -159,6 +159,10 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     @IBAction func drawButton(_ sender: UIButton) {
         if game.currentTurn.allowedToDrawCard() {
+            //animation
+            perform(#selector(flip), with: nil, afterDelay: 0)
+            perform(#selector(flipBack), with: nil, afterDelay: 1.3)
+            
             //draw action
             self.topCardOnDrawButton = self.game.cards[self.game.deck[0]]
             
