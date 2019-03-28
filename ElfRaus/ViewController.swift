@@ -16,6 +16,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     //included in UIViewControllerAndVariablesPassedAround, because these two need to be passed around
 
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
+    lazy var topCardOnDrawButton = self.game.cards[self.game.deck[0]]
     
     //SET OUTLETS
     @IBOutlet var playingField: [cardView]! {didSet{initPlayingField()}}
@@ -159,10 +160,13 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     @IBAction func drawButton(_ sender: UIButton) {
         if game.currentTurn.allowedToDrawCard() {
             //draw action
+            self.topCardOnDrawButton = self.game.cards[self.game.deck[0]]
+            
             game.drawCard("Player")
             hand = game.getCardsPlayer()
             hand.showTheNewlyDrawnCard()
             updateColorCountButtonView()
+            
             //animation
             perform(#selector(flip), with: nil, afterDelay: 0)
             perform(#selector(flipBack), with: nil, afterDelay: 1.3)
@@ -181,12 +185,12 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         
         
         UIView.transition(with: drawButton, duration: 1.0, options: transitionOptions, animations: {
-            self.drawButton.setHandCardView(card: self.game.cards[self.game.deck[0]])
+            self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
         })
     }
     @objc func flipBack() {
         let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
-        self.drawButton.setHandCardView(card: self.game.cards[self.game.deck[0]])
+        self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
         UIView.transition(with: drawButton, duration: 1.0, options: transitionOptions, animations: {
             self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
         })
