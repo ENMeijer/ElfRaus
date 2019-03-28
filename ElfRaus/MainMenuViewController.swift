@@ -37,15 +37,14 @@ class MainMenuViewController: UIViewControllerAndVariablesPassedAround {
 
     
     
-    func thingsToKeepTrackOf(from:UIViewControllerAndVariablesPassedAround, to:UIViewControllerAndVariablesPassedAround){
-        to.game = from.game
-        to.hand = from.hand
-        to.difficulty = from.difficulty
-        to.gameRunning = from.gameRunning
-        to.score = from.score
-        to.roundsToPlay = from.roundsToPlay
-        
-    }
+//    func thingsToKeepTrackOf(from:UIViewControllerAndVariablesPassedAround, to:UIViewControllerAndVariablesPassedAround){
+//        to.game = from.game
+//        to.hand = from.hand
+//        to.difficulty = from.difficulty
+//        to.gameRunning = from.gameRunning
+//        to.score = from.score
+//        to.roundsToPlay = from.roundsToPlay
+//    }
     
     func initializeNewGame(){
         self.game = ElfRaus()

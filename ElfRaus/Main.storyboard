@@ -574,7 +574,7 @@
                                     <color key="titleColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="crash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0I0-OH-iXk"/>
+                                    <action selector="showScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QlX-IB-0vG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -657,6 +657,7 @@
                         <outletCollection property="cardButtons" destination="Clh-PC-ppR" collectionClass="NSMutableArray" id="32c-kj-9Pg"/>
                         <outletCollection property="cardButtons" destination="myG-EB-54C" collectionClass="NSMutableArray" id="BcG-Ze-sD3"/>
                         <outletCollection property="cardButtons" destination="3If-9J-1Ab" collectionClass="NSMutableArray" id="1lf-wc-Ds0"/>
+                        <segue destination="9BE-si-CO5" kind="show" identifier="showScoreView" id="lN8-cU-CAY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1070,15 +1071,15 @@ The overall game e.g. after 3 - 5 rounds, is won by the player with the lowest f
                                     <segue destination="Bim-ur-7uz" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="uhf-7M-JKG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-RS-7VL">
-                                <rect key="frame" x="279" y="20" width="80" height="36"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" red="1" green="0.66788150089999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfD-DS-eIR">
+                                <rect key="frame" x="276" y="20" width="83" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Contiune">
+                                    <color key="titleColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="showContinueGame:" destination="9BE-si-CO5" eventType="touchUpInside" id="67p-th-xjq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1090,18 +1091,19 @@ The overall game e.g. after 3 - 5 rounds, is won by the player with the lowest f
                             <constraint firstItem="MtI-3E-VZv" firstAttribute="trailing" secondItem="T9X-IT-jSD" secondAttribute="trailing" id="5SC-b0-tNq"/>
                             <constraint firstItem="MtI-3E-VZv" firstAttribute="trailing" secondItem="inS-iZ-lyb" secondAttribute="trailing" constant="16" id="7Sv-ce-Ide"/>
                             <constraint firstItem="MtI-3E-VZv" firstAttribute="bottom" secondItem="inS-iZ-lyb" secondAttribute="bottom" constant="80" id="FfQ-eC-nyj"/>
-                            <constraint firstItem="Blt-RS-7VL" firstAttribute="trailing" secondItem="inS-iZ-lyb" secondAttribute="trailing" id="TX3-D9-1Gq"/>
                             <constraint firstItem="T9X-IT-jSD" firstAttribute="top" secondItem="MtI-3E-VZv" secondAttribute="top" id="dUm-8h-PLv"/>
                             <constraint firstItem="inS-iZ-lyb" firstAttribute="leading" secondItem="MtI-3E-VZv" secondAttribute="leading" constant="16" id="dki-8G-RWa"/>
                             <constraint firstItem="inS-iZ-lyb" firstAttribute="firstBaseline" secondItem="P4w-9j-4b0" secondAttribute="baseline" constant="40" symbolType="layoutAnchor" id="dlo-Y1-OgE"/>
                             <constraint firstItem="MlJ-4t-bqS" firstAttribute="top" secondItem="T9X-IT-jSD" secondAttribute="top" id="f7D-LK-zdV"/>
+                            <constraint firstItem="vfD-DS-eIR" firstAttribute="top" secondItem="MtI-3E-VZv" secondAttribute="top" id="q1g-fh-a03"/>
                             <constraint firstItem="T9X-IT-jSD" firstAttribute="leading" secondItem="MtI-3E-VZv" secondAttribute="leading" id="qA7-8N-hPB"/>
-                            <constraint firstItem="MlJ-4t-bqS" firstAttribute="baseline" secondItem="Blt-RS-7VL" secondAttribute="baseline" id="us8-0M-02n"/>
+                            <constraint firstItem="MtI-3E-VZv" firstAttribute="trailing" secondItem="vfD-DS-eIR" secondAttribute="trailing" constant="16" id="sZI-Tx-wGi"/>
                             <constraint firstItem="inS-iZ-lyb" firstAttribute="top" secondItem="MlJ-4t-bqS" secondAttribute="bottom" constant="41" id="zYn-gt-RdJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MtI-3E-VZv"/>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="vfD-DS-eIR" id="dpc-UO-mHB"/>
                         <outletCollection property="table" destination="IZb-lI-Re2" collectionClass="NSMutableArray" id="KeR-X6-Vwr"/>
                         <outletCollection property="table" destination="yDo-kT-0UD" collectionClass="NSMutableArray" id="09M-Zs-7Mq"/>
                         <outletCollection property="table" destination="DoC-eU-qFX" collectionClass="NSMutableArray" id="krJ-Ib-x4U"/>
@@ -1135,6 +1137,7 @@ The overall game e.g. after 3 - 5 rounds, is won by the player with the lowest f
                         <outletCollection property="table" destination="84v-RR-Oag" collectionClass="NSMutableArray" id="d2Z-4a-u8Q"/>
                         <outletCollection property="table" destination="i3z-DY-UcK" collectionClass="NSMutableArray" id="J4k-MH-hSL"/>
                         <outletCollection property="table" destination="zrC-6H-JLN" collectionClass="NSMutableArray" id="Bdu-nr-PEt"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showContinueGame" id="Fam-MD-t7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFB-5V-hnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1147,6 +1150,7 @@ The overall game e.g. after 3 - 5 rounds, is won by the player with the lowest f
         <image name="backgroundTable" width="852" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IQt-JW-kdg"/>
+        <segue reference="lN8-cU-CAY"/>
+        <segue reference="Fam-MD-t7d"/>
     </inferredMetricsTieBreakers>
 </document>

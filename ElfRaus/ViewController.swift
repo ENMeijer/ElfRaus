@@ -14,9 +14,6 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     //var game = ElfRaus()
     //var hand = CardsPlayer()
     //included in UIViewControllerAndVariablesPassedAround, because these two need to be passed around
-    @IBAction func crash(_ sender: UIButton) {
-        print("crash")
-    }
     
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     lazy var topCardOnDrawButton = self.game.cards[self.game.deck[0]]
@@ -180,10 +177,11 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         }
         showHand()
         updateNextDrawButton()
-        
-        
     }
     
+    @IBAction func showScore(_ sender: UIButton) {
+        performSegue(withIdentifier: "showScoreView", sender: nil)
+    }
     
     //ANIMATIONS
     @objc func flip() {
@@ -203,6 +201,22 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         })
         updateNextDrawButton()
     }
+    
+    //performSegue(withIdentifier: "showDifficultyView", sender: nil)
+
+    //SEGUE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        //specifies with seque should be used
+        switch segue.identifier {
+        case "showScoreView":
+            let viewControllerB = segue.destination as! ViewController
+            thingsToKeepTrackOf(from: self, to: viewControllerB)
+        default:
+            print("could not find the segue")
+        }
+    }
+    
     
 
     
