@@ -10,7 +10,7 @@ import UIKit
 
 
 class DifficultyViewController: UIViewControllerAndVariablesPassedAround {
-    func setDifficulty(_ newDifficulty: Int){
+    func setDifficulty(_ newDifficulty: String){
         difficulty = newDifficulty
     }
 }

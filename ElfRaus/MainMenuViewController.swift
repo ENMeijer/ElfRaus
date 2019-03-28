@@ -49,6 +49,7 @@ class MainMenuViewController: UIViewControllerAndVariablesPassedAround {
     
     func initializeNewGame(){
         self.game = ElfRaus()
+        self.game.changeModelDifficulty(Model: self.difficulty)
         self.hand = CardsPlayer()
         self.gameRunning = true
         self.currentRound = 1

@@ -12,7 +12,7 @@ class UIViewControllerAndVariablesPassedAround: UIViewController{
     
     public var game = ElfRaus()
     public var hand = CardsPlayer()
-    public var difficulty = 1
+    public var difficulty = "simpleModel"
     public var gameRunning = false
     public var score = [Int]()
     public var roundsToPlay = 10
