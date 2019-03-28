@@ -14,7 +14,10 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     //var game = ElfRaus()
     //var hand = CardsPlayer()
     //included in UIViewControllerAndVariablesPassedAround, because these two need to be passed around
-
+    @IBAction func crash(_ sender: UIButton) {
+        print("crash")
+    }
+    
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     lazy var topCardOnDrawButton = self.game.cards[self.game.deck[0]]
     
@@ -158,17 +161,17 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     }
     
     @IBAction func drawButton(_ sender: UIButton) {
-        if game.currentTurn.allowedToDrawCard() {
+        if game.currentTurn.allowedToDrawCard() , game.cardsInDeck > 0 {
+            //draw action
+            if game.cardsInDeck > 0 {
+                self.topCardOnDrawButton = self.game.cards[self.game.deck[0]]
+            }
             //animation
             perform(#selector(flip), with: nil, afterDelay: 0)
             perform(#selector(flipBack), with: nil, afterDelay: 1.3)
-            
-            //draw action
-            self.topCardOnDrawButton = self.game.cards[self.game.deck[0]]
-            
+
             game.drawCard("Player")
             hand = game.getCardsPlayer()
-            hand.showTheNewlyDrawnCard()
             updateColorCountButtonView()
             
             //animation
@@ -188,14 +191,14 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         //self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
         
         
-        UIView.transition(with: drawButton, duration: 1.0, options: transitionOptions, animations: {
+        UIView.transition(with: drawButton, duration: 0.5, options: transitionOptions, animations: {
             self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
         })
     }
     @objc func flipBack() {
         let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
         self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
-        UIView.transition(with: drawButton, duration: 1.0, options: transitionOptions, animations: {
+        UIView.transition(with: drawButton, duration: 0.5, options: transitionOptions, animations: {
             self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
         })
         updateNextDrawButton()
@@ -254,7 +257,11 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     func updateDrawButton(){
         drawButton.setDrawButton(cardsLeft: game.cardsInDeck)
-        drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
+        if(game.currentTurn.allowedToDrawCard()&&game.cardsInDeck > 0){
+            drawButton.enableDrawButton(true)
+        } else {
+            drawButton.enableDrawButton(false)
+        }
         if(game.cardsInDeck>60){ //make it visible at the start of the game, otherwise when model starts the button will not get visible //??? check again
             drawButton.enableDrawButton(true)
         }
@@ -264,9 +271,12 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         if game.currentTurn.allowedToNextTurn(){
             nextButton.isEnabled = true
             nextButton.alpha = 1
-        } else {
+        } else if(game.deck.count > 0){
             nextButton.isEnabled = false
             nextButton.alpha = 0.5
+        } else {
+            nextButton.isEnabled = true
+            nextButton.alpha = 1
         }
     }
     
