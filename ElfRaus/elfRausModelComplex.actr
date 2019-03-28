@@ -188,7 +188,7 @@
         direction =direction
 )
 
-(p retrieve-player-card
+(p retrieved-player-card
     =goal>
         state retrieve-opponents-card
     =retrieval>
