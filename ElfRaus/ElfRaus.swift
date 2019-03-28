@@ -40,12 +40,12 @@ class ElfRaus {
     
     private func win(player : String) -> Bool{
         if(player == "Player"){
-            if(cardsPlayerClass.cards == nil){
+            if(cardsPlayerClass.cards.count == 0){
                 return true
             }
             
         }else{
-            if(cardsModelClass.cards == nil){
+            if(cardsModelClass.cards.count == 0){
                 return true
             }
         }
@@ -59,8 +59,6 @@ class ElfRaus {
         }
         else{
             cardsPlayerClass.newTurn(allLegalOptions: legalOptions)
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-            )
             currentTurn = Turn(cardOptions: cardsPlayerClass.getLegalOptions())
         }
     }
@@ -69,8 +67,11 @@ class ElfRaus {
         if(currentTurn.allowedToNextTurn()){
             return
         }else if(cardsModelClass.getLegalOptions() == nil), (currentTurn.allowedToDrawCard()){
-             drawCard("model")
-             turnModel()
+            if(cardsInDeck > 0){
+                drawCard("model")
+                turnModel()
+            }
+            return
         }else if(cardsModelClass.getLegalOptions()!.endIndex == 1){
             actRModel.removeCardFromDM(model: actRModel.model, card: cardsModelClass.getLegalOptions()![0])
             chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")

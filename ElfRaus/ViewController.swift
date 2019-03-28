@@ -116,23 +116,8 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         showHand()
     }
     
-    @IBAction func nextButton(_ sender: UIButton) {
-        //next card
-        if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
-            if(game.currentTurn.allowedToNextTurn()){
-                game.newTurn("Player")
-                showHand()
-                game.turnModel()
-                game.newTurn("Model")
-                updateViewFromModel()
-            } else if(game.cardsInDeck == 0){
-                game.newTurn("Player")
-                showHand()
-                game.turnModel()
-                game.newTurn("Model")
-                updateViewFromModel()
-            }
-        }else if(game.cardsPlayerClass.won){
+    func won(){
+        if(game.cardsPlayerClass.won){
             let m = "You won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
             let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
             
@@ -143,7 +128,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             //the game is over
             self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
             self.updateRound()
-        }else{
+        }else if(game.cardsModelClass.won){
             let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
             let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
             
@@ -154,6 +139,33 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             //the game is over
             self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
             self.updateRound()
+        }
+    }
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        //next card
+        if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
+            if(game.currentTurn.allowedToNextTurn()){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                updateViewFromModel()
+            }else if (game.currentTurn.allowedToNextTurn()){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                updateViewFromModel()
+            }else if(game.cardsInDeck == 0),(game.cardsPlayerClass.legalOptions == nil){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                updateViewFromModel()
+            }
+        }else{
+            won()
         }
     }
     
@@ -296,17 +308,21 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     
     func updateViewFromModel(){
-        //update playing field view
-        updatePlayingFieldView()
-        //update oppoenents card count from model
-        updateOpponentsCardCountView()
-        //update Player Cards
-        showHand()
-        //update the number of cards a player has per color
-        updateColorCountButtonView()
-        //update draw and next button
-        updateNextDrawButton()
-        updateDrawButton() //??? doulbe check how to simplefy
+        if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
+            //update playing field view
+            updatePlayingFieldView()
+            //update oppoenents card count from model
+            updateOpponentsCardCountView()
+            //update Player Cards
+            showHand()
+            //update the number of cards a player has per color
+            updateColorCountButtonView()
+            //update draw and next button
+            updateNextDrawButton()
+            updateDrawButton() //??? doulbe check how to simplefy
+        }else{
+            won()
+        }
     }
     
     func updatePlayingFieldView(){
