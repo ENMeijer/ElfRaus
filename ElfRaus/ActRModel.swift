@@ -13,8 +13,6 @@ class ActRModel{
     private var modelCards = CardsModel()
     let model = Model()
     let complexModel = Model()
-    
-    //public var weightsPerColDir = ["yellow-low": 0, "yellow-high": 0, "green-low": 0,"green-high": 0, "red-low": 0, "red-high": 0, "blue-low": 0, "blue-high": 0]
 
     init() {
         model.loadModel(fileName: "elfRausModel2")
@@ -31,19 +29,22 @@ class ActRModel{
     }
     
     public func turnComplexModel(cards: CardsModel) -> [String] {
+        //Adding all the cards to the Declarative Memory
         self.modelCards = cards
         addAllcardsOfhandToDM(cards: cards, model: complexModel)
         setLegalOptions(cards: cards, model: complexModel)
-        
-        print(complexModel.dm.chunks)
+
+        //Run the model until it waits for action of legal cards
         let legalOptions = cards.getLegalOptions()
-        complexModel.run() //Run the model until it waits for action of legal cards
+        complexModel.run()
+        
         var colour =  model.lastAction(slot: "colour")
         var direction = model.lastAction(slot: "direction")
         var number = 11
         var weightsPerLegalOption = [String:Int]()
+        
+        //Run the model through every legal option: 'the model looks at every card that is possible to play'
         for legalCard in 0...legalOptions!.endIndex-1 {
-            
             colour = legalOptions![legalCard].colorString
             direction = legalOptions![legalCard].direction
             number = legalOptions![legalCard].number
@@ -54,6 +55,7 @@ class ActRModel{
                 complexModel.modifyLastAction(slot: "number", value: "\(number+1)")}
                 else{complexModel.modifyLastAction(slot: "number", value: "\(number-1)") }
             
+            //The model looks which cards are also in that direction and colour
             while number <= 20 && number >= 1 {
                 print (number)
                 if complexModel.lastAction(slot: "isa") == "card-present"{
@@ -69,10 +71,9 @@ class ActRModel{
                 complexModel.modifyLastAction(slot: "number", value: "\(number)")
                 complexModel.run()
             }
-            print("weight for \(colour!),\(direction!)", weightsPerLegalOption["\(colour!)-\(direction!)"])
-            print(" buffer3 : ", complexModel.buffers)
+            
+            //Let the model run and retrieve opponents cards
             complexModel.modifyLastAction(slot: "next", value: "no")
-            print(" buffer4 : ", complexModel.buffers)
             complexModel.run()
             if complexModel.lastAction(slot: "isa") == "player-card-played" {
                 weightsPerLegalOption["\(colour!)-\(direction!)"]! -= legalOptions![legalCard].number
@@ -82,7 +83,7 @@ class ActRModel{
             complexModel.run()
             }
         }
-        
+        //Calculate the max weight for the model's choice
         var maxWeight = -99
         var maxKey = ""
         for index in weightsPerLegalOption{
@@ -96,41 +97,33 @@ class ActRModel{
         return choosenColDir
     }
     
+    
     public func turn(cards:CardsModel) -> [String]{
+        //Adding all the cards to the DM
         self.modelCards = cards
-        //print(model.buffers)
-        //Set Legal options of hand in the chunks in DM to possible: "yes"
         addAllcardsOfhandToDM(cards: cards, model: model)
         setLegalOptions(cards: cards, model: model)
         
         //Let the model run
-        //print("dm of model: ", model.dm.chunks)
         model.run()
-        var modelCardColor = model.lastAction(slot: "colour") // The model action
-        
+        var modelCardColor = model.lastAction(slot: "colour")
         // Choose most common color of legal set.
         let mostCommonColor = modelCards.getMaxLegalOptionsColor()
         if mostCommonColor != "false" {
             model.modifyLastAction(slot: "colour", value: mostCommonColor)
         }
-        // Let model run again
+        //Let the model retrieve which direction it has to go.
         model.run()
         modelCardColor = mostCommonColor
         let modelCardDirection = model.lastAction(slot: "direction")
         let modelCardNumber = model.lastAction(slot: "number")
-        //print(model.lastAction(slot: "number"))
-        //print(modelCardNumber, modelCardDirection)
         var modelCardNumberInt : Int = 0
         if modelCardNumber != nil{
             modelCardNumberInt = (modelCardNumber! as NSString).integerValue
-            //print("Card Number ",modelCardNumberInt)
         }else{
-            modelCardNumberInt = 21
+            modelCardNumberInt = 99 // means error
         }
         print("model decision: ", modelCardDirection!, modelCardColor!, modelCardNumberInt)
-
-        //let playerAction = sender.currentTitle! // The player action
-        //print("waiting? ", model.waitingForAction)
         
         //Remove choosen card from DM
         let choosenChunk = getChunk(nameChunk: "card\(modelCardColor!)\(modelCardNumberInt)", model: model)
