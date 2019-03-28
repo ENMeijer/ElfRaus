@@ -13,7 +13,41 @@ class ScoreViewController: UIViewControllerAndVariablesPassedAround {
     
     //Setup of the outlet, round,player,model,round...
     
+    @IBOutlet weak var continueButton: UIButton! {didSet {updateContinueButon() }}
     @IBOutlet var table: [UILabel]! {didSet{setupTable()}}
+    
+    
+    
+    @IBAction func showContinueGame(_ sender: UIButton) {
+        performSegue(withIdentifier: "showContinueGame", sender: nil)
+    }
+    
+    func updateContinueButon(){
+        if self.gameRunning{
+            continueButton.isEnabled = true
+            continueButton.alpha = 1
+        } else {
+            continueButton.isEnabled = false
+            continueButton.alpha = 0.5
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        //specifies with seque should be used
+        switch segue.identifier {
+        case "showContinueGame":
+            let viewControllerB = segue.destination as! ViewController
+            thingsToKeepTrackOf(from: self, to: viewControllerB)
+
+        default:
+            print("could not find the segue")
+        }
+    }
+    
+    
+    
+    
     func setupTable(){
         //first erase eyeryting
         for cell in table {
@@ -41,7 +75,6 @@ class ScoreViewController: UIViewControllerAndVariablesPassedAround {
                 table[(round-1)*3+2].text = String(scoreModel) //Model score
                 break
             }
-        
         }
     }
     

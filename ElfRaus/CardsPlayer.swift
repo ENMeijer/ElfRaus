@@ -176,15 +176,6 @@ class CardsPlayer{
         playerCardsPivotView = 0
     }
     
-    func showTheNewlyDrawnCard(){
-        // scroll until you see the new card
-        // update the view
-        if selectedCards.count <= cardsInPlayersHand{
-            playerCardsPivotView = 0
-        } else {
-            playerCardsPivotView = selectedCards.count-cardsInPlayersHand
-        }
-    }
     
     func updateHandView(){
         

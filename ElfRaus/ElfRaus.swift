@@ -59,6 +59,8 @@ class ElfRaus {
         }
         else{
             cardsPlayerClass.newTurn(allLegalOptions: legalOptions)
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            )
             currentTurn = Turn(cardOptions: cardsPlayerClass.getLegalOptions())
         }
     }
@@ -75,7 +77,7 @@ class ElfRaus {
             
         }else if(cardsModelClass.ableToPlayAllCards(hand: cardsModelClass.cards, possibleCards: cardsModelClass.getLegalOptions()!)){
             print("in play all cards")
-            while(cardsModelClass.cards.count > 0){
+            while(cardsModelClass.getLegalOptions() != nil){
                 chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
             }
         }else{
@@ -203,6 +205,7 @@ class ElfRaus {
             let cardModel = deck[card]
             deck.remove(at: card)
             cards[cardModel].location = "Model"
+            print(cards[cardModel])
             cardsModel.append(cards[cardModel])
             cardsModelClass.drawCard(cards[cardModel], allLegalOptions: legalOptions)
             cardsInDeck -= 2
@@ -226,6 +229,9 @@ class ElfRaus {
                     startPlayer[3] = card.value.location
                 }
             }
+            
+            
+            print(startPlayer)
             for player in startPlayer{
                 if(player == "Model"){
                     newTurn("Player")
