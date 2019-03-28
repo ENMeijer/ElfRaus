@@ -195,6 +195,7 @@ class ElfRaus {
             cardsPlayer.append(cards[cardPlayer])
             cardsPlayerClass.drawCard(cards[cardPlayer], allLegalOptions: legalOptions)
             if(cards[cardPlayer].number == 11 ){
+                print(cards[cardPlayer])
                 legalOptions.updateValue(cards[cardPlayer], forKey: cards[cardPlayer].identifier)
             }
             
@@ -212,11 +213,11 @@ class ElfRaus {
         }
         actRModel.addAllcardsOfhandToDM(cards: cardsModelClass, model: actRModel.model)
         var startPlayer = ["","","",""]
+        print("all legal options: ",legalOptions)
         if(legalOptions.count > 0){
             for card in legalOptions{
                 if(card.value.colorString == "red"){
                     startPlayer[0] = card.value.location
-                    break
                 }else if(card.value.colorString == "yellow"){
                     startPlayer[1] = card.value.location
                 }else if(card.value.colorString == "green"){
