@@ -222,7 +222,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         //specifies with seque should be used
         switch segue.identifier {
         case "showScoreView":
-            let viewControllerB = segue.destination as! ViewController
+            let viewControllerB = segue.destination as! ScoreViewController
             thingsToKeepTrackOf(from: self, to: viewControllerB)
         default:
             print("could not find the segue")
