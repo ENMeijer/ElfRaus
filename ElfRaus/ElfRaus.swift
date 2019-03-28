@@ -118,7 +118,7 @@ class ElfRaus {
     }
     
     //index = indentifier = index in array cards
-    func chooseCard(at index : Int, _ player : String) -> Bool{
+    func chooseCard(at index : Int, _ player : String){
         //print("chooseCard", player)
         //print(currentTurn.allowedToPlayCard())
         if(currentTurn.allowedToPlayCard()){
@@ -160,12 +160,9 @@ class ElfRaus {
                     }
                     
                 }
-                
-              return true
             }
             
         }
-        return false
         
         
     }
