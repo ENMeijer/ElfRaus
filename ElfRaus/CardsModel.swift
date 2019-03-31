@@ -4,7 +4,6 @@
 //
 //  Created by A. Bliek on 01/03/2019.
 //  Copyright © 2019 Eline Meijer. All rights reserved.
-//NOT WORKINGggggg
 
 import Foundation
 import UIKit
@@ -90,6 +89,7 @@ class CardsModel{
         }
     }
     
+    
     func drawCard(_ card:Card, allLegalOptions:[Int:Card]){
         cards.append(card)
         for color in 0...3{
@@ -143,6 +143,7 @@ class CardsModel{
             }
         }
     }
+    
     
     func playCard(_ card:Card, allLegalOptions:[Int:Card]){
         for index in 0...legalOptions!.endIndex-1{
