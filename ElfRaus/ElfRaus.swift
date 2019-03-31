@@ -17,10 +17,6 @@ class ElfRaus {
     var cardsModel = [Card]()
     let totalCards = 80
     var cardsInDeck = 80
-//    var cardsPlayedGreen = [Int]()
-//    var cardsPlayedRed = [Int]()
-//    var cardsPlayedBlue = [Int]()
-//    var cardsPlayedYellow = [Int]()
     var playedCards = PlayedCards()
     var cardsModelClass = CardsModel()
     let actRModel = ActRModel() //Act
@@ -88,7 +84,6 @@ class ElfRaus {
             }else{
                 choice = actRModel.turnComplexModel(cards: cardsModelClass)
             }
-            print("model choice: ",choice)
             //let choice = actRModel.turn(cards: cardsModelClass)
             for option in legalOptions{
                 /// WHICH MODEL you want to play with. choice = simple model. complexchoice = complex model
@@ -126,11 +121,8 @@ class ElfRaus {
     
     //index = indentifier = index in array cards
     func chooseCard(at index : Int, _ player : String){
-        //print("chooseCard", player)
-        //print(currentTurn.allowedToPlayCard())
         if(currentTurn.allowedToPlayCard()){
             if (legalOptions.index(forKey: index) != nil) {
-                //print("play card")
                 cards[index].location = "Played"
                 //Add the played card to the DM of the model
                 actRModel.addCardToDM(card: cards[index], model: actRModel.complexModel)
@@ -142,7 +134,6 @@ class ElfRaus {
                 }
                 legalOptions.removeValue(forKey: index)
                 playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
-                //playedCards.printPlayedCards()
                 if(player == "Player"){
                     cardsPlayerClass.playCard(cards[index], allLegalOptions: legalOptions)
         
@@ -158,7 +149,6 @@ class ElfRaus {
                     
                     for indexCardModel in 0...cardsModel.endIndex-1{
                         if(cardsModel[indexCardModel].identifier == index){
-                            //print("Model plays ", cardsModel[indexCardModel].number)
                             cardsModelClass.playCard(cardsModel[indexCardModel], allLegalOptions: legalOptions)
                             cardsModel.remove(at: indexCardModel)
                             
