@@ -26,30 +26,32 @@ class MainMenuViewController: UIViewControllerAndVariablesPassedAround {
     }
     
     @IBAction func showHelp(_ sender: UIButton) {
-        performSegue(withIdentifier: "showDifficultyView", sender: nil)
+        performSegue(withIdentifier: "showHelpView", sender: nil)
     }
     
     @IBAction func showScores(_ sender: UIButton) {
-        performSegue(withIdentifier: "showDifficultyView", sender: nil)
+        performSegue(withIdentifier: "showScoreView", sender: nil)
     }
     
 
 
     
     
-    func thingsToKeepTrackOf(from:UIViewControllerAndVariablesPassedAround, to:UIViewControllerAndVariablesPassedAround){
-        to.game = from.game
-        to.hand = from.hand
-        to.difficulty = from.difficulty
-        to.gameRunning = from.gameRunning
-        to.score = from.score
-        
-    }
+//    func thingsToKeepTrackOf(from:UIViewControllerAndVariablesPassedAround, to:UIViewControllerAndVariablesPassedAround){
+//        to.game = from.game
+//        to.hand = from.hand
+//        to.difficulty = from.difficulty
+//        to.gameRunning = from.gameRunning
+//        to.score = from.score
+//        to.roundsToPlay = from.roundsToPlay
+//    }
     
     func initializeNewGame(){
         self.game = ElfRaus()
+        self.game.changeModelDifficulty(Model: self.difficulty)
         self.hand = CardsPlayer()
         self.gameRunning = true
+        self.currentRound = 1
     }
     
     
@@ -70,10 +72,10 @@ class MainMenuViewController: UIViewControllerAndVariablesPassedAround {
             let viewControllerB = segue.destination as! DifficultyViewController
             thingsToKeepTrackOf(from: self, to: viewControllerB)
         case "showHelpView":
-            let viewControllerB = segue.destination as! DifficultyViewController
+            let viewControllerB = segue.destination as! UIViewControllerAndVariablesPassedAround
             thingsToKeepTrackOf(from: self, to: viewControllerB)
         case "showScoreView":
-            let viewControllerB = segue.destination as! DifficultyViewController
+            let viewControllerB = segue.destination as! ScoreViewController
             thingsToKeepTrackOf(from: self, to: viewControllerB)
 
         default:

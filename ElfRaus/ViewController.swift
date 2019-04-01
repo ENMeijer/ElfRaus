@@ -14,8 +14,9 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     //var game = ElfRaus()
     //var hand = CardsPlayer()
     //included in UIViewControllerAndVariablesPassedAround, because these two need to be passed around
-
+    
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
+    lazy var topCardOnDrawButton = self.game.cards[self.game.deck[0]]
     
     //SET OUTLETS
     @IBOutlet var playingField: [cardView]! {didSet{initPlayingField()}}
@@ -53,7 +54,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     
     
-    @IBOutlet weak var nextButton: UIButton! {didSet{ enableNextButton(false)}}
+    @IBOutlet weak var nextButton: UIButton! {didSet{ nextButton.isEnabled = true}} //needs to be true if the model started
     @IBOutlet weak var drawButton: cardView! {didSet{ updateDrawButton()}}
     
     
@@ -69,12 +70,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         if let cardNumber = cardButtons.index(of: sender) {
             // only send information to model if card is present
             if(cardButtons[cardNumber].alpha == 1){
-                let shouldChooseCard = game.chooseCard(at: hand.view[cardNumber].identifier, "Player")
-                if shouldChooseCard{
-                    if(game.currentTurn.allowedToNextTurn()){
-                        enableNextButton(true)
-                    }
-                }
+                game.chooseCard(at: hand.view[cardNumber].identifier, "Player")
                 updateViewFromModel()
             }
         }else {
@@ -120,25 +116,8 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         showHand()
     }
     
-    @IBAction func nextButton(_ sender: UIButton) {
-        //next card
-        if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
-            if(game.currentTurn.allowedToNextTurn()){
-                game.newTurn("Player")
-                showHand()
-                game.turnModel()
-                game.newTurn("Model")
-                enableNextButton(false)
-                updateViewFromModel()
-            } else if(game.cardsInDeck == 0){
-                game.newTurn("Player")
-                showHand()
-                game.turnModel()
-                game.newTurn("Model")
-                enableNextButton(false)
-                updateViewFromModel()
-            }
-        }else if(game.cardsPlayerClass.won){
+    func won(){
+        if(game.cardsPlayerClass.won){
             let m = "You won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
             let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
             
@@ -147,8 +126,9 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             
             self.present(alert, animated: true)
             //the game is over
-            self.gameRunning = false
-        }else{
+            self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
+            self.updateRound()
+        }else if(game.cardsModelClass.won){
             let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
             let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
             
@@ -157,39 +137,103 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             
             self.present(alert, animated: true)
             //the game is over
-            self.gameRunning = false
+            self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
+            self.updateRound()
+        }
+    }
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        //next card
+        if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
+            if(game.currentTurn.allowedToNextTurn()){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                updateViewFromModel()
+            }else if (game.currentTurn.allowedToNextTurn()){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                updateViewFromModel()
+            }else if(game.cardsInDeck == 0),(game.cardsPlayerClass.legalOptions == nil){
+                game.newTurn("Player")
+                showHand()
+                game.turnModel()
+                game.newTurn("Model")
+                updateViewFromModel()
+            }
+        }else{
+            won()
         }
     }
     
     @IBAction func drawButton(_ sender: UIButton) {
-        if game.currentTurn.allowedToDrawCard() {
+        if game.currentTurn.allowedToDrawCard() , game.cardsInDeck > 0 {
             //draw action
+            if game.cardsInDeck > 0 {
+                self.topCardOnDrawButton = self.game.cards[self.game.deck[0]]
+            }
+            //animation
+            perform(#selector(flip), with: nil, afterDelay: 0)
+            perform(#selector(flipBack), with: nil, afterDelay: 1.3)
+
             game.drawCard("Player")
             hand = game.getCardsPlayer()
-            hand.showTheNewlyDrawnCard()
             updateColorCountButtonView()
-            if(game.currentTurn.allowedToNextTurn()){
-                enableNextButton(true)
-            }
+            
+            //animation
+            perform(#selector(flip), with: nil, afterDelay: 0)
+            perform(#selector(flipBack), with: nil, afterDelay: 1.3)
         }
         showHand()
         updateNextDrawButton()
     }
+    
+    @IBAction func showScore(_ sender: UIButton) {
+        performSegue(withIdentifier: "showScoreView", sender: nil)
+    }
+    
+    //ANIMATIONS
+    @objc func flip() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        //self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
+        
+        
+        UIView.transition(with: drawButton, duration: 0.5, options: transitionOptions, animations: {
+            self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
+        })
+    }
+    @objc func flipBack() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
+        UIView.transition(with: drawButton, duration: 0.5, options: transitionOptions, animations: {
+            self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
+        })
+        updateNextDrawButton()
+    }
+    
+    //performSegue(withIdentifier: "showDifficultyView", sender: nil)
+
+    //SEGUE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        //specifies with seque should be used
+        switch segue.identifier {
+        case "showScoreView":
+            let viewControllerB = segue.destination as! ScoreViewController
+            thingsToKeepTrackOf(from: self, to: viewControllerB)
+        default:
+            print("could not find the segue")
+        }
+    }
+    
+    
 
     
     //FUNCTIONS
     
-    func enableNextButton(_ isActive:Bool){
-        //print("enable")
-        if isActive{
-            nextButton.isEnabled = true
-            nextButton.alpha = 1
-        } else {
-            nextButton.isEnabled = false
-            nextButton.alpha = 0.5
-        }
-        
-    }
     
     func enableGoThroughPlayerHand(){
         hand = game.getCardsPlayer()
@@ -233,39 +277,52 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     }
     
     func updateNextDrawButton(){
-        drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
-        enableNextButton(game.currentTurn.allowedToNextTurn())
-        if game.currentTurn.allowedToPlayCard(){
-            drawButton.enableDrawButton(false)
-            //enableNextButton(false)
-        }else if(game.cardsInDeck == 0){
-            enableNextButton(true)
-        }
+        updateNextButton()
         updateDrawButton()
     }
     
     func updateDrawButton(){
         drawButton.setDrawButton(cardsLeft: game.cardsInDeck)
-        drawButton.enableDrawButton(game.currentTurn.allowedToDrawCard())
-        if(game.cardsInDeck>60){ //make it visible at the start of the game, otherwise when model starts the button will not get visible
+        if(game.currentTurn.allowedToDrawCard()&&game.cardsInDeck > 0){
+            drawButton.enableDrawButton(true)
+        } else {
+            drawButton.enableDrawButton(false)
+        }
+        if(game.cardsInDeck>60){ //make it visible at the start of the game, otherwise when model starts the button will not get visible //??? check again
             drawButton.enableDrawButton(true)
         }
     }
     
+    func updateNextButton(){
+        if game.currentTurn.allowedToNextTurn(){
+            nextButton.isEnabled = true
+            nextButton.alpha = 1
+        } else if(game.deck.count > 0){
+            nextButton.isEnabled = false
+            nextButton.alpha = 0.5
+        } else {
+            nextButton.isEnabled = true
+            nextButton.alpha = 1
+        }
+    }
     
     
     func updateViewFromModel(){
-        //update playing field view
-        updatePlayingFieldView()
-        //update oppoenents card count from model
-        updateOpponentsCardCountView()
-        //update Player Cards
-        showHand()
-        //update the number of cards a player has per color
-        updateColorCountButtonView()
-        //update draw and next button
-        updateNextDrawButton()
-        updateDrawButton()
+        if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
+            //update playing field view
+            updatePlayingFieldView()
+            //update oppoenents card count from model
+            updateOpponentsCardCountView()
+            //update Player Cards
+            showHand()
+            //update the number of cards a player has per color
+            updateColorCountButtonView()
+            //update draw and next button
+            updateNextDrawButton()
+            updateDrawButton() //??? doulbe check how to simplefy
+        }else{
+            won()
+        }
     }
     
     func updatePlayingFieldView(){

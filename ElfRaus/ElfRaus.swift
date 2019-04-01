@@ -17,16 +17,12 @@ class ElfRaus {
     var cardsModel = [Card]()
     let totalCards = 80
     var cardsInDeck = 80
-//    var cardsPlayedGreen = [Int]()
-//    var cardsPlayedRed = [Int]()
-//    var cardsPlayedBlue = [Int]()
-//    var cardsPlayedYellow = [Int]()
     var playedCards = PlayedCards()
     var cardsModelClass = CardsModel()
-    let actRModel = ActRModel()
+    let actRModel = ActRModel() //Act
     var cardsPlayerClass = CardsPlayer()
     var currentTurn = Turn(cardOptions: nil)
-    
+    var playingActRModel = "simpleModel"  //Can also be "complexModel"
     
     var legalOptions = [Int:Card]()
     
@@ -40,12 +36,12 @@ class ElfRaus {
     
     private func win(player : String) -> Bool{
         if(player == "Player"){
-            if(cardsPlayerClass.cards == nil){
+            if(cardsPlayerClass.cards.count == 0){
                 return true
             }
             
         }else{
-            if(cardsModelClass.cards == nil){
+            if(cardsModelClass.cards.count == 0){
                 return true
             }
         }
@@ -67,21 +63,30 @@ class ElfRaus {
         if(currentTurn.allowedToNextTurn()){
             return
         }else if(cardsModelClass.getLegalOptions() == nil), (currentTurn.allowedToDrawCard()){
-             drawCard("model")
-            actRModel.addCardToDM(card: cardsModelClass.cards[cardsModelClass.cards.endIndex-1], model: actRModel.model)
-             turnModel()
+            if(cardsInDeck > 0){
+                drawCard("model")
+                turnModel()
+            }
+            return
         }else if(cardsModelClass.getLegalOptions()!.endIndex == 1){
             actRModel.removeCardFromDM(model: actRModel.model, card: cardsModelClass.getLegalOptions()![0])
             chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
             
         }else if(cardsModelClass.ableToPlayAllCards(hand: cardsModelClass.cards, possibleCards: cardsModelClass.getLegalOptions()!)){
             print("in play all cards")
-            while(cardsModelClass.cards.count > 0){
+            while(cardsModelClass.getLegalOptions() != nil){
                 chooseCard(at: cardsModelClass.getLegalOptions()![0].identifier , "model")
             }
         }else{
-            let choice = actRModel.turn(cards: cardsModelClass)
+            var choice = [""]
+            if playingActRModel == "simpleModel" {
+                choice = actRModel.turn(cards: cardsModelClass)
+            }else{
+                choice = actRModel.turnComplexModel(cards: cardsModelClass)
+            }
+            //let choice = actRModel.turn(cards: cardsModelClass)
             for option in legalOptions{
+                /// WHICH MODEL you want to play with. choice = simple model. complexchoice = complex model
                 if(option.value.colorString == choice[0]){
                     if(option.value.direction == choice[1]){
                         chooseCard(at: option.value.identifier, "model")
@@ -115,13 +120,12 @@ class ElfRaus {
     }
     
     //index = indentifier = index in array cards
-    func chooseCard(at index : Int, _ player : String) -> Bool{
-        //print("chooseCard", player)
-        //print(currentTurn.allowedToPlayCard())
+    func chooseCard(at index : Int, _ player : String){
         if(currentTurn.allowedToPlayCard()){
             if (legalOptions.index(forKey: index) != nil) {
-                //print("play card")
                 cards[index].location = "Played"
+                //Add the played card to the DM of the model
+                actRModel.addCardToDM(card: cards[index], model: actRModel.complexModel)
                 if(cards[index].number >= 11), (cards[index].number < 20){
                     legalOptions.updateValue(cards[index+1], forKey: index+1)
                 }
@@ -130,9 +134,9 @@ class ElfRaus {
                 }
                 legalOptions.removeValue(forKey: index)
                 playedCards.newPlayedCard(color: cards[index].color, number: cards[index].number)
-                //playedCards.printPlayedCards()
                 if(player == "Player"){
                     cardsPlayerClass.playCard(cards[index], allLegalOptions: legalOptions)
+        
                     for indexCardPlayer in 0...cardsPlayer.endIndex-1{
                         if(cardsPlayer[indexCardPlayer].identifier == index){
                             cardsPlayer.remove(at: indexCardPlayer)
@@ -145,7 +149,6 @@ class ElfRaus {
                     
                     for indexCardModel in 0...cardsModel.endIndex-1{
                         if(cardsModel[indexCardModel].identifier == index){
-                            //print("Model plays ", cardsModel[indexCardModel].number)
                             cardsModelClass.playCard(cardsModel[indexCardModel], allLegalOptions: legalOptions)
                             cardsModel.remove(at: indexCardModel)
                             
@@ -154,14 +157,15 @@ class ElfRaus {
                     }
                     
                 }
-                
-              return true
             }
             
         }
-        return false
         
         
+    }
+    
+    func changeModelDifficulty (Model:String ){
+        self.playingActRModel = Model
     }
     
     init(){
@@ -184,6 +188,7 @@ class ElfRaus {
             cardsPlayer.append(cards[cardPlayer])
             cardsPlayerClass.drawCard(cards[cardPlayer], allLegalOptions: legalOptions)
             if(cards[cardPlayer].number == 11 ){
+                print(cards[cardPlayer])
                 legalOptions.updateValue(cards[cardPlayer], forKey: cards[cardPlayer].identifier)
             }
             
@@ -191,6 +196,7 @@ class ElfRaus {
             let cardModel = deck[card]
             deck.remove(at: card)
             cards[cardModel].location = "Model"
+            print(cards[cardModel])
             cardsModel.append(cards[cardModel])
             cardsModelClass.drawCard(cards[cardModel], allLegalOptions: legalOptions)
             cardsInDeck -= 2
@@ -201,11 +207,11 @@ class ElfRaus {
         }
         actRModel.addAllcardsOfhandToDM(cards: cardsModelClass, model: actRModel.model)
         var startPlayer = ["","","",""]
+        print("all legal options: ",legalOptions)
         if(legalOptions.count > 0){
             for card in legalOptions{
                 if(card.value.colorString == "red"){
                     startPlayer[0] = card.value.location
-                    break
                 }else if(card.value.colorString == "yellow"){
                     startPlayer[1] = card.value.location
                 }else if(card.value.colorString == "green"){
@@ -214,10 +220,14 @@ class ElfRaus {
                     startPlayer[3] = card.value.location
                 }
             }
+            
+            
+            print(startPlayer)
             for player in startPlayer{
                 if(player == "Model"){
                     newTurn("Player")
                     turnModel()
+                    newTurn("Model")
                     break
                 }else if(player == "Player"){
                     newTurn("Model")

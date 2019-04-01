@@ -18,6 +18,7 @@
 		2F40E146221DB272007E5536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E145221DB272007E5536 /* Assets.xcassets */; };
 		2F40E149221DB272007E5536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40E147221DB272007E5536 /* LaunchScreen.storyboard */; };
 		4000093D224A44400099BC3E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000093C224A44400099BC3E /* MainMenuViewController.swift */; };
+		4000093F224BAD990099BC3E /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000093E224BAD990099BC3E /* ScoreViewController.swift */; };
 		4007D560223A67BB00EA4E17 /* cardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007D55F223A67BB00EA4E17 /* cardView.swift */; };
 		4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FD22281C2200A33FBE /* ACTRWindowView.swift */; };
 		4026931022281C2200A33FBE /* BufferAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402692FE22281C2200A33FBE /* BufferAction.swift */; };
@@ -60,6 +61,7 @@
 		2F40E148221DB272007E5536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F40E14A221DB272007E5536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4000093C224A44400099BC3E /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		4000093E224BAD990099BC3E /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		4007D55F223A67BB00EA4E17 /* cardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardView.swift; sourceTree = "<group>"; };
 		402692FD22281C2200A33FBE /* ACTRWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTRWindowView.swift; sourceTree = "<group>"; };
 		402692FE22281C2200A33FBE /* BufferAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAction.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		4026932322281EFA00A33FBE /* PlayingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		402693252228200400A33FBE /* PlayedCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayedCards.swift; sourceTree = "<group>"; };
 		40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAndVariablesPassedAround.swift; sourceTree = "<group>"; };
-		40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DifficultyViewController.swift; path = ElfRaus/DifficultyViewController.swift; sourceTree = "<group>"; };
+		40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		40F68C9D22240043004EBCFC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BB22DA99222FE919005EC811 /* testActR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testActR.swift; sourceTree = "<group>"; };
 		BBEB17FF224A62E1006F51F4 /* elfRausModelComplex.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = elfRausModelComplex.actr; sourceTree = "<group>"; };
@@ -102,7 +104,6 @@
 		2F40E132221DB26F007E5536 = {
 			isa = PBXGroup;
 			children = (
-				40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */,
 				2F40E13D221DB26F007E5536 /* ElfRaus */,
 				2F40E13C221DB26F007E5536 /* Products */,
 			);
@@ -119,8 +120,10 @@
 		2F40E13D221DB26F007E5536 /* ElfRaus */ = {
 			isa = PBXGroup;
 			children = (
+				40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */,
 				40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */,
 				4000093C224A44400099BC3E /* MainMenuViewController.swift */,
+				4000093E224BAD990099BC3E /* ScoreViewController.swift */,
 				4007D55F223A67BB00EA4E17 /* cardView.swift */,
 				21F32B0222297E1C001701E2 /* CardsModel.swift */,
 				2F40E145221DB272007E5536 /* Assets.xcassets */,
@@ -264,6 +267,7 @@
 				4026930F22281C2200A33FBE /* ACTRWindowView.swift in Sources */,
 				2F40E13F221DB26F007E5536 /* AppDelegate.swift in Sources */,
 				210DC30E221EE0A000DF4CFC /* Card.swift in Sources */,
+				4000093F224BAD990099BC3E /* ScoreViewController.swift in Sources */,
 				4026931B22281C2200A33FBE /* SlotAction.swift in Sources */,
 				4026931022281C2200A33FBE /* BufferAction.swift in Sources */,
 				4026932022281C2200A33FBE /* Vision.swift in Sources */,
@@ -418,7 +422,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cogmod.ElfRaus;
+				PRODUCT_BUNDLE_IDENTIFIER = AdnaT.ElfRaus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -438,7 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cogmod.ElfRaus;
+				PRODUCT_BUNDLE_IDENTIFIER = AdnaT.ElfRaus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
