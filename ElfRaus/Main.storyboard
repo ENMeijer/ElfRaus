@@ -670,24 +670,21 @@
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Rules:
-
-The player with the red eleven goes first. This card should be placed face up in the middle of the table. 
-
-If there is no red eleven among the dealt cards, then the player with the eleven in another color goes first. The order of precedence is yellow, green, blue. If there is no eleven among the dealt cards at all, the cards must be reshuffled and dealt once more.
-
-It is now the turn of the next player on the right and s/he has three possibilities:
-1. S/he lays a 10 of the same color tot he left of the eleven already played or a 12 to the right. Cards of the same color should be placed on top of each in the sequence 10 - 1 or 12 - 20 in each case.
-2. S/he lays another eleven above or below the eleven already played and
-3. S/he is unable to go and must take a card from the pack, which is face down. If the card matches, s/he can play it at once. If the card does not match, s/he must take another card, but up to a maximum of three cards. The it is the turn of the next player.
-Each player can play not just once card but as many matching cards as s/he likes when it is his/her turn.
-Matching cards do not have to be played however. It is a favorite trick to hold back certain cards as long as possible.In this way other players can be prevented from playing their cards.
-
-The round is won by the first player able to play his last card. The other players should add up the values of their cards and make a note of the totals on a piece of paper.
-The overall game e.g. after 3 - 5 rounds, is won by the player with the lowest final total.</string>
+                                        <mutableString key="content">Rules:
+You play the game Elfer Raus against one opponent. The player, who gets to first empty its hand,
+is the winner. Cards can be placed down interceding order from 11 to 1 or increasing order form
+11 to 20 from the same color. If you can play, you have to play at least one card, before you can
+end your turn. If you cannot play, you can pick up to three cards. If you can play the first two,
+you need to play them. If there are no cards left, then you just end your turn.
+When one player’s hand is empty, the game is over and the remaining points of both players are
+written down. These points are summed for both players over the total amount of turns (3-10)
+and the player with the least points at the end, wins the whole game.</mutableString>
                                         <attributes>
-                                            <font key="NSFont" size="18" name="ComicSansMS"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="12" name="ComicSansMS"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
