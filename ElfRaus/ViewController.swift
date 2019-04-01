@@ -17,6 +17,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     lazy var topCardOnDrawButton = self.game.cards[self.game.deck[0]]
+    var cardsDrawnByModel = 3
     
     //SET OUTLETS
     @IBOutlet var playingField: [cardView]! {didSet{initPlayingField()}}
@@ -57,6 +58,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     @IBOutlet weak var nextButton: UIButton! {didSet{ nextButton.isEnabled = true}} //needs to be true if the model started
     @IBOutlet weak var drawButton: cardView! {didSet{ updateDrawButton()}}
     
+    @IBOutlet weak var newlyDrawnCard: cardView!
     
 
     @IBOutlet weak var opponentView: UILabel! {didSet { updateOpponentsCardCountView()}}
@@ -143,6 +145,8 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
+        cardsDrawnByModel = 0
+        let cardsBeforeModel = game.cardsInDeck
         //next card
         if(!game.cardsPlayerClass.won), (!game.cardsModelClass.won){
             if(game.currentTurn.allowedToNextTurn()){
@@ -150,13 +154,17 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
                 showHand()
                 game.turnModel()
                 game.newTurn("Model")
+                cardsDrawnByModel = cardsBeforeModel-game.cardsInDeck
+                if (cardsDrawnByModel > 0 && cardsDrawnByModel <= 3){
+                    perform(#selector(moveDrawnCardAnimation), with: nil, afterDelay: 0.2)
+                }
                 updateViewFromModel()
-            }else if (game.currentTurn.allowedToNextTurn()){
-                game.newTurn("Player")
-                showHand()
-                game.turnModel()
-                game.newTurn("Model")
-                updateViewFromModel()
+//            }else if (game.currentTurn.allowedToNextTurn()){
+//                game.newTurn("Player")
+//                showHand()
+//                game.turnModel()
+//                game.newTurn("Model")
+//                updateViewFromModel()
             }else if(game.cardsInDeck == 0),(game.cardsPlayerClass.legalOptions == nil){
                 game.newTurn("Player")
                 showHand()
@@ -175,17 +183,14 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             if game.cardsInDeck > 0 {
                 self.topCardOnDrawButton = self.game.cards[self.game.deck[0]]
             }
-            //animation
-            perform(#selector(flip), with: nil, afterDelay: 0)
-            perform(#selector(flipBack), with: nil, afterDelay: 1.3)
-
             game.drawCard("Player")
             hand = game.getCardsPlayer()
             updateColorCountButtonView()
             
             //animation
             perform(#selector(flip), with: nil, afterDelay: 0)
-            perform(#selector(flipBack), with: nil, afterDelay: 1.3)
+            
+            
         }
         showHand()
         updateNextDrawButton()
@@ -198,20 +203,26 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     //ANIMATIONS
     @objc func flip() {
         let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
-        //self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
         
-        
-        UIView.transition(with: drawButton, duration: 0.5, options: transitionOptions, animations: {
+        UIView.transition(with: drawButton, duration: 0.75, options: transitionOptions, animations: {
             self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
+        },completion: { _ in
+            self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
+            self.updateNextDrawButton()
         })
     }
-    @objc func flipBack() {
-        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
-        self.drawButton.setHandCardView(card: self.topCardOnDrawButton)
-        UIView.transition(with: drawButton, duration: 0.5, options: transitionOptions, animations: {
-            self.drawButton.setDrawButton(cardsLeft: self.game.cardsInDeck)
+    
+    
+    @objc func moveDrawnCardAnimation() {
+        self.newlyDrawnCard.setDrawButton(cardsLeft: self.game.cardsInDeck)
+        self.newlyDrawnCard.setCardView(cardNumber: cardsDrawnByModel) //set to a too high number to get a question mark
+        self.newlyDrawnCard.center = self.drawButton.center
+        self.newlyDrawnCard.isHidden = false
+        UIView.transition(with: newlyDrawnCard, duration: 1.0, options: [.curveLinear], animations: {
+            self.newlyDrawnCard.center = self.opponentView.center
+        },completion: { _ in
+            self.newlyDrawnCard.isHidden = true
         })
-        updateNextDrawButton()
     }
     
     //performSegue(withIdentifier: "showDifficultyView", sender: nil)

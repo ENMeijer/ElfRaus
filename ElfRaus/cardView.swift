@@ -43,6 +43,14 @@ class cardView: UIButton {
         }
     }
     
+    func setDrawnCard(){
+        self.interactable = false
+        self.number = 0
+        self.color = UIColor.black
+        self.alpha = 1
+        self.atLeastOneCard = true
+    }
+    
     func setDrawButton(cardsLeft:Int){
         if cardsLeft<=0{
             self.isEnabled = false
