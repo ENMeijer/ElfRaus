@@ -55,7 +55,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     
     
-    @IBOutlet weak var nextButton: UIButton! {didSet{ nextButton.isEnabled = true}} //needs to be true if the model started
+    @IBOutlet weak var nextButton: UIButton! {didSet{ updateNextButton()}}//{didSet{ nextButton.isEnabled = true}} //needs to be true if the model started
     @IBOutlet weak var drawButton: cardView! {didSet{ updateDrawButton()}}
     
     @IBOutlet weak var newlyDrawnCard: cardView!
@@ -132,15 +132,24 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             self.updateRound()
         }else if(game.cardsModelClass.won){
             let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
-            let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
+            let action1 = UIAlertAction(title: "Continue", style: .default) { (action:UIAlertAction) in
+                print("You continue");
+            }
             
-            alert.addAction(UIAlertAction(title: "Oww", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Oww", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
+            let action2 = UIAlertAction(title: "Show Score", style: .default) { (action:UIAlertAction) in
+                CATransaction.setCompletionBlock({
+                    self.performSegue(withIdentifier: "showScoreView", sender: nil)
+                })
+            }
+            alertController.addAction(action1)
+            alertController.addAction(action2)
+            self.present(alertController, animated: true)
+            self.updateViewFromModel()
             //the game is over
             self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
-            self.updateRound()
+            self.updateRound() //already sets up the playing field
+            self.updateViewFromModel()
         }
     }
     

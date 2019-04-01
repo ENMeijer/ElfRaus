@@ -26,6 +26,7 @@ class UIViewControllerAndVariablesPassedAround: UIViewController{
             self.gameRunning = false
         }
         self.currentRound += 1
+        self.game = ElfRaus()
     }
     
     func thingsToKeepTrackOf(from:UIViewControllerAndVariablesPassedAround, to:UIViewControllerAndVariablesPassedAround){
