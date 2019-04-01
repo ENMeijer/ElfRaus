@@ -10,6 +10,41 @@ import UIKit
 
 
 class DifficultyViewController: UIViewControllerAndVariablesPassedAround {
+    
+    func setRoundsController(){
+        switch self.roundsToPlay {
+        case 1:
+            roundsController.selectedSegmentIndex = 0
+            print("one round selected")
+        case 3:
+            roundsController.selectedSegmentIndex = 1
+        case 5:
+            roundsController.selectedSegmentIndex = 2
+        case 10:
+            roundsController.selectedSegmentIndex = 3
+        default:
+            roundsController.selectedSegmentIndex = 0
+            print("unknown round")
+        }
+    }
+    
+    @IBOutlet weak var roundsController: UISegmentedControl! {didSet{ setRoundsController()} }
+    @IBAction func roundsController(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.roundsToPlay = 1
+        case 1:
+            self.roundsToPlay = 3
+        case 2:
+            self.roundsToPlay = 5
+        case 3:
+            self.roundsToPlay = 10
+            
+        default:
+            print("amount of rounds not found")
+        }
+    }
+    
     func setDifficulty(_ newDifficulty: String){
         difficulty = newDifficulty
     }

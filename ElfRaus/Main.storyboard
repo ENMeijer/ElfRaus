@@ -27,10 +27,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGm-72-ada">
                                         <rect key="frame" x="46" y="0.0" width="102" height="72"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Start">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="newGame:" destination="paW-U4-k1d" eventType="touchUpInside" id="8wl-xv-V2L"/>
@@ -38,10 +38,10 @@
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-XK-WRe">
                                         <rect key="frame" x="0.0" y="80" width="194" height="72"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Continue">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="continueGame:" destination="paW-U4-k1d" eventType="touchUpInside" id="LlF-MI-tAq"/>
@@ -49,11 +49,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb0-K8-Tl2">
                                         <rect key="frame" x="9" y="160" width="176" height="72"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Settings">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="showDifficulty:" destination="paW-U4-k1d" eventType="touchUpInside" id="BPm-MZ-DkR"/>
@@ -61,11 +61,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0j-Dk-H9X">
                                         <rect key="frame" x="47" y="240" width="100" height="72"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Help">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="showHelp:" destination="paW-U4-k1d" eventType="touchUpInside" id="RdP-Ta-u9w"/>
@@ -73,11 +73,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OY9-1g-bnO">
                                         <rect key="frame" x="23.5" y="320" width="147" height="72"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Scores">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="showScores:" destination="paW-U4-k1d" eventType="touchUpInside" id="nZu-W4-H6R"/>
@@ -124,19 +124,19 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnT-De-BxS">
                                 <rect key="frame" x="16" y="285.5" width="343" height="36"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-vM-sCa">
                                 <rect key="frame" x="16" y="329.5" width="343" height="29"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <segments>
                                     <segment title="Easy"/>
                                     <segment title="Hard"/>
                                 </segments>
-                                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="tintColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="difficultyController:" destination="37D-fA-vol" eventType="valueChanged" id="ohB-0N-QYZ"/>
                                 </connections>
@@ -152,26 +152,54 @@
                                     <segue destination="gEq-bN-ANh" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="sbA-Wt-nZG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVz-X1-zJy">
+                                <rect key="frame" x="138.5" y="183.5" width="98.5" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vfw-Jl-VQf">
+                                <rect key="frame" x="16" y="227.5" width="343" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="3"/>
+                                    <segment title="5"/>
+                                    <segment title="10"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.70027965339999998" blue="0.088885439390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="roundsController:" destination="37D-fA-vol" eventType="valueChanged" id="Jhu-XG-Ym1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CWD-jE-RPI" firstAttribute="trailing" secondItem="bzn-kJ-yos" secondAttribute="trailing" id="4WV-dq-oqy"/>
                             <constraint firstItem="sBC-vM-sCa" firstAttribute="centerY" secondItem="CWD-jE-RPI" secondAttribute="centerY" id="C5O-oR-ojQ"/>
                             <constraint firstItem="DnT-De-BxS" firstAttribute="centerX" secondItem="CWD-jE-RPI" secondAttribute="centerX" id="Gmt-gV-abx"/>
+                            <constraint firstItem="DnT-De-BxS" firstAttribute="top" secondItem="Vfw-Jl-VQf" secondAttribute="bottom" constant="30" id="K8Z-2h-GAG"/>
                             <constraint firstItem="sBC-vM-sCa" firstAttribute="centerX" secondItem="CWD-jE-RPI" secondAttribute="centerX" id="KR4-H6-s4p"/>
                             <constraint firstItem="DnT-De-BxS" firstAttribute="leading" secondItem="CWD-jE-RPI" secondAttribute="leading" constant="16" id="O3n-0Z-Dxg"/>
                             <constraint firstItem="sBC-vM-sCa" firstAttribute="leading" secondItem="CWD-jE-RPI" secondAttribute="leading" constant="16" id="OB6-Db-GH1"/>
+                            <constraint firstItem="tVz-X1-zJy" firstAttribute="centerX" secondItem="CWD-jE-RPI" secondAttribute="centerX" id="RL1-vi-qia"/>
                             <constraint firstItem="CWD-jE-RPI" firstAttribute="top" secondItem="bzn-kJ-yos" secondAttribute="top" id="Ref-TP-J9A"/>
+                            <constraint firstItem="CWD-jE-RPI" firstAttribute="trailing" secondItem="Vfw-Jl-VQf" secondAttribute="trailing" constant="16" id="Yy5-NS-kCi"/>
+                            <constraint firstItem="Vfw-Jl-VQf" firstAttribute="centerX" secondItem="CWD-jE-RPI" secondAttribute="centerX" id="ahJ-2K-OZH"/>
                             <constraint firstItem="CWD-jE-RPI" firstAttribute="bottom" secondItem="bzn-kJ-yos" secondAttribute="bottom" id="cTV-Uw-db3"/>
                             <constraint firstItem="CWD-jE-RPI" firstAttribute="trailing" secondItem="sBC-vM-sCa" secondAttribute="trailing" constant="16" id="lBD-VV-Wrp"/>
+                            <constraint firstItem="Vfw-Jl-VQf" firstAttribute="top" secondItem="tVz-X1-zJy" secondAttribute="bottom" constant="8" symbolType="layoutAnchor" id="lPY-zD-MZi"/>
                             <constraint firstItem="sBC-vM-sCa" firstAttribute="top" secondItem="DnT-De-BxS" secondAttribute="bottom" constant="8" symbolType="layoutAnchor" id="neL-xO-0i3"/>
                             <constraint firstItem="CWD-jE-RPI" firstAttribute="trailing" secondItem="DnT-De-BxS" secondAttribute="trailing" constant="16" id="rlI-bI-NuB"/>
                             <constraint firstItem="bzn-kJ-yos" firstAttribute="leading" secondItem="CWD-jE-RPI" secondAttribute="leading" id="sfW-f8-v13"/>
+                            <constraint firstItem="Vfw-Jl-VQf" firstAttribute="leading" secondItem="CWD-jE-RPI" secondAttribute="leading" constant="16" id="tdE-Ac-Wfi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CWD-jE-RPI"/>
                     </view>
                     <connections>
                         <outlet property="difficultyController" destination="sBC-vM-sCa" id="t7o-kR-rbq"/>
+                        <outlet property="roundsController" destination="Vfw-Jl-VQf" id="Zg2-4C-Qmk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UF8-7t-zba" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -841,7 +869,7 @@ and the player with the least points at the end, wins the whole game.</string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84v-RR-Oag">
                                                 <rect key="frame" x="11" y="456.5" width="56.5" height="33.5"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1163,7 +1191,7 @@ and the player with the least points at the end, wins the whole game.</string>
         <image name="backgroundTable" width="852" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lN8-cU-CAY"/>
-        <segue reference="Fam-MD-t7d"/>
+        <segue reference="w5z-Ag-dfx"/>
+        <segue reference="Bdd-gt-PNy"/>
     </inferredMetricsTieBreakers>
 </document>
