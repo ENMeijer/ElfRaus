@@ -121,20 +121,10 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     func won(){
         if(game.cardsPlayerClass.won){
             let m = "You won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
-            let alert = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Yeah", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Yeah", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
-            //the game is over
-            self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
-            self.updateRound()
-        }else if(game.cardsModelClass.won){
-            let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
             let alertController = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
-            let action1 = UIAlertAction(title: "Continue", style: .default) { (action:UIAlertAction) in
-                print("You continue");
+            let action1 = UIAlertAction(title: "Continue", style: .default) { (action:UIAlertAction) in print("continue game")
+                self.updateRound();
+                self.updateViewFromModel();
             }
             
             let action2 = UIAlertAction(title: "Show Score", style: .default) { (action:UIAlertAction) in
@@ -145,15 +135,34 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             alertController.addAction(action1)
             alertController.addAction(action2)
             self.present(alertController, animated: true)
-            self.updateViewFromModel()
+            //the game is over
+            self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
+            self.updateRound()
+        }else if(game.cardsModelClass.won){
+            let m = "The model won! \nScore model:"+String(game.cardsModelClass.countScore())+"\nScore Player: "+String(game.cardsPlayerClass.countScore())
+            let alertController = UIAlertController(title: "Winning?", message: m, preferredStyle: .alert)
+            let action1 = UIAlertAction(title: "Continue", style: .default) { (action:UIAlertAction) in
+                print("continue game")
+                self.updateRound();
+                self.updateViewFromModel();
+            }
+            
+            let action2 = UIAlertAction(title: "Show Score", style: .default) { (action:UIAlertAction) in
+                CATransaction.setCompletionBlock({
+                    self.performSegue(withIdentifier: "showScoreView", sender: nil)
+                })
+            }
+            alertController.addAction(action1)
+            alertController.addAction(action2)
+            self.present(alertController, animated: true)
             //the game is over
             self.updateScore(playerScore: game.cardsPlayerClass.countScore(), modelScore: game.cardsModelClass.countScore())
             self.updateRound() //already sets up the playing field
-            self.updateViewFromModel()
         }
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
+        
         cardsDrawnByModel = 0
         let cardsBeforeModel = game.cardsInDeck
         //next card
@@ -184,6 +193,8 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         }else{
             won()
         }
+        //check for winning after the models turn
+        won()
     }
     
     @IBAction func drawButton(_ sender: UIButton) {
@@ -308,7 +319,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         } else {
             drawButton.enableDrawButton(false)
         }
-        if(game.cardsInDeck>60){ //make it visible at the start of the game, otherwise when model starts the button will not get visible //??? check again
+        if(game.cardsInDeck>60){
             drawButton.enableDrawButton(true)
         }
     }

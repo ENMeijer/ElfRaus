@@ -150,7 +150,7 @@ extension cardView {
     
     private var numberString: String {
         switch number {
-        case 0: return ""
+        case 0: return " "
         case 1...20: return String(number)
         case 21...80: return String(number) //needed for the draw card pile
         default: return "?"
