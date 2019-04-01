@@ -238,7 +238,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
         self.newlyDrawnCard.setCardView(cardNumber: cardsDrawnByModel) //set to a too high number to get a question mark
         self.newlyDrawnCard.center = self.drawButton.center
         self.newlyDrawnCard.isHidden = false
-        UIView.transition(with: newlyDrawnCard, duration: 1.0, options: [.curveLinear], animations: {
+        UIView.transition(with: newlyDrawnCard, duration: 2.0, options: [.curveLinear], animations: {
             self.newlyDrawnCard.center = self.opponentView.center
         },completion: { _ in
             self.newlyDrawnCard.isHidden = true

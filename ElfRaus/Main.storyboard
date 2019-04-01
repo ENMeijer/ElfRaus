@@ -727,7 +727,7 @@
                                     <fragment>
                                         <string key="content">Rules:
 You play the game Elfer Raus against one opponent. The player, who gets to first empty its hand,
-is the winner. Cards can be placed down interceding order from 11 to 1 or increasing order form
+is the winner. Cards can be placed down in decresasing order from 11 to 1 or increasing order form
 11 to 20 from the same color. If you can play, you have to play at least one card, before you can
 end your turn. If you cannot play, you can pick up to three cards. If you can play the first two,
 you need to play them. If there are no cards left, then you just end your turn.
@@ -735,11 +735,9 @@ When one player’s hand is empty, the game is over and the remaining points of 
 written down. These points are summed for both players over the total amount of turns (3-10)
 and the player with the least points at the end, wins the whole game.</string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <font key="NSFont" size="12" name="ComicSansMS"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -1191,7 +1189,7 @@ and the player with the least points at the end, wins the whole game.</string>
         <image name="backgroundTable" width="852" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w5z-Ag-dfx"/>
-        <segue reference="Bdd-gt-PNy"/>
+        <segue reference="lN8-cU-CAY"/>
+        <segue reference="Fam-MD-t7d"/>
     </inferredMetricsTieBreakers>
 </document>
