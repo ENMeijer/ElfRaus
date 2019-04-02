@@ -37,8 +37,6 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     @IBOutlet var cardButtons: [cardView]! {didSet{showHand()}}
     
-    
-    
 
     @IBOutlet weak var goLeftButton: UIButton! {didSet{ enableGoThroughPlayerHand()}}
     @IBOutlet weak var goRightButton: UIButton! {didSet{ enableGoThroughPlayerHand()}}
@@ -55,7 +53,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     
     
-    @IBOutlet weak var nextButton: UIButton! {didSet{ updateNextButton()}}//{didSet{ nextButton.isEnabled = true}} //needs to be true if the model started
+    @IBOutlet weak var nextButton: UIButton! {didSet{ updateNextButton()}}
     @IBOutlet weak var drawButton: cardView! {didSet{ updateDrawButton()}}
     
     @IBOutlet weak var newlyDrawnCard: cardView!
@@ -410,6 +408,7 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
             }
         }
     }
+    
     
     func initPlayingField(){
         //initialized the playing field

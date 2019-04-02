@@ -14,7 +14,20 @@ class MainMenuViewController: UIViewControllerAndVariablesPassedAround {
     @IBOutlet weak var continueButton: UIButton!
     
     @IBAction func newGame(_ sender: UIButton) {
-        performSegue(withIdentifier: "showNewGameView", sender: nil)
+        if(!self.questionsShown){
+            //??? show questions
+            let m = "Cards can be played in sequence from 11 up- and downwards. \n If you cannot play, you need to draw up to 3 Cards.\n Goal: Empty your hand first."
+            let alertController = UIAlertController(title: "Short Rules", message: m, preferredStyle: .alert)
+            let action1 = UIAlertAction(title: "Start Game", style: .default) { (action:UIAlertAction) in CATransaction.setCompletionBlock({
+                self.performSegue(withIdentifier: "showNewGameView", sender: nil)
+            })
+            }
+            alertController.addAction(action1)
+            self.present(alertController, animated: true)
+            self.questionsShown = true
+        } else {
+            self.performSegue(withIdentifier: "showNewGameView", sender: nil)
+        }
     }
     
     @IBAction func continueGame (_ sender: UIButton) {

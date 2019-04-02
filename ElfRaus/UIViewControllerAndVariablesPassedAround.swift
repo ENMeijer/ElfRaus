@@ -17,6 +17,7 @@ class UIViewControllerAndVariablesPassedAround: UIViewController{
     public var score = [Int]()
     public var roundsToPlay = 10
     public var currentRound = 1
+    public var questionsShown = false
     
     func updateScore(playerScore:Int,modelScore:Int){
         self.score += [playerScore,modelScore]
@@ -36,5 +37,6 @@ class UIViewControllerAndVariablesPassedAround: UIViewController{
         to.gameRunning = from.gameRunning
         to.score = from.score
         to.roundsToPlay = from.roundsToPlay
+        to.questionsShown = from.questionsShown
     }
 }
