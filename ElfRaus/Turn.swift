@@ -49,14 +49,11 @@ struct Turn {
     public mutating func drawCard(cardOptions : [Card]?){
         drawnCards = drawnCards + 1
         self.cardOptions = cardOptions
-        print("drawn cards :", drawnCards)
     }
     
     public mutating func playCard(cardOptions : [Card]?){
-        print("in play Card")
         playedCards = playedCards + 1
         self.cardOptions = cardOptions
-        print("played cards: ",playedCards)
     }
     
     

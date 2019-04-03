@@ -35,6 +35,7 @@ struct Card {
         }else{
             self.direction = "low"
         }
+        
         if color == UIColor.yellow{
             colorString = "yellow"
         }else if color == UIColor.red {
@@ -44,11 +45,7 @@ struct Card {
         }else{
             colorString = "green"
         }
-        //for colorCount in 0...3{
-          //  if color == colors[colorCount]{
-            //    colorString = colorsStrings[colorCount]
-            
-        }
     }
+}
 
 

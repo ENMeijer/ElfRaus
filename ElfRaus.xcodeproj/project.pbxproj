@@ -10,6 +10,7 @@
 		210DC30E221EE0A000DF4CFC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DC30D221EE0A000DF4CFC /* Card.swift */; };
 		21359F3F222FD7B400EB75F5 /* ActRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21359F3E222FD7B400EB75F5 /* ActRModel.swift */; };
 		21359F41222FF69F00EB75F5 /* CardsPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21359F40222FF69F00EB75F5 /* CardsPlayer.swift */; };
+		215390C92254F0AE005A404B /* CardsHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215390C82254F0AE005A404B /* CardsHand.swift */; };
 		2156BDB9223A627800DA7264 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156BDB8223A627800DA7264 /* Turn.swift */; };
 		21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */; };
 		21F32B0322297E1C001701E2 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F32B0222297E1C001701E2 /* CardsModel.swift */; };
@@ -50,6 +51,7 @@
 		210DC30D221EE0A000DF4CFC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		21359F3E222FD7B400EB75F5 /* ActRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActRModel.swift; sourceTree = "<group>"; };
 		21359F40222FF69F00EB75F5 /* CardsPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPlayer.swift; sourceTree = "<group>"; };
+		215390C82254F0AE005A404B /* CardsHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsHand.swift; sourceTree = "<group>"; };
 		2156BDB8223A627800DA7264 /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElfRaus.swift; sourceTree = "<group>"; };
 		21F32B0222297E1C001701E2 /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		2F40E132221DB26F007E5536 = {
 			isa = PBXGroup;
 			children = (
+				215390C82254F0AE005A404B /* CardsHand.swift */,
 				2F40E13D221DB26F007E5536 /* ElfRaus */,
 				2F40E13C221DB26F007E5536 /* Products */,
 			);
@@ -253,6 +256,7 @@
 				21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
 				40F25DD8224A896A00C48F32 /* DifficultyViewController.swift in Sources */,
 				4026931722281C2200A33FBE /* Model.swift in Sources */,
+				215390C92254F0AE005A404B /* CardsHand.swift in Sources */,
 				21F32B0322297E1C001701E2 /* CardsModel.swift in Sources */,
 				BB22DA9A222FE919005EC811 /* testActR.swift in Sources */,
 				4026931A22281C2200A33FBE /* Production.swift in Sources */,
