@@ -8,13 +8,9 @@
 
 import UIKit
 
-//class ViewController: UIViewController, GameAndHandVariables {
 class ViewController: UIViewControllerAndVariablesPassedAround {
     //SET VARIABLES
-    //var game = ElfRaus()
-    //var hand = CardsPlayer()
-    //included in UIViewControllerAndVariablesPassedAround, because these two need to be passed around
-    
+    //some variables are set in UIViewControllerAndVariablesPassedAround
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     lazy var topCardOnDrawButton = self.game.cards[self.game.deck[0]]
     var cardsDrawnByModel = 3
@@ -64,7 +60,6 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
     
     
     //ACTION FUNCTIONS
-    
     @IBAction func touchCard(_ sender: cardView) {
         //print("hand: ",hand.cards)
         if let cardNumber = cardButtons.index(of: sender) {
@@ -130,7 +125,10 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
                     self.performSegue(withIdentifier: "showScoreView", sender: nil)
                 })
             }
-            alertController.addAction(action1)
+            //only show continue, if there are more rounds to play (current round is updated later)
+            if (self.currentRound < self.roundsToPlay){
+                alertController.addAction(action1)
+            }
             alertController.addAction(action2)
             self.present(alertController, animated: true)
             //the game is over
@@ -150,7 +148,10 @@ class ViewController: UIViewControllerAndVariablesPassedAround {
                     self.performSegue(withIdentifier: "showScoreView", sender: nil)
                 })
             }
-            alertController.addAction(action1)
+            //only show continue, if there are more rounds to play (current round is updated later)
+            if (self.currentRound < self.roundsToPlay){
+                alertController.addAction(action1)
+            }
             alertController.addAction(action2)
             self.present(alertController, animated: true)
             //the game is over

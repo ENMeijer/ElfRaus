@@ -58,7 +58,7 @@ class ScoreViewController: UIViewControllerAndVariablesPassedAround {
         var roundNumber = 1
         var scorePlayer = 0
         var scoreModel  = 0
-        for round in 1...self.roundsToPlay {
+        for round in 1...self.roundsToPlay + 1{
             //order roundNumber, Player, Model
             if self.score.count/2 >= roundNumber {
                 table[(round-1)*3+0].text = String(roundNumber); roundNumber += 1
