@@ -15,7 +15,6 @@ class MainMenuViewController: UIViewControllerAndVariablesPassedAround {
     
     @IBAction func newGame(_ sender: UIButton) {
         if(!self.questionsShown){
-            //??? show questions
             let m = "Cards can be played in sequence from 11 up- and downwards. \n If you cannot play, you need to draw up to 3 Cards.\n Goal: Empty your hand first."
             let alertController = UIAlertController(title: "Short Rules", message: m, preferredStyle: .alert)
             let action1 = UIAlertAction(title: "Start Game", style: .default) { (action:UIAlertAction) in CATransaction.setCompletionBlock({

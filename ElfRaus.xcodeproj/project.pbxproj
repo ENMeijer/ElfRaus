@@ -38,7 +38,6 @@
 		4026931E22281C2200A33FBE /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930C22281C2200A33FBE /* Temporal.swift */; };
 		4026931F22281C2200A33FBE /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930D22281C2200A33FBE /* Tokenizer.swift */; };
 		4026932022281C2200A33FBE /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026930E22281C2200A33FBE /* Vision.swift */; };
-		4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026932322281EFA00A33FBE /* PlayingCardView.swift */; };
 		402693262228200400A33FBE /* PlayedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402693252228200400A33FBE /* PlayedCards.swift */; };
 		40DCD5C7224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */; };
 		40F25DD8224A896A00C48F32 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */; };
@@ -81,7 +80,6 @@
 		4026930C22281C2200A33FBE /* Temporal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
 		4026930D22281C2200A33FBE /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 		4026930E22281C2200A33FBE /* Vision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
-		4026932322281EFA00A33FBE /* PlayingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		402693252228200400A33FBE /* PlayedCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayedCards.swift; sourceTree = "<group>"; };
 		40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAndVariablesPassedAround.swift; sourceTree = "<group>"; };
 		40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				402692FC22281C2200A33FBE /* ACT-R */,
 				2F40E140221DB26F007E5536 /* ViewController.swift */,
 				21359F40222FF69F00EB75F5 /* CardsPlayer.swift */,
-				4026932322281EFA00A33FBE /* PlayingCardView.swift */,
 				40F68C9D22240043004EBCFC /* Main.storyboard */,
 				402693252228200400A33FBE /* PlayedCards.swift */,
 				21EC54D0221EDD3E009A5BF5 /* ElfRaus.swift */,
@@ -253,7 +250,6 @@
 				4000093D224A44400099BC3E /* MainMenuViewController.swift in Sources */,
 				2156BDB9223A627800DA7264 /* Turn.swift in Sources */,
 				4026931E22281C2200A33FBE /* Temporal.swift in Sources */,
-				4026932422281EFA00A33FBE /* PlayingCardView.swift in Sources */,
 				21EC54D1221EDD3E009A5BF5 /* ElfRaus.swift in Sources */,
 				40F25DD8224A896A00C48F32 /* DifficultyViewController.swift in Sources */,
 				4026931722281C2200A33FBE /* Model.swift in Sources */,

@@ -15,7 +15,6 @@ class DifficultyViewController: UIViewControllerAndVariablesPassedAround {
         switch self.roundsToPlay {
         case 1:
             roundsController.selectedSegmentIndex = 0
-            print("one round selected")
         case 3:
             roundsController.selectedSegmentIndex = 1
         case 5:
@@ -39,7 +38,6 @@ class DifficultyViewController: UIViewControllerAndVariablesPassedAround {
             self.roundsToPlay = 5
         case 3:
             self.roundsToPlay = 10
-            
         default:
             print("amount of rounds not found")
         }
@@ -48,6 +46,7 @@ class DifficultyViewController: UIViewControllerAndVariablesPassedAround {
     func setDifficulty(_ newDifficulty: String){
         difficulty = newDifficulty
     }
+    
     func setDifficultyController(){
         switch self.difficulty {
         case "simpleModel":
@@ -64,10 +63,8 @@ class DifficultyViewController: UIViewControllerAndVariablesPassedAround {
         switch sender.selectedSegmentIndex {
         case 0:
             setDifficulty("simpleModel")
-            print("choose simple Model")
         case 1:
             setDifficulty("complexModel")
-            print("choose complex Model")
         default:
             print("model Difficulty not found")
         }

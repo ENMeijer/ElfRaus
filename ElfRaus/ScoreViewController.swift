@@ -11,12 +11,8 @@ import UIKit
 
 class ScoreViewController: UIViewControllerAndVariablesPassedAround {
     
-    //Setup of the outlet, round,player,model,round...
-    
     @IBOutlet weak var continueButton: UIButton! {didSet {updateContinueButon() }}
     @IBOutlet var table: [UILabel]! {didSet{setupTable()}}
-    
-    
     
     @IBAction func showContinueGame(_ sender: UIButton) {
         performSegue(withIdentifier: "showContinueGame", sender: nil)
@@ -39,14 +35,10 @@ class ScoreViewController: UIViewControllerAndVariablesPassedAround {
         case "showContinueGame":
             let viewControllerB = segue.destination as! ViewController
             thingsToKeepTrackOf(from: self, to: viewControllerB)
-
         default:
             print("could not find the segue")
         }
     }
-    
-    
-    
     
     func setupTable(){
         //first erase eyeryting
@@ -77,13 +69,4 @@ class ScoreViewController: UIViewControllerAndVariablesPassedAround {
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
