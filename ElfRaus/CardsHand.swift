@@ -10,12 +10,13 @@ import UIKit
 
 
 class CardsHand{
-    private var cardsPerColor = [0,0,0,0] //yellow green red blue
-    private var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
-    private let colorString = ["yellow", "green", "red", "blue"]
+    //need to be set back to private
+    var cardsPerColor = [0,0,0,0] //yellow green red blue
+    var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
+    let colorString = ["yellow", "green", "red", "blue"]
     var cards = [Card]()
-    private var legalOptions : [Card]?
-    private var legalOptionsColors = [0,0,0,0] //yellow green red blue
+    var legalOptions : [Card]?
+    var legalOptionsColors = [0,0,0,0] //yellow green red blue
     var won = false
     
 

@@ -104,7 +104,6 @@
 		2F40E132221DB26F007E5536 = {
 			isa = PBXGroup;
 			children = (
-				215390C82254F0AE005A404B /* CardsHand.swift */,
 				2F40E13D221DB26F007E5536 /* ElfRaus */,
 				2F40E13C221DB26F007E5536 /* Products */,
 			);
@@ -121,6 +120,7 @@
 		2F40E13D221DB26F007E5536 /* ElfRaus */ = {
 			isa = PBXGroup;
 			children = (
+				215390C82254F0AE005A404B /* CardsHand.swift */,
 				40F25DD7224A896A00C48F32 /* DifficultyViewController.swift */,
 				40DCD5C6224A744B00D26022 /* UIViewControllerAndVariablesPassedAround.swift */,
 				4000093C224A44400099BC3E /* MainMenuViewController.swift */,

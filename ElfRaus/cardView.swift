@@ -35,9 +35,8 @@ class cardView: UIButton {
             self.alpha = 1
             self.atLeastOneCard = true
         } else {
-            self.isEnabled = false
+            self.isEnabled = true
             self.number = 0
-            self.color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
             self.alpha = howOpaque
         }
     }
