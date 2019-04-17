@@ -10,7 +10,6 @@ import UIKit
 
 
 class CardsHand{
-    //need to be set back to private
     var cardsPerColor = [0,0,0,0] //yellow green red blue
     var colors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.blue]
     let colorString = ["yellow", "green", "red", "blue"]
